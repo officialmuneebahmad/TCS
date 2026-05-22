@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Computer Shop Multan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="sidebar-overlay" id="filter-overlay" onclick="toggleFilterSidebar()"></div>
+    <div class="nav-drawer-overlay" id="nav-overlay" onclick="toggleNavMenu()"></div>
+
+    <header>
+        <div class="logo-container" onclick="changeCategory('all')">
+            <img src="A_high-fidelity,_professional_combination_mark_202605121257.jpeg" alt="The Computer Shop Multan Rounded Logo">
+        </div>
+
+        <div class="search-wrapper-row">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search parameters..." oninput="filterProducts()">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button class="theme-toggle-btn" onclick="toggleDayNightTheme()" title="Toggle Contrast Settings" id="theme-toggle-icon">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="burger-menu-btn" onclick="toggleNavMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav id="mobile-navigation-drawer">
+            <button class="drawer-close-btn" onclick="toggleNavMenu()"><i class="fas fa-times"></i></button>
+            <ul class="nav-menu">
+                <li><button class="nav-btn active" id="btn-home" onclick="changeCategory('all')">HOME</button></li>
+                <li><button class="nav-btn" id="btn-computer" onclick="changeCategory('computer')">COMPUTER GEAR</button></li>
+                <li><button class="nav-btn" id="btn-mobile" onclick="changeCategory('mobile')">MOBILE GEAR</button></li>
+                <li><button class="nav-btn whatsapp-nav-btn" onclick="directHelpWhatsapp()"><i class="fab fa-whatsapp"></i> NEED HELP</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="carousel-wrapper" id="page-carousel">
+        <div class="carousel-container" id="carousel-track">
+            <div class="carousel-slide image-slide">
+                <h2>COMPUTER GEAR UPGRADES</h2>
+                <p>Blazing-fast power, premium durability, and next-level accessories engineered for modern tech lifestyles.</p>
+            </div>
+            <div class="carousel-slide" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+                <h2>MOBILE GEAR UPGRADES</h2>
+                <p>Lightning-fast 20W adapters, durable premium cables, and smart automotive mounts.</p>
+            </div>
+            <div class="carousel-slide" style="background: linear-gradient(135deg, #111827, var(--primary-blue));">
+                <h2>100% AUTHENTIC STOCKS</h2>
+                <p>We source directly from premium manufacturers. Genuine setups only.</p>
+            </div>
+            <div class="carousel-slide" style="background: linear-gradient(135deg, #020617, #1f2937);">
+                <h2>SUPER FAST HOME DELIVERY</h2>
+                <p>Place your orders seamlessly via WhatsApp and get items shipped safely with local routing.</p>
+            </div>
+        </div>
+        <div class="carousel-dots" id="carousel-dots-group">
+            <div class="dot active" onclick="jumpToSlide(0)"></div>
+            <div class="dot" onclick="jumpToSlide(1)"></div>
+            <div class="dot" onclick="jumpToSlide(2)"></div>
+            <div class="dot" onclick="jumpToSlide(3)"></div>
+        </div>
+    </div>
+
+    <div id="home-view">
+        <div class="main-container">
+            <div class="mobile-filter-trigger" onclick="toggleFilterSidebar()">
+                <i class="fas fa-sliders-h"></i> SHOW FILTERS & SORTING
+            </div>
+
+            <aside class="sidebar" id="filter-sidebar">
+                <button class="sidebar-close-btn" onclick="toggleFilterSidebar()"><i class="fas fa-times"></i></button>
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label><input type="radio" name="sort" value="default" checked onchange="filterProductsWithMobileClose()"> Default Sorting</label>
+                    <label><input type="radio" name="sort" value="low-high" onchange="filterProductsWithMobileClose()"> Price: Low to High</label>
+                    <label><input type="radio" name="sort" value="high-low" onchange="filterProductsWithMobileClose()"> Price: High to Low</label>
+                </div>
+
+                <div class="filter-group">
+                    <label><input type="checkbox" id="stock-filter" onchange="filterProductsWithMobileClose()"> Available in Stock</label>
+                </div>
+
+                <div class="filter-group">
+                    <label style="font-weight: 600;">Max Price Scroller</label>
+                    <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts()">
+                    <div class="price-labels">
+                        <span>Rs. 1,000</span>
+                        <span id="price-limit" style="font-weight: bold; color: var(--neon-blue);">Rs. 20,000</span>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="products-area">
+                <h2 class="section-title" id="grid-title">Top Selling Products</h2>
+                <div class="grid" id="products-grid"></div>
+            </section>
+        </div>
+    </div>
+
+    <div id="product-view">
+        <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Shop</button>
+        
+        <div class="product-details-container">
+            <div class="prod-image-left">
+                <div class="main-detail-img-wrapper">
+                    <img id="detail-img-main" src="" alt="Active Product Zoom View">
+                </div>
+                <div class="thumbnail-gallery" id="thumb-gallery-container"></div>
+            </div>
+            
+            <div class="prod-info-right">
+                <h1 id="detail-title">Product Title</h1>
+                <div class="price-row">
+                    <div class="price" id="detail-price">Rs. 0</div>
+                    <div class="detail-discount" id="detail-discount-tag">0% OFF</div>
+                </div>
+                <p class="desc" id="detail-desc">Premium computer and mobile accessory selections guaranteed to satisfy performance demands.</p>
+                
+                <button class="whatsapp-cta" onclick="orderViaWhatsapp()">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </button>
+                
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.9/5 Customer Feedback Matrix)</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Other Related Matrix Items</h2>
+        <div class="grid" id="related-products-grid"></div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col" style="margin-bottom: 5px;">
+                <img src="A_high-fidelity,_professional_combination_mark_202605121257.jpeg" alt="Logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid var(--neon-blue); margin-bottom: 12px;">
+                <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Your ultimate destination for premium computer components and certified phone mobile gear profiles in Multan.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="alert('About Us section coming soon!')">About Us</a></li>
+                    <li><a href="#" onclick="alert('FAQs window setup context coming soon!')">FAQs</a></li>
+                    <li><a href="#" onclick="alert('Live coordinates configuration channels coming soon!')">Contact Us</a></li>
+                    <li><a href="#" onclick="alert('Terms and conditions policy layout documentation.')">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col trust-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <strong>TRUSTED SELLER</strong><br>
+                        <span style="font-size: 0.7rem; color: #94a3b8;">Verified Operations</span>
+                    </div>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-truck-fast"></i>
+                    <div>
+                        <strong>FAST DELIVERY</strong><br>
+                        <span style="font-size: 0.7rem; color: #94a3b8;">Direct Multan & Nationwide</span>
+                    </div>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>100% GENUINE PRODUCT</strong><br>
+                        <span style="font-size: 0.7rem; color: #94a3b8;">Guaranteed Original Stocks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 The Computer Shop Multan. All Rights Reserved. <br>
+            Unauthorized copying, modification, distribution, resale, reverse engineering, or reproduction of this software, in whole or in part, is strictly prohibited and may result in legal action.
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
