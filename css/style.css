@@ -280,6 +280,7 @@
     overflow: hidden;
     background: #050b14;
     touch-action: pan-y;
+    
 }
 
 .carousel-container {
@@ -315,16 +316,65 @@
 }
 
 /* --- REMOVE FIXED HEIGHTS FROM MEDIA QUERIES --- */
-@media (min-width: 650px) {
+
+/* Extra small devices (max 360px) */
+@media (max-width: 360px) {
     .carousel-wrapper { 
         height: auto; /* Overrides old fixed px settings */
     } 
+
+    .carousel-slide h2 {
+        font-size: 14px;
+    }
+
+    .carousel-slide p {
+        font-size: 12px;
+    }
 }
 
+/* Small devices (361px - 400px) */
+@media (max-width: 400px) {
+    .carousel-wrapper { 
+        height: auto;
+    } 
+
+    .carousel-slide h2 {
+        font-size: 15px;
+    }
+
+    .carousel-slide p {
+        font-size: 13px;
+    }
+}
+
+/* Medium devices (650px and up) */
+@media (min-width: 650px) {
+    .carousel-wrapper { 
+        height: auto;
+    }
+
+    .carousel-slide h2 {
+        font-size: 18px;
+    }
+
+    .carousel-slide p {
+        font-size: 15px;
+    }
+}
+
+/* Large devices (1025px and up) */
 @media (min-width: 1025px) {
     .carousel-wrapper { 
-        height: auto; /* Overrides old desktop fixed px settings */
-        aspect-ratio: 16 / 4.5; /* Optimizes computer monitors to perfectly see every detail */
+        height: auto;
+        aspect-ratio: 16 / 4.5; /* Optimizes computer monitors */
+    }
+
+    .carousel-slide h2 {
+        font-size: 22px;
+    }
+
+    .carousel-slide p {
+        font-size: 18px;
     }
 }
 
