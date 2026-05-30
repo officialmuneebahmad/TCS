@@ -410,12 +410,12 @@
                                 `*Offer:* ${activeProductGlobal.discount}\n\n` +
                                 `Please confirm current status for dispatch coordinates!`;
 
-            const storeMobileNum = "923000000000"; 
+            const storeMobileNum = "923070655275"; 
             window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(messageText)}`, '_blank');
         }
 
         function directHelpWhatsapp() {
             const helpMsg = `Hello The Computer Shop Multan! I am browsing through your web store and need live support choosing a mobile or computer setup accessory. Can you help?`;
-            const storeMobileNum = "923000000000";
+            const storeMobileNum = "923070655275";
             window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(helpMsg)}`, '_blank');
         }
