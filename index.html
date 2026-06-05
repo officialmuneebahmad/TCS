@@ -3,10 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Computer Shop Multan</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <title>The Computer Shop Multan | Genuine Computer & Mobile Accessories</title>
+    <meta name="description" content="Shop 100% genuine computer accessories, gaming setups, and mobile gear at The Computer Shop Multan. Enjoy fast home delivery across Multan and competitive market rates.">
+    <meta name="keywords" content="The Computer Shop Multan, computer accessories in Multan, mobile accessories Multan, multantech store, gaming gear Multan, original phone chargers Multan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://multantech.store/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multantech.store/">
+    <meta property="og:title" content="The Computer Shop Multan | Genuine Computer & Mobile Accessories">
+    <meta property="og:description" content="Your ultimate destination for premium computer components and certified mobile gear in Multan. Sourced directly from manufacturers.">
+    <meta property="og:image" content="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg">
+
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Schema.org Structured Data for Local SEO Search Relevance -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Computer Shop Multan",
+      "image": "https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg",
+      "url": "https://multantech.store",
+      "telephone": "+923070655275", 
+      "priceRange": "Rs.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sher Shah Road, Multan",
+        "addressLocality": "Multan",
+        "addressRegion": "Punjab",
+        "postalCode": "59200",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.1575,
+        "longitude": 71.5249
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61590214397707"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -15,12 +72,12 @@
 
     <header>
         <div class="logo-container" onclick="changeCategory('all')">
-            <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg" alt="The Computer Shop Multan Rounded Logo">
+            <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg" alt="The Computer Shop Multan Logo">
         </div>
 
         <div class="search-wrapper-row">
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search..." oninput="filterProducts()">
+                <input type="text" id="search-input" placeholder="Search here" oninput="filterProducts()" aria-label="Search Products">
                 <i class="fas fa-search"></i>
             </div>
         </div>
@@ -29,13 +86,13 @@
             <button class="theme-toggle-btn" onclick="toggleDayNightTheme()" title="Toggle Contrast Settings" id="theme-toggle-icon">
                 <i class="fas fa-moon"></i>
             </button>
-            <button class="burger-menu-btn" onclick="toggleNavMenu()">
+            <button class="burger-menu-btn" onclick="toggleNavMenu()" aria-label="Open Navigation Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
         <nav id="mobile-navigation-drawer">
-            <button class="drawer-close-btn" onclick="toggleNavMenu()"><i class="fas fa-times"></i></button>
+            <button class="drawer-close-btn" onclick="toggleNavMenu()" aria-label="Close Navigation Menu"><i class="fas fa-times"></i></button>
             <ul class="nav-menu">
                 <li><button class="nav-btn active" id="btn-home" onclick="changeCategory('all')">HOME</button></li>
                 <li><button class="nav-btn" id="btn-computer" onclick="changeCategory('computer')">COMPUTER GEAR</button></li>
@@ -45,122 +102,127 @@
         </nav>
     </header>
 
-    <div class="carousel-wrapper" id="page-carousel">
-        <div class="carousel-container" id="carousel-track">
-            <div class="carousel-slide image-slide">
-                <h2>COMPUTER GEAR UPGRADES</h2>
-                <p>Blazing-fast power, premium durability, and next-level accessories engineered for modern tech lifestyles.</p>
+    <main>
+        <!-- Carousel Slideshow Promotional Space -->
+        <div class="carousel-wrapper" id="page-carousel">
+            <div class="carousel-container" id="carousel-track">
+                <div class="carousel-slide image-slide">
+                    <h2>COMPUTER GEAR UPGRADES</h2>
+                    <p>Blazing-fast power, premium durability, and next-level accessories engineered for modern tech lifestyles.</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+                    <h2>MOBILE GEAR UPGRADES</h2>
+                    <p>Lightning-fast 20W adapters, durable premium cables, and smart automotive mounts.</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #111827, var(--primary-blue));">
+                    <h2>100% AUTHENTIC STOCKS</h2>
+                    <p>We source directly from premium manufacturers. Genuine setups only.</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #020617, #1f2937);">
+                    <h2>SUPER FAST HOME DELIVERY</h2>
+                    <p>Place your orders seamlessly via WhatsApp and get items shipped safely with local routing.</p>
+                </div>
             </div>
-            <div class="carousel-slide" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
-                <h2>MOBILE GEAR UPGRADES</h2>
-                <p>Lightning-fast 20W adapters, durable premium cables, and smart automotive mounts.</p>
-            </div>
-            <div class="carousel-slide" style="background: linear-gradient(135deg, #111827, var(--primary-blue));">
-                <h2>100% AUTHENTIC STOCKS</h2>
-                <p>We source directly from premium manufacturers. Genuine setups only.</p>
-            </div>
-            <div class="carousel-slide" style="background: linear-gradient(135deg, #020617, #1f2937);">
-                <h2>SUPER FAST HOME DELIVERY</h2>
-                <p>Place your orders seamlessly via WhatsApp and get items shipped safely with local routing.</p>
+            <div class="carousel-dots" id="carousel-dots-group">
+                <div class="dot active" onclick="jumpToSlide(0)"></div>
+                <div class="dot" onclick="jumpToSlide(1)"></div>
+                <div class="dot" onclick="jumpToSlide(2)"></div>
+                <div class="dot" onclick="jumpToSlide(3)"></div>
             </div>
         </div>
-        <div class="carousel-dots" id="carousel-dots-group">
-            <div class="dot active" onclick="jumpToSlide(0)"></div>
-            <div class="dot" onclick="jumpToSlide(1)"></div>
-            <div class="dot" onclick="jumpToSlide(2)"></div>
-            <div class="dot" onclick="jumpToSlide(3)"></div>
-        </div>
-    </div>
 
-    <div id="home-view">
-        <div class="main-container">
-            <div class="mobile-filter-trigger" onclick="toggleFilterSidebar()">
-                <i class="fas fa-sliders-h"></i> SHOW FILTERS & SORTING
+        <!-- Main Product Catalog Interface -->
+        <div id="home-view">
+            <div class="main-container">
+                <div class="mobile-filter-trigger" onclick="toggleFilterSidebar()">
+                    <i class="fas fa-sliders-h"></i> SHOW FILTERS & SORTING
+                </div>
+
+                <aside class="sidebar" id="filter-sidebar">
+                    <button class="sidebar-close-btn" onclick="toggleFilterSidebar()"><i class="fas fa-times"></i></button>
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label><input type="radio" name="sort" value="default" checked onchange="filterProductsWithMobileClose()"> Default Sorting</label>
+                        <label><input type="radio" name="sort" value="low-high" onchange="filterProductsWithMobileClose()"> Price: Low to High</label>
+                        <label><input type="radio" name="sort" value="high-low" onchange="filterProductsWithMobileClose()"> Price: High to Low</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><input type="checkbox" id="stock-filter" onchange="filterProductsWithMobileClose()"> Available in Stock</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <label style="font-weight: 600;">Max Price Scroller</label>
+                        <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts()">
+                        <div class="price-labels">
+                            <span>Rs. 1,000</span>
+                            <span id="price-limit" style="font-weight: bold; color: var(--neon-blue);">Rs. 20,000</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="products-area">
+                    <h1 class="section-title" id="grid-title" style="font-size: 1.8rem; margin-bottom: 20px;">Top Selling Products</h1>
+                    <div class="grid" id="products-grid"></div>
+                </section>
             </div>
+        </div>
 
-            <aside class="sidebar" id="filter-sidebar">
-                <button class="sidebar-close-btn" onclick="toggleFilterSidebar()"><i class="fas fa-times"></i></button>
-                <h3>Filters</h3>
+        <!-- Single Detailed Item View Panel -->
+        <div id="product-view" style="display: none;">
+            <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Shop</button>
+            
+            <div class="product-details-container">
+                <div class="prod-image-left">
+                    <div class="main-detail-img-wrapper">
+                        <img id="detail-img-main" src="" alt="Active Product Zoom View">
+                    </div>
+                    <div class="thumbnail-gallery" id="thumb-gallery-container"></div>
+                </div>
                 
-                <div class="filter-group">
-                    <label><input type="radio" name="sort" value="default" checked onchange="filterProductsWithMobileClose()"> Default Sorting</label>
-                    <label><input type="radio" name="sort" value="low-high" onchange="filterProductsWithMobileClose()"> Price: Low to High</label>
-                    <label><input type="radio" name="sort" value="high-low" onchange="filterProductsWithMobileClose()"> Price: High to Low</label>
-                </div>
-
-                <div class="filter-group">
-                    <label><input type="checkbox" id="stock-filter" onchange="filterProductsWithMobileClose()"> Available in Stock</label>
-                </div>
-
-                <div class="filter-group">
-                    <label style="font-weight: 600;">Max Price Scroller</label>
-                    <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts()">
-                    <div class="price-labels">
-                        <span>Rs. 1,000</span>
-                        <span id="price-limit" style="font-weight: bold; color: var(--neon-blue);">Rs. 20,000</span>
+                <div class="prod-info-right">
+                    <h2 id="detail-title">Product Title</h2>
+                    <div class="price-row">
+                        <div class="price" id="detail-price">Rs. 0</div>
+                        <div class="detail-discount" id="detail-discount-tag">0% OFF</div>
+                    </div>
+                    <p class="desc" id="detail-desc">Premium computer and mobile accessory selections guaranteed to satisfy performance demands.</p>
+                    
+                    <button class="whatsapp-cta" onclick="orderViaWhatsapp()">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </button>
+                    
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.9/5 Customer Feedback Matrix)</span>
                     </div>
                 </div>
-            </aside>
-
-            <section class="products-area">
-                <h2 class="section-title" id="grid-title">Top Selling Products</h2>
-                <div class="grid" id="products-grid"></div>
-            </section>
-        </div>
-    </div>
-
-    <div id="product-view">
-        <button class="back-btn" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Shop</button>
-        
-        <div class="product-details-container">
-            <div class="prod-image-left">
-                <div class="main-detail-img-wrapper">
-                    <img id="detail-img-main" src="" alt="Active Product Zoom View">
-                </div>
-                <div class="thumbnail-gallery" id="thumb-gallery-container"></div>
             </div>
-            
-            <div class="prod-info-right">
-                <h1 id="detail-title">Product Title</h1>
-                <div class="price-row">
-                    <div class="price" id="detail-price">Rs. 0</div>
-                    <div class="detail-discount" id="detail-discount-tag">0% OFF</div>
-                </div>
-                <p class="desc" id="detail-desc">Premium computer and mobile accessory selections guaranteed to satisfy performance demands.</p>
-                
-                <button class="whatsapp-cta" onclick="orderViaWhatsapp()">
-                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                </button>
-                
-                <div class="star-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>(4.9/5 Customer Feedback Matrix)</span>
-                </div>
-            </div>
-        </div>
 
-        <h2 class="section-title">Other Related Matrix Items</h2>
-        <div class="grid" id="related-products-grid"></div>
-    </div>
+            <h3 class="section-title">Other Related Matrix Items</h3>
+            <div class="grid" id="related-products-grid"></div>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-grid">
             <div class="footer-col" style="margin-bottom: 5px;">
-                <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg" alt="Logo" style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid var(--neon-blue); margin-bottom: 12px;">
+                <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg" alt="The Computer Shop Multan" style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid var(--neon-blue); margin-bottom: 12px;">
                 <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Your ultimate destination for premium computer components and certified phone mobile gear profiles in Multan.</p>
             </div>
             
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="./foot/about-us.html"">About Us</a></li>
-                    <li><a href="./foot/faqs.html">FAQs</a></li>
-                    <li><a href="./foot/contact-us.html">Contact Us</a></li>
-                    <li><a href="./foot/ToC.html">Terms & Conditions</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="ToC.html">Terms & Conditions</a></li>
                 </ul>
             </div>
 
@@ -194,6 +256,6 @@
         </div>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
