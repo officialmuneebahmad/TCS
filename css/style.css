@@ -259,7 +259,7 @@
         }
 
         .whatsapp-nav-btn {
-            background: #25D366 !important;
+            background: #25d365e4 !important;
             color: white !important;
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
             display: flex;
@@ -790,7 +790,7 @@
         }
 
         .whatsapp-cta {
-            background: #25D366; 
+            background: #25d365e4; 
             color: var(--white);
             padding: 14px 25px;
             border-radius: 50px;
@@ -1008,3 +1008,113 @@
                 border-color: var(--neon-blue);
             }
         }
+
+        /* 
+            CODE APPENDED ---- 08/06/2026 ----------- 
+            Native Share Buttons & Product Routing Updates
+        */
+
+        /* --- NATIVE SHARE UI COMPONENT --- */
+.share-action-container {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+.share-btn {
+    margin-top: 2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+}
+[data-theme="dark"] .share-btn {
+    background: #334155;
+}
+.share-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* --- LIGHTBOX IMAGE MODAL ZOOM --- */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-content {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.lightbox-modal.active .lightbox-content {
+    transform: scale(1);
+}
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f1f5f9;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.lightbox-close:hover {
+    color: var(--neon-blue);
+}
+@media (max-width: 768px) {
+    .share-action-container { flex-direction: column; }
+    .lightbox-close { top: 15px; right: 20px; font-size: 30px; }
+}
+
+/* ZOOM PIC */
+.zoom-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    z-index:99999;
+    justify-content:center;
+    align-items:center;
+}
+
+.zoom-modal img{
+    max-width:95%;
+    max-height:95%;
+}
+
+.zoom-close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:#fff;
+    font-size:40px;
+    cursor:pointer;
+}

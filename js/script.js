@@ -3,8 +3,8 @@
             {
                 id: 1,
                 name: "XTRIKE ME MP-005 GAMING MOUSE PAD MEDIUM 320x270x2MM",
-                price: 799,
-                discount: "12% OFF",
+                price: 765,
+                discount: "15% OFF",
                 category: "computer",
                 inStock: true,
                 images: [
@@ -16,13 +16,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779272631/A_minimalist__bright_8K_HDR_202605131239_gauhj2.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779272636/A_professional_8K_HDR_commercial_202605131237_ecge8u.jpg"
                 ],
-                desc: "XTRIKE ME MP-005 Gaming Mouse Pad features a smooth low-friction surface for precise mouse tracking and responsive gaming performance. Its anti-slip rubber base keeps the pad firmly in place during intense gameplay or work sessions. Lightweight, portable, and stylish, the 320x270x2mm design adds comfort and a modern look to any gaming or office setup. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "XTRIKE ME MP-005 Gaming Mouse Pad features a smooth low-friction surface for precise mouse tracking and responsive gaming performance. Its anti-slip rubber base keeps the pad firmly in place during intense gameplay or work sessions. Lightweight, portable, and stylish, the 320x270x2mm design adds comfort and a modern look to any gaming or office setup."
             },
             {
                 id: 2,
                 name: "XIAOMI 120W EU PLUG QC3.0 FAST QUICK WALL CHARGER WITH CABLE",
-                price: 1199,
-                discount: "15% OFF",
+                price: 1260,
+                discount: "10% OFF",
                 category: "mobile",
                 inStock: true,
                 images: [
@@ -32,13 +32,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779273309/A_professional_8K_HDR__Hero__202605131518_1_jbvkrq.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779273303/d5683921781776248400_wflnjx.jpg"
                 ],
-                desc: "Xiaomi 120W Fast Charger delivers ultra-fast charging with smart power allocation, supporting USB Power Delivery (PD) and Qualcomm Quick Charge (QC) protocols for maximum efficiency. Compatible with flagship Xiaomi and Redmi devices, it ensures safe, stable, and high-speed charging for daily use. Its compact design makes it perfect for travel, gaming, and heavy smartphone users needing reliable rapid charging performance.FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Xiaomi 120W Fast Charger delivers ultra-fast charging with smart power allocation, supporting USB Power Delivery (PD) and Qualcomm Quick Charge (QC) protocols for maximum efficiency. Compatible with flagship Xiaomi and Redmi devices, it ensures safe, stable, and high-speed charging for daily use. Its compact design makes it perfect for travel, gaming, and heavy smartphone users needing reliable rapid charging performance."
             },
             {
                 id: 3,
-                name: "SAMSUNG TYPE-C TO TYPE-C ORIGINAL CABLE",
-                price: 399,
-                discount: "20% OFF",
+                name: "SAMSUNG TYPE -C TO TYPE C ORIGINAL CABLE",
+                price: 475,
+                discount: "5% OFF",
                 category: "mobile",
                 inStock: true,
                 images: [
@@ -46,7 +46,7 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276326/A_top-down_8K__flat_lay__202605151525_sst5x4.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276311/21561450831776413292_unqsfj.jpg"
                 ],
-                desc: "Samsung Original Type-C to Type-C Cable delivers reliable fast charging and stable data transmission for all compatible USB Type-C smartphones and devices. Featuring a durable 100CM black design, it supports up to 2A fast charging for efficient everyday use. Its original Samsung build quality ensures safe performance, strong connectivity, and long-lasting durability. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Samsung Original Type-C to Type-C Cable delivers reliable fast charging and stable data transmission for all compatible USB Type-C smartphones and devices. Featuring a durable 100CM black design, it supports up to 2A fast charging for efficient everyday use. Its original Samsung build quality ensures safe performance, strong connectivity, and long-lasting durability."
             },
             {
                 id: 4,
@@ -60,7 +60,7 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276544/An_atmospheric__high-end_8K_HDR_202605140909_pyp6bd.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276547/A_high-end_8K_HDR_studio_202605140901_kfbego.jpg"
                 ],
-                desc: "Samsung 45W PD Super Fast Charger delivers ultra-fast and efficient charging with advanced PD and PPS technology for compatible Samsung Galaxy and USB Type-C devices. Built with compact GaN technology, it offers safer, cooler, and more power-efficient performance during charging. Perfect for travel, office, or daily use, this original charger supports rapid charging speeds up to 45W for smartphones, tablets, and other modern devices.FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Samsung 45W PD Super Fast Charger delivers ultra-fast and efficient charging with advanced PD and PPS technology for compatible Samsung Galaxy and USB Type-C devices. Built with compact GaN technology, it offers safer, cooler, and more power-efficient performance during charging. Perfect for travel, office, or daily use, this original charger supports rapid charging speeds up to 45W for smartphones, tablets, and other modern devices."
             },
             {
                 id: 5,
@@ -74,13 +74,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276864/A_high-detail_8K_lifestyle_shot_202605151709_be9cz7.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276855/2641376be11776507612_d3y81j.jpg"
                 ],
-                desc: "Samsung 25W Super Fast USB-C Charger provides fast, safe, and efficient charging for Samsung Galaxy phones, tablets, and other USB Type-C devices. Supporting Power Delivery 3.0 technology, it delivers up to 25W fast charging for compatible devices while maintaining stable performance. Its compact lightweight design makes it ideal for travel, office, and everyday charging needs. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Samsung 25W Super Fast USB-C Charger provides fast, safe, and efficient charging for Samsung Galaxy phones, tablets, and other USB Type-C devices. Supporting Power Delivery 3.0 technology, it delivers up to 25W fast charging for compatible devices while maintaining stable performance. Its compact lightweight design makes it ideal for travel, office, and everyday charging needs."
             },
             {
                 id: 6,
                 name: "REMAX RC-C189 65W 4 IN 1 MULTI FUNCTIONAL DATA CABLE BLACK",
-                price: 699,
-                discount: "12% OFF",
+                price: 765,
+                discount: "15% OFF",
                 category: "mobile",
                 inStock: true,
                 images: [
@@ -88,7 +88,7 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277260/A_cinematic_lifestyle_shot_of_202605151454_2_slncnb.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277256/A_cinematic_lifestyle_shot_of_202605151454_bc0una.jpg"
                 ],
-                desc: "Remax RC-C189 65W Fast Charging Cable features a versatile 2-in-2 interchangeable design supporting USB-C and Lightning connections for Android and iPhone devices. Built with a durable braided flat cable and aluminum connectors, it ensures fast charging, stable data transfer, and long-lasting performance. Supporting up to 65W power output, this premium 100CM cable is perfect for gaming, travel, office, and everyday charging needs. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Remax RC-C189 65W Fast Charging Cable features a versatile 2-in-2 interchangeable design supporting USB-C and Lightning connections for Android and iPhone devices. Built with a durable braided flat cable and aluminum connectors, it ensures fast charging, stable data transfer, and long-lasting performance. Supporting up to 65W power output, this premium 100CM cable is perfect for gaming, travel, office, and everyday charging needs."
             },
             {
                 id: 7,
@@ -102,13 +102,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277588/Mouse_mat_with_gaming_mouse_202605160942_dc26tc.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277589/Razer_Goliathus_Control_Mouse_Pad_202605160931_kgpnk7.jpg"
                 ],
-                desc: "Razer Goliathus Control Edition Gaming Mouse Pad features a textured control surface for precise tracking, smooth glide, and enhanced gaming accuracy with all mouse sensor types. Its anti-fraying stitched edges and durable 4mm thick design provide long-lasting comfort and stability during intense gameplay sessions. Measuring 245x320mm, this premium gaming mouse pad delivers excellent control, grip, and professional-level performance for gamers and daily users alike. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Razer Goliathus Control Edition Gaming Mouse Pad features a textured control surface for precise tracking, smooth glide, and enhanced gaming accuracy with all mouse sensor types. Its anti-fraying stitched edges and durable 4mm thick design provide long-lasting comfort and stability during intense gameplay sessions. Measuring 245x320mm, this premium gaming mouse pad delivers excellent control, grip, and professional-level performance for gamers and daily users alike."
             },
             {
                 id: 8,
                 name: "LOGITECH MOUSE PAD BIG 250x290x2mm",
-                price: 499,
-                discount: "30% OFF",
+                price: 475,
+                discount: "5% OFF",
                 category: "computer",
                 inStock: true,
                 images: [
@@ -116,13 +116,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278197/A_beautiful_8K_high-detail_lifestyle_202605161033_cxsy3j.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278193/A_professional_8K_HDR_studio_202605161029_ukd2jj.jpg"
                 ],
-                desc: "Premium Gaming Mouse Pad features a smooth cloth surface for precise mouse movement, comfortable usage, and easy cleaning during daily gaming or office work. Its non-slip rubber base keeps the pad securely in place while vibrant full-color printing adds a stylish look to your setup. Measuring 250x290x2mm, this durable and washable mouse pad is designed for long-lasting performance without fading or discoloration. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Premium Gaming Mouse Pad features a smooth cloth surface for precise mouse movement, comfortable usage, and easy cleaning during daily gaming or office work. Its non-slip rubber base keeps the pad securely in place while vibrant full-color printing adds a stylish look to your setup. Measuring 250x290x2mm, this durable and washable mouse pad is designed for long-lasting performance without fading or discoloration."
             },
             {
                 id: 9,
                 name: "GIONEE TYPE C ORIGINAL WIRED HAND FREE",
-                price: 499,
-                discount: "18% OFF",
+                price: 570,
+                discount: "5% OFF",
                 category: "mobile",
                 inStock: true,
                 images: [
@@ -130,13 +130,13 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278513/A_professional_8K_HDR_cinematic_202605140938_hlkmue.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278510/I_have_uploaded_a__GIONEE_202605140946_1_wcpm3r.jpg"
                 ],
-                desc: "GIONEE Type-C Wired Handsfree delivers clear high-definition sound with deep bass and crisp audio for music, calls, videos, and gaming. Designed for modern USB Type-C devices, it provides stable connectivity, a built-in microphone, and convenient in-line controls for easy hands-free use. Its lightweight ergonomic design with soft silicone earbuds ensures a secure and comfortable fit during long listening sessions. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "GIONEE Type-C Wired Handsfree delivers clear high-definition sound with deep bass and crisp audio for music, calls, videos, and gaming. Designed for modern USB Type-C devices, it provides stable connectivity, a built-in microphone, and convenient in-line controls for easy hands-free use. Its lightweight ergonomic design with soft silicone earbuds ensures a secure and comfortable fit during long listening sessions."
             },
             {
                 id: 10,
                 name: "GIONEE WIRED HAND FREE ORIGINAL",
-                price: 399,
-                discount: "20% OFF",
+                price: 475,
+                discount: "5% OFF",
                 category: "mobile",
                 inStock: true,
                 images: [
@@ -144,7 +144,7 @@
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278934/A_high-end_8K_lifestyle_photograph_202605160912_nhsdzx.jpg",
                     "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278939/A_professional_8K_HDR_studio_202605160910_in2xz4.jpg"
                 ],
-                desc: "Universal 3.5mm Stereo Earphones deliver powerful Hi-Fi sound with deep bass, clear audio quality, and a built-in microphone for calls and music control. Designed for maximum comfort and everyday performance, these earphones provide a secure fit for long listening sessions. Compatible with all 3.5mm devices, they are perfect for gaming, music, videos, and hands-free calling. FREE SHIPPING ALL OVER MULTAN (ONLY) WITH SPECIAL DISCOUNT PRICE"
+                desc: "Universal 3.5mm Stereo Earphones deliver powerful Hi-Fi sound with deep bass, clear audio quality, and a built-in microphone for calls and music control. Designed for maximum comfort and everyday performance, these earphones provide a secure fit for long listening sessions. Compatible with all 3.5mm devices, they are perfect for gaming, music, videos, and hands-free calling."
             }
         ];
 
@@ -169,6 +169,8 @@
 
         // RUN SYSTEM INITIALIZATION CYCLES
         document.addEventListener("DOMContentLoaded", () => {
+            checkDeepLink();
+            initImageZoom();
             filterProducts();
             startCarouselTimer();
             setupTouchSwipeGestures();
@@ -354,11 +356,17 @@
             });
         }
 
-        function viewProductDetails(productId) {
+        function viewProductDetails(productId, updateUrl = true) {
+
             const product = productsDatabase.find(p => p.id === productId);
+
             if (!product) return;
 
             activeProductGlobal = product;
+
+            if(updateUrl){
+                updateProductUrl(product);
+            }
 
             homeView.style.display = 'none';
             carouselSection.style.display = 'none';
@@ -393,12 +401,21 @@
             renderProductsGrid(relatedItems, relatedGrid);
         }
 
-        function showHome() {
-            productView.style.display = 'none';
-            homeView.style.display = 'block';
-            carouselSection.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        function showHome(updateUrl = true) {
+
+    productView.style.display = 'none';
+    homeView.style.display = 'block';
+    carouselSection.style.display = 'block';
+
+    if(updateUrl){
+        history.pushState({}, "", window.location.pathname);
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 
         /* --- CONTACT API DISPATCH COORDINATES --- */
         function orderViaWhatsapp() {
@@ -419,3 +436,108 @@
             const storeMobileNum = "923070655275";
             window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(helpMsg)}`, '_blank');
         }
+
+        /* =========================
+   PRODUCT URL SLUG SYSTEM
+========================= */
+
+function createProductSlug(name) {
+    return name
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .trim();
+}
+
+function getProductBySlug(slug) {
+    return productsDatabase.find(
+        p => createProductSlug(p.name) === slug
+    );
+}
+
+/* =========================
+   DEEP LINKING
+========================= */
+
+function updateProductUrl(product) {
+    const slug = createProductSlug(product.name);
+
+    history.pushState(
+        {
+            productSlug: slug
+        },
+        "",
+        `?product=${slug}`
+    );
+}
+
+function checkDeepLink() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("product");
+
+    if (!slug) return;
+
+    const product = getProductBySlug(slug);
+
+    if (product) {
+        viewProductDetails(product.id, false);
+    }
+}
+
+window.addEventListener("popstate", () => {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has("product")) {
+        const product = getProductBySlug(params.get("product"));
+
+        if (product) {
+            viewProductDetails(product.id, false);
+        }
+    } else {
+        showHome(false);
+    }
+});
+
+function shareProduct() {
+
+    if(!activeProductGlobal) return;
+
+    const shareUrl = window.location.href;
+
+    if(navigator.share){
+
+        navigator.share({
+            title: activeProductGlobal.name,
+            text: activeProductGlobal.name,
+            url: shareUrl
+        });
+
+    } else {
+
+        navigator.clipboard.writeText(shareUrl);
+
+        alert("Product link copied!");
+    }
+}
+
+function initImageZoom(){
+
+    const modal = document.getElementById("zoomModal");
+    const zoomImg = document.getElementById("zoomImage");
+
+    document.addEventListener("click",(e)=>{
+
+        if(e.target.id === "detail-img-main"){
+
+            modal.style.display = "flex";
+            zoomImg.src = e.target.src;
+        }
+
+    });
+
+    modal.addEventListener("click",()=>{
+
+        modal.style.display = "none";
+    });
+}

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dyrncibsu/image/upload/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg">
     
     <!-- Core SEO Meta Tags -->
     <title>The Computer Shop Multan | Genuine Computer & Mobile Accessories</title>
@@ -77,7 +79,7 @@
 
         <div class="search-wrapper-row">
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search here" oninput="filterProducts()" aria-label="Search Products">
+                <input type="text" id="search-input" placeholder="Search tech gear..." oninput="filterProducts()" aria-label="Search Products">
                 <i class="fas fa-search"></i>
             </div>
         </div>
@@ -192,6 +194,11 @@
                     <button class="whatsapp-cta" onclick="orderViaWhatsapp()">
                         <i class="fab fa-whatsapp"></i> Order via WhatsApp
                     </button>
+
+                    <button class="share-btn" onclick="shareProduct()">
+                        <i class="fas fa-share-alt"></i>
+                        Share Product
+                    </button>
                     
                     <div class="star-rating">
                         <i class="fas fa-star"></i>
@@ -226,6 +233,21 @@
                 </ul>
             </div>
 
+            <div class="footer-col social-connections" style="font-family: 'Poppins', sans-serif;">
+                <h4 style="font-family: 'Orbitron', sans-serif; font-size: 1rem; color: #ffffff; margin-bottom: 15px; letter-spacing: 1px;">CONNECT WITH US</h4>
+                <div class="social-icon-wrapper" style="display: flex; gap: 12px; align-items: center;">
+                    <a href="https://www.facebook.com/profile.php?id=61590214397707" target="_blank" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; color: #ffffff; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thecomputershopmultan/" target="_blank" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; color: #ffffff; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/923070655275" target="_blank" aria-label="WhatsApp Support" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; color: #25D366; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease;">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
             <div class="footer-col trust-badges">
                 <div class="badge">
                     <i class="fas fa-shield-alt"></i>
@@ -255,7 +277,10 @@
             Unauthorized copying, modification, distribution, resale, reverse engineering, or reproduction of this software, in whole or in part, is strictly prohibited and may result in legal action.
         </div>
     </footer>
-
+    <div id="zoomModal" class="zoom-modal">
+    <span class="zoom-close">&times;</span>
+    <img id="zoomImage">
+</div>
     <script src="js/script.js"></script>
 </body>
 </html>
