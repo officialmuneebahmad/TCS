@@ -148,6 +148,19 @@
             }
         ];
 
+         const productSlugs = {
+            1: "xtrike-me-mp-005-gaming-mouse-pad",
+            2: "xiaomi-120w-fast-charger",
+            3: "samsung-type-c-to-type-c-cable",
+            4: "samsung-45w-super-fast-charger",
+            5: "samsung-25w-usb-c-adapter",
+            6: "remax-rc-c189-65w-cable",
+            7: "razer-mouse-pad-small",
+            8: "logitech-mouse-pad-big",
+            9: "gionee-type-c-wired-handsfree",
+            10: "gionee-wired-handsfree-original"
+        };
+
         let selectedCategory = "all";
         let activeProductGlobal = null;
         let slideIndex = 0;
@@ -167,24 +180,69 @@
         const navOverlay = document.getElementById('nav-overlay');
         const carouselTrack = document.getElementById('carousel-track');
 
+        // Helper to check directory depth
+        function getPathPrefix() {
+            const path = window.location.pathname;
+            if (path.includes('/products/') || path.includes('/blog/')) {
+                return '../';
+            }
+            return '';
+        }
+
         // RUN SYSTEM INITIALIZATION CYCLES
         document.addEventListener("DOMContentLoaded", () => {
-            checkDeepLink();
-            initImageZoom();
-            filterProducts();
-            startCarouselTimer();
-            setupTouchSwipeGestures();
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchParam = urlParams.get('search');
+            const categoryParam = urlParams.get('category');
+            
+            if (productsGrid) {
+                if (searchParam) {
+                    const searchInput = document.getElementById('search-input');
+                    if (searchInput) {
+                        searchInput.value = searchParam;
+                        searchInput.focus();
+                        // Place cursor at the end of text
+                        const len = searchInput.value.length;
+                        searchInput.setSelectionRange(len, len);
+                    }
+                }
+                if (categoryParam) {
+                    selectedCategory = categoryParam;
+                    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                    if (categoryParam === 'all') {
+                        const btn = document.getElementById('btn-home');
+                        if (btn) btn.classList.add('active');
+                    } else {
+                        const btn = document.getElementById('btn-' + categoryParam);
+                        if (btn) btn.classList.add('active');
+                    }
+                    
+                    const gridTitle = document.getElementById('grid-title');
+                    if (gridTitle) {
+                        if (categoryParam === 'all') gridTitle.innerText = "Top Selling Products";
+                        if (categoryParam === 'computer') gridTitle.innerText = "Computer Accessories";
+                        if (categoryParam === 'mobile') gridTitle.innerText = "Mobile Accessories";
+                    }
+                }
+                filterProducts();
+            }
+            
+            if (carouselSection && carouselTrack) {
+                startCarouselTimer();
+                setupTouchSwipeGestures();
+            }
+            
             initSavedTheme();
         });
 
         /* --- BURGER DRAWER UTILITY CONTROL --- */
         function toggleNavMenu() {
-            mobileNavDrawer.classList.toggle('open');
-            navOverlay.classList.toggle('show');
+            if (mobileNavDrawer) mobileNavDrawer.classList.toggle('open');
+            if (navOverlay) navOverlay.classList.toggle('show');
         }
 
         function toggleFilterSidebar() {
-            if (window.innerWidth < 1025) {
+            if (window.innerWidth < 1025 && filterSidebar && filterOverlay) {
                 filterSidebar.classList.toggle('open');
                 filterOverlay.classList.toggle('show');
             }
@@ -193,7 +251,7 @@
         function filterProductsWithMobileClose() {
             filterProducts();
             setTimeout(() => {
-                if(filterSidebar.classList.contains('open')) {
+                if (filterSidebar && filterSidebar.classList.contains('open')) {
                     toggleFilterSidebar();
                 }
             }, 300);
@@ -221,6 +279,7 @@
 
         function updateThemeToggleButtonIcon(activeTheme) {
             const themeIconContainer = document.getElementById('theme-toggle-icon');
+            if (!themeIconContainer) return;
             if (activeTheme === 'dark') {
                 themeIconContainer.innerHTML = `<i class="fas fa-sun" style="color:#f59e0b;"></i>`;
             } else {
@@ -230,6 +289,7 @@
 
         /* --- SWIPE TOUCH BANNER TIMELINE CONTROLLERS --- */
         function setupTouchSwipeGestures() {
+            if (!carouselSection) return;
             let touchStartX = 0;
             let touchEndX = 0;
 
@@ -257,6 +317,7 @@
         }
 
         function startCarouselTimer() {
+            if (!carouselSection) return;
             carouselInterval = setInterval(() => {
                 slideIndex = (slideIndex + 1) % totalSlides;
                 updateCarouselPosition();
@@ -271,10 +332,11 @@
         }
 
         function updateCarouselPosition() {
+            if (!carouselTrack) return;
             carouselTrack.style.transform = `translateX(-${slideIndex * 25}%)`;
             const dots = document.querySelectorAll('#carousel-dots-group .dot');
             dots.forEach((dot, idx) => {
-                if(idx === slideIndex) {
+                if (idx === slideIndex) {
                     dot.classList.add('active');
                 } else {
                     dot.classList.remove('active');
@@ -284,19 +346,36 @@
 
         /* --- CATALOGUE PROFILE FILTERS AND VIEW SHIFT MANAGEMENT --- */
         function changeCategory(category) {
+            const prefix = getPathPrefix();
+            if (!productsGrid) {
+                window.location.href = `${prefix}index.html?category=${category}`;
+                return;
+            }
+            
             selectedCategory = category;
             
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            if(category === 'all') document.getElementById('btn-home').classList.add('active');
-            if(category === 'computer') document.getElementById('btn-computer').classList.add('active');
-            if(category === 'mobile') document.getElementById('btn-mobile').classList.add('active');
+            if (category === 'all') {
+                const btn = document.getElementById('btn-home');
+                if (btn) btn.classList.add('active');
+            }
+            if (category === 'computer') {
+                const btn = document.getElementById('btn-computer');
+                if (btn) btn.classList.add('active');
+            }
+            if (category === 'mobile') {
+                const btn = document.getElementById('btn-mobile');
+                if (btn) btn.classList.add('active');
+            }
             
             const gridTitle = document.getElementById('grid-title');
-            if(category === 'all') gridTitle.innerText = "Top Selling Products";
-            if(category === 'computer') gridTitle.innerText = "Computer Accessories";
-            if(category === 'mobile') gridTitle.innerText = "Mobile Accessories";
+            if (gridTitle) {
+                if (category === 'all') gridTitle.innerText = "Top Selling Products";
+                if (category === 'computer') gridTitle.innerText = "Computer Accessories";
+                if (category === 'mobile') gridTitle.innerText = "Mobile Accessories";
+            }
 
-            if(mobileNavDrawer.classList.contains('open')) {
+            if (mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
                 toggleNavMenu();
             }
 
@@ -305,12 +384,18 @@
         }
 
         function filterProducts() {
-            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
-            const sortSelection = document.querySelector('input[name="sort"]:checked').value;
-            const isStockChecked = document.getElementById('stock-filter').checked;
-            const maxPriceVal = parseInt(document.getElementById('price-slider').value);
+            if (!productsGrid) return;
+            const searchInput = document.getElementById('search-input');
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            const sortSelectionChecked = document.querySelector('input[name="sort"]:checked');
+            const sortSelection = sortSelectionChecked ? sortSelectionChecked.value : 'default';
+            const stockFilter = document.getElementById('stock-filter');
+            const isStockChecked = stockFilter ? stockFilter.checked : false;
+            const priceSlider = document.getElementById('price-slider');
+            const maxPriceVal = priceSlider ? parseInt(priceSlider.value) : 20000;
 
-            document.getElementById('price-limit').innerText = `Rs. ${maxPriceVal.toLocaleString()}`;
+            const priceLimit = document.getElementById('price-limit');
+            if (priceLimit) priceLimit.innerText = `Rs. ${maxPriceVal.toLocaleString()}`;
 
             let processedItems = productsDatabase.filter(prod => {
                 const queryMatch = prod.name.toLowerCase().includes(searchQuery);
@@ -331,6 +416,7 @@
         }
 
         function renderProductsGrid(itemsList, targetGrid) {
+            if (!targetGrid) return;
             targetGrid.innerHTML = "";
 
             if (itemsList.length === 0) {
@@ -338,16 +424,18 @@
                 return;
             }
 
+            const prefix = getPathPrefix();
+
             itemsList.forEach(item => {
-                const card = document.createElement('div');
+                const card = document.createElement('a');
                 card.className = 'product-card';
-                card.onclick = () => viewProductDetails(item.id);
+                card.href = `${prefix}products/${productSlugs[item.id]}.html`;
 
                 card.innerHTML = `
                     <div>
                         <div class="discount-badge">${item.discount}</div>
                         ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
-                        <img src="${item.images[0]}" alt="${item.name}" class="product-img">
+                        <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
                         <div class="product-name">${item.name}</div>
                     </div>
                     <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
@@ -356,66 +444,56 @@
             });
         }
 
-        function viewProductDetails(productId, updateUrl = true) {
-
+        function viewProductDetails(productId) {
             const product = productsDatabase.find(p => p.id === productId);
-
             if (!product) return;
 
             activeProductGlobal = product;
 
-            if(updateUrl){
-                updateProductUrl(product);
-            }
-
-            homeView.style.display = 'none';
-            carouselSection.style.display = 'none';
-            productView.style.display = 'block';
+            if (homeView) homeView.style.display = 'none';
+            if (carouselSection) carouselSection.style.display = 'none';
+            if (productView) productView.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            document.getElementById('detail-title').innerText = product.name;
-            document.getElementById('detail-price').innerText = `Rs. ${product.price.toLocaleString()}`;
-            document.getElementById('detail-discount-tag').innerText = product.discount;
-            document.getElementById('detail-desc').innerText = product.desc;
+            const detailTitle = document.getElementById('detail-title');
+            if (detailTitle) detailTitle.innerText = product.name;
+            const detailPrice = document.getElementById('detail-price');
+            if (detailPrice) detailPrice.innerText = `Rs. ${product.price.toLocaleString()}`;
+            const detailDiscount = document.getElementById('detail-discount-tag');
+            if (detailDiscount) detailDiscount.innerText = product.discount;
+            const detailDesc = document.getElementById('detail-desc');
+            if (detailDesc) detailDesc.innerText = product.desc;
 
             const mainImgElement = document.getElementById('detail-img-main');
-            mainImgElement.src = product.images[0];
+            if (mainImgElement) mainImgElement.src = product.images[0];
 
             const thumbContainer = document.getElementById('thumb-gallery-container');
-            thumbContainer.innerHTML = "";
-
-            product.images.forEach((imgUrl, index) => {
-                const thumb = document.createElement('img');
-                thumb.className = `thumb-img ${index === 0 ? 'active' : ''}`;
-                thumb.src = imgUrl;
-                thumb.alt = `Thumbnail ${index + 1}`;
-                thumb.onclick = () => {
-                    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
-                    thumb.classList.add('active');
-                    mainImgElement.src = imgUrl;
-                };
-                thumbContainer.appendChild(thumb);
-            });
+            if (thumbContainer) {
+                thumbContainer.innerHTML = "";
+                product.images.forEach((imgUrl, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.className = `thumb-img ${index === 0 ? 'active' : ''}`;
+                    thumb.src = imgUrl;
+                    thumb.alt = `Thumbnail ${index + 1}`;
+                    thumb.onclick = () => {
+                        document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
+                        if (mainImgElement) mainImgElement.src = imgUrl;
+                    };
+                    thumbContainer.appendChild(thumb);
+                });
+            }
 
             const relatedItems = productsDatabase.filter(p => p.id !== product.id).slice(0, 3);
-            renderProductsGrid(relatedItems, relatedGrid);
+            if (relatedGrid) renderProductsGrid(relatedItems, relatedGrid);
         }
 
-        function showHome(updateUrl = true) {
-
-    productView.style.display = 'none';
-    homeView.style.display = 'block';
-    carouselSection.style.display = 'block';
-
-    if(updateUrl){
-        history.pushState({}, "", window.location.pathname);
-    }
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
+        function showHome() {
+            if (productView) productView.style.display = 'none';
+            if (homeView) homeView.style.display = 'block';
+            if (carouselSection) carouselSection.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         /* --- CONTACT API DISPATCH COORDINATES --- */
         function orderViaWhatsapp() {
@@ -437,107 +515,121 @@
             window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(helpMsg)}`, '_blank');
         }
 
-        /* =========================
-   PRODUCT URL SLUG SYSTEM
-========================= */
-
-function createProductSlug(name) {
-    return name
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, "")
-        .replace(/\s+/g, "-")
-        .replace(/-+/g, "-")
-        .trim();
-}
-
-function getProductBySlug(slug) {
-    return productsDatabase.find(
-        p => createProductSlug(p.name) === slug
-    );
-}
-
-/* =========================
-   DEEP LINKING
-========================= */
-
-function updateProductUrl(product) {
-    const slug = createProductSlug(product.name);
-
-    history.pushState(
-        {
-            productSlug: slug
-        },
-        "",
-        `?product=${slug}`
-    );
-}
-
-function checkDeepLink() {
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("product");
-
-    if (!slug) return;
-
-    const product = getProductBySlug(slug);
-
-    if (product) {
-        viewProductDetails(product.id, false);
-    }
-}
-
-window.addEventListener("popstate", () => {
-    const params = new URLSearchParams(window.location.search);
-
-    if (params.has("product")) {
-        const product = getProductBySlug(params.get("product"));
-
-        if (product) {
-            viewProductDetails(product.id, false);
+        let subpageSearchTimeout;
+        function handleSubpageSearch(event) {
+            const query = event.target.value;
+            const prefix = getPathPrefix();
+            
+            if (event.key === 'Enter') {
+                window.location.href = `${prefix}index.html?search=${encodeURIComponent(query)}`;
+                return;
+            }
+            
+            if (event.type === 'input') {
+                clearTimeout(subpageSearchTimeout);
+                subpageSearchTimeout = setTimeout(() => {
+                    if (query.trim().length > 0) {
+                        window.location.href = `${prefix}index.html?search=${encodeURIComponent(query)}`;
+                    }
+                }, 600);
+            }
         }
-    } else {
-        showHome(false);
-    }
-});
 
-function shareProduct() {
+        function shareProduct() {
+            const shareData = {
+                title: document.title,
+                text: document.getElementById('detail-desc') ? document.getElementById('detail-desc').innerText.trim() : '',
+                url: window.location.href
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .catch((error) => console.log('Error sharing:', error));
+            } else {
+                navigator.clipboard.writeText(window.location.href)
+                    .then(() => {
+                        const shareBtn = document.querySelector('.share-btn');
+                        if (shareBtn) {
+                            const originalText = shareBtn.innerHTML;
+                            shareBtn.innerHTML = `<i class="fas fa-check"></i> Link Copied!`;
+                            const originalBG = shareBtn.style.background;
+                            const originalColor = shareBtn.style.color;
+                            shareBtn.style.background = '#10b981';
+                            shareBtn.style.color = '#ffffff';
+                            shareBtn.style.borderColor = '#10b981';
+                            setTimeout(() => {
+                                shareBtn.innerHTML = originalText;
+                                shareBtn.style.background = originalBG;
+                                shareBtn.style.color = originalColor;
+                                shareBtn.style.borderColor = '';
+                            }, 2000);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Could not copy text: ', err);
+                    });
+            }
+        }
 
-    if(!activeProductGlobal) return;
-
-    const shareUrl = window.location.href;
-
-    if(navigator.share){
-
-        navigator.share({
-            title: activeProductGlobal.name,
-            text: activeProductGlobal.name,
-            url: shareUrl
+        // LIGHTBOX PRODUCT IMAGE ZOOM CONTROLLER
+        document.addEventListener("DOMContentLoaded", () => {
+            const mainImg = document.getElementById('detail-img-main');
+            if (mainImg) {
+                mainImg.style.cursor = 'zoom-in';
+                mainImg.addEventListener('click', () => {
+                    openImageZoomLightbox(mainImg.src);
+                });
+            }
         });
 
-    } else {
-
-        navigator.clipboard.writeText(shareUrl);
-
-        alert("Product link copied!");
-    }
-}
-
-function initImageZoom(){
-
-    const modal = document.getElementById("zoomModal");
-    const zoomImg = document.getElementById("zoomImage");
-
-    document.addEventListener("click",(e)=>{
-
-        if(e.target.id === "detail-img-main"){
-
-            modal.style.display = "flex";
-            zoomImg.src = e.target.src;
-        }
-
-    });
-
-    modal.addEventListener("click",()=>{
-
-        modal.style.display = "none";
-    });
-}
+        function openImageZoomLightbox(imgUrl) {
+            const overlay = document.createElement('div');
+            overlay.className = 'image-lightbox-overlay';
+            
+            const container = document.createElement('div');
+            container.className = 'lightbox-img-container';
+            
+            const img = document.createElement('img');
+            img.src = imgUrl;
+            img.className = 'lightbox-zoomed-img';
+            img.alt = 'Zoomed View';
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'lightbox-close-btn';
+            closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+            closeBtn.ariaLabel = 'Close Full Screen View';
+            
+            container.appendChild(img);
+            container.appendChild(closeBtn);
+            overlay.appendChild(container);
+            document.body.appendChild(overlay);
+            
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 10);
+            
+            const closeLightbox = () => {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
+            };
+            
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target === container) {
+                    closeLightbox();
+                }
+            });
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            const handleEsc = (e) => {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                    document.removeEventListener('keydown', handleEsc);
+                }
+            };
+            document.addEventListener('keydown', handleEsc);
+        }
