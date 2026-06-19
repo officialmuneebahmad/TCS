@@ -127,6 +127,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://multantech.store/products/speedx-sp-s188l-3in1-power-bank.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://multantech.store/products/speedx-sp-s185-225w-power-bank.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
   <!-- Authoritative AEO/GEO Blog Guides -->
   <url>
