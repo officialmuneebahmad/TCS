@@ -55,7 +55,7 @@ Google Business Profile allows you to list key products directly on your profile
 ### Category: Mobile Accessories & Chargers
 
 4.  **Product Name:** Xiaomi 120W EU Plug Wall Charger with Cable
-    *   **Price:** Rs. 1,260
+    *   **Price:** Rs. 1,299
     *   **Description:** Genuine ultra-fast wall charger supporting Qualcomm QC3.0. Includes original high-current Type-C cable.
     *   **Product URL:** https://multantech.store/products/xiaomi-120w-fast-charger.html
 5.  **Product Name:** Samsung 45W EU Pin PD Super Fast Charger

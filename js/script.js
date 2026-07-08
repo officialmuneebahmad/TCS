@@ -21,7 +21,7 @@ const productsDatabase = [
     {
         id: 2,
         name: "XIAOMI 120W EU PLUG QC3.0 FAST QUICK WALL CHARGER WITH CABLE",
-        price: 1199,
+        price: 1299,
         discount: "10% OFF",
         category: "mobile",
         inStock: true,
@@ -164,8 +164,8 @@ const productsDatabase = [
     {
         id: 12,
         name: "SPEEDX SP-S185 22.5W 10000MAH SUPER FAST CHARGING POWER BANK",
-        price: 2900,
-        discount: "9% OFF",
+        price: 2999,
+        discount: "12% OFF",
         category: "mobile",
         inStock: true,
         images: [
