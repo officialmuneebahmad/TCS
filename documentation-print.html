@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Computer Shop Multan — Technical Documentation (Printable Version)</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           ROOT VARIABLES & DESIGN TOKENS (BLACK & WHITE SYSTEM)
+           ============================================================ */
+        :root {
+            --color-black: #000000;
+            --color-dark: #111111;
+            --color-gray-dark: #444444;
+            --color-gray: #777777;
+            --color-gray-light: #e8e8e8;
+            --color-gray-ultra-light: #f5f5f5;
+            --color-white: #ffffff;
+
+            --font-body: 'Lora', Georgia, serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        /* ============================================================
+           GLOBAL RESET & LAYOUT FOR SCREEN (PRINT PREVIEW VIEWER)
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-gray-light);
+            color: var(--color-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 0;
+        }
+
+        .document-container {
+            width: 210mm;
+            /* A4 width */
+            margin: 0 auto;
+            background-color: var(--color-white);
+            padding: 20mm 20mm 20mm 20mm;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid #cccccc;
+        }
+
+        */ a {
+            color: var(--color-black);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: var(--color-gray-dark);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+        }
+
+        /* ============================================================
+           TYPOGRAPHY & HIERARCHY
+           ============================================================ */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-sans);
+            color: var(--color-black);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        p {
+            margin-bottom: 14px;
+            font-size: 10pt;
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 14px;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 10pt;
+            margin-bottom: 4px;
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--color-black);
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 8.5pt;
+            background-color: var(--color-gray-ultra-light);
+            padding: 2px 4px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+        }
+
+        /* ============================================================
+           PAGE BREAK AND PRINT WRAPPING
+           ============================================================ */
+        /* .page {
+            position: relative;
+            background-color: var(--color-white);
+            page-break-after: always;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #dddddd;
+        }
+
+        .page:last-of-type {
+            page-break-after: avoid;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        } */
+
+        /* ============================================================
+           COVER PAGE STYLING
+           ============================================================ */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250mm;
+
+            padding-top: 40mm;
+            padding-bottom: 10mm;
+            border-bottom: 1px dashed #dddddd;
+            margin-bottom: 40px;
+        }
+
+        .cover-header {
+            text-align: center;
+        }
+
+        .cover-title {
+            font-family: var(--font-display);
+            font-size: 32pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            border-bottom: 3px double var(--color-black);
+            padding-bottom: 15px;
+        }
+
+        .cover-subtitle {
+            font-family: var(--font-sans);
+            font-size: 13pt;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-gray-dark);
+            margin-bottom: 40px;
+        }
+
+        .cover-divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-black);
+            margin: 30px auto;
+        }
+
+        .cover-desc {
+            font-size: 11pt;
+            color: var(--color-gray-dark);
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .cover-meta {
+            margin-top: auto;
+            border-top: 1px solid var(--color-black);
+            padding-top: 25px;
+        }
+
+        .cover-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 40px;
+            font-family: var(--font-sans);
+            font-size: 9pt;
+        }
+
+        .cover-meta-item strong {
+            display: block;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 1px;
+            color: var(--color-gray-dark);
+            margin-bottom: 3px;
+        }
+
+        .cover-meta-item span {
+            font-size: 9.5pt;
+            font-weight: 600;
+        }
+
+        */
+
+        /* ============================================================
+           PAGE HEADER & FOOTER SYSTEM
+           ============================================================ */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-black);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            font-family: var(--font-sans);
+            font-size: 7.5pt;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-gray-dark);
+        }
+
+        .page-header .section-title {
+            font-weight: 700;
+        }
+
+        .page-footer {
+            margin-top: 20px;
+            border-top: 1px solid var(--color-gray-light);
+            padding-top: 8px;
+            font-family: var(--font-sans);
+            font-size: 7.5pt;
+            color: var(--color-gray);
+            text-align: center;
+        }
+
+        /* ============================================================
+           SECTION HEADER STYLING
+           ============================================================ */
+        .section-title-wrap {
+            margin-bottom: 20px;
+        }
+
+        .section-num {
+            font-family: var(--font-sans);
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-gray);
+            margin-bottom: 4px;
+        }
+
+        .section-heading-text {
+            font-family: var(--font-sans);
+            font-size: 16pt;
+            font-weight: 700;
+            color: var(--color-black);
+            border-bottom: 2px solid var(--color-gray-light);
+            padding-bottom: 6px;
+        }
+
+        /* ============================================================
+           CARDS GRID & CARDS
+           ============================================================ */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 18px 0 22px;
+        }
+
+        .doc-card {
+            border: 1px solid var(--color-gray-light);
+            background-color: var(--color-gray-ultra-light);
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .doc-card h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 3px;
+        }
+
+        .doc-card p {
+            font-size: 8.5pt;
+            color: var(--color-gray-dark);
+            margin: 0;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        /* ============================================================
+           CALLOUT BOX STYLING
+           ============================================================ */
+        .callout {
+            border-left: 3px solid var(--color-black);
+            background-color: var(--color-gray-ultra-light);
+            padding: 12px 18px;
+            margin: 18px 0;
+            font-size: 9pt;
+        }
+
+        .callout p {
+            margin: 0;
+            font-style: italic;
+            color: var(--color-gray-dark);
+            text-align: left;
+        }
+
+        .callout strong {
+            font-style: normal;
+        }
+
+        /* ============================================================
+           TABLE STYLING
+           ============================================================ */
+        .table-wrap {
+            margin: 18px 0 22px;
+            width: 100%;
+        }
+
+        table.doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        table.doc-table th {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 0.5px;
+            background-color: var(--color-gray-ultra-light);
+            border-top: 1px solid var(--color-black);
+            border-bottom: 1.5px solid var(--color-black);
+            padding: 6px 10px;
+            text-align: left;
+        }
+
+        table.doc-table td {
+            padding: 7px 10px;
+            border-bottom: 1px solid var(--color-gray-light);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        table.doc-table tr:last-child td {
+            border-bottom: 1px solid var(--color-black);
+        }
+
+        table.doc-table td code {
+            font-size: 8pt;
+        }
+
+        /* ============================================================
+           FILE TREE STYLING
+           ============================================================ */
+        .file-tree {
+            font-family: var(--font-mono);
+            font-size: 8.5pt;
+            background-color: var(--color-gray-ultra-light);
+            border: 1px solid #dddddd;
+            padding: 16px 20px;
+            border-radius: 4px;
+            line-height: 1.6;
+            margin: 15px 0 20px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .tree-comment {
+            color: var(--color-gray);
+            font-style: italic;
+        }
+
+        /* ============================================================
+           CODE BLOCK STYLING
+           ============================================================ */
+        .code-block {
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 15px 0 20px;
+        }
+
+        .code-block-header {
+            font-family: var(--font-mono);
+            font-size: 7.5pt;
+            font-weight: 600;
+            background-color: var(--color-gray-light);
+            border-bottom: 1px solid #dddddd;
+            padding: 5px 12px;
+            color: var(--color-gray-dark);
+        }
+
+        .code-block pre {
+            font-family: var(--font-mono);
+            font-size: 8pt;
+            padding: 12px 15px;
+            background-color: var(--color-gray-ultra-light);
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+
+        /* ============================================================
+           STATISTICS / METRICS GRID
+           ============================================================ */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 15px 0 20px;
+        }
+
+        .stat-box {
+            border: 1px solid var(--color-gray-light);
+            text-align: center;
+            padding: 10px 5px;
+            border-radius: 4px;
+            background-color: var(--color-gray-ultra-light);
+        }
+
+        .stat-box .stat-val {
+            font-family: var(--font-sans);
+            font-size: 14pt;
+            font-weight: 800;
+            color: var(--color-black);
+            line-height: 1.1;
+        }
+
+        .stat-box .stat-label {
+            font-family: var(--font-sans);
+            font-size: 7pt;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--color-gray);
+            margin-top: 3px;
+        }
+
+        /* ============================================================
+           STEPS TIMELINE (ORDER FLOW)
+           ============================================================ */
+        .flow-steps {
+            margin: 15px 0 20px;
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .flow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .flow-num {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 9pt;
+            border: 1.5px solid var(--color-black);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .flow-body {
+            font-size: 9pt;
+        }
+
+        .flow-body h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .flow-body p {
+            font-size: 9pt;
+            color: var(--color-gray-dark);
+            margin: 0;
+            text-align: left;
+        }
+
+        /* ============================================================
+           LIST SYSTEM FOR UI/UX OR BULLETS
+           ============================================================ */
+        ul.bullet-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        ul.bullet-list li {
+            position: relative;
+            padding-left: 15px;
+            font-size: 9pt;
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        ul.bullet-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            top: -1px;
+            font-size: 8pt;
+            color: var(--color-black);
+        }
+
+        ul.bullet-list li strong {
+            display: inline;
+        }
+
+        /* ============================================================
+           BADGE & LABELS
+           ============================================================ */
+        .badge {
+            display: inline-block;
+            border: 1px solid var(--color-black);
+            padding: 1px 6px;
+            font-family: var(--font-sans);
+            font-size: 7.5pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        /* ============================================================
+           A4 SHEET SCREEN RENDERING OVERRIDES
+           ============================================================ */
+        /* @media screen {
+            .page-break-indicator {
+                text-align: center;
+                color: var(--color-gray);
+                font-family: var(--font-sans);
+                font-size: 7.5pt;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin: 20px 0;
+                border-top: 1px dashed #cccccc;
+                padding-top: 10px;
+            }
+        } */
+
+        /* ============================================================
+           PURE PRINT STYLE OVERRIDES
+           ============================================================ */
+    </style>
+</head>
+
+<body>
+
+    <div class="document-container">
+
+        <!-- ============================================================
+         COVER PAGE (PAGE 1)
+         ============================================================ -->
+        <div class="cover-page">
+            <div class="cover-header">
+                <div class="cover-title">The Computer Shop Multan</div>
+                <div class="cover-subtitle">Technical Documentation & Business Portfolio</div>
+                <div class="cover-divider"></div>
+                <p class="cover-desc">
+                    A professional retrospective on the architecture, technical optimization,
+                    functional implementation, and search engine optimization of the live e-commerce
+                    website multantech.store. Solo developed and operational.
+                </p>
+            </div>
+
+            <div class="cover-meta">
+                <div class="cover-meta-grid">
+                    <div class="cover-meta-item">
+                        <strong>Founder & Developer</strong>
+                        <span>Muneeb Ahmad</span>
+                    </div>
+                    <div class="cover-meta-item">
+                        <strong>Origin Location</strong>
+                        <span>Multan, Punjab, Pakistan 🇵🇰</span>
+                    </div>
+                    <div class="cover-meta-item">
+                        <strong>Live Production URL</strong>
+                        <span>multantech.store</span>
+                    </div>
+                    <div class="cover-meta-item">
+                        <strong>Documentation Version</strong>
+                        <span>1.0 (June 2026)</span>
+                    </div>
+                    <div class="cover-meta-item">
+                        <strong>Technical Architecture</strong>
+                        <span>Vanilla HTML5, CSS3, JavaScript (ES6+)</span>
+                    </div>
+                    <div class="cover-meta-item">
+                        <strong>Operational Status</strong>
+                        <span>Active, Profitable Commercial Retailer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================================
+         SECTION 1: PROJECT OVERVIEW (PAGE 2)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">01 — Project Overview</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 01</div>
+                <h2 class="section-heading-text">Executive Summary & Mission</h2>
+            </div>
+
+            <p>
+                <strong>The Computer Shop Multan</strong> is a live, production-grade e-commerce storefront operating
+                under the primary domain <a href="https://multantech.store" target="_blank">multantech.store</a>.
+                The platform is built to supply genuine, verified computer peripherals and mobile device accessories
+                to consumers locally inside Multan, Punjab, and nationwide throughout Pakistan.
+            </p>
+            <p>
+                The project stands out as a <em>completely bootstrapped solo operation</em>. It was designed, coded,
+                optimized, deployed, and marketed entirely by <strong>Muneeb Ahmad</strong>. In addition to creating the
+                complete
+                front-end and SEO systems, the founder directly runs the commercial aspects: catalog sourcing, physical
+                inventory,
+                customer relationships, and shipping logistics.
+            </p>
+
+            <div class="callout">
+                <p>
+                    <strong>Operational Verification:</strong> This is a verified, live business generating real profit
+                    as of June 2026. The products represent active warehouse inventory, and orders are fulfilled daily
+                    using local
+                    courier systems.
+                </p>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">Core
+                Business Objectives</h3>
+            <div class="card-grid">
+                <div class="doc-card">
+                    <h3>Authenticity First</h3>
+                    <p>Establishing brand trust by selling strictly 100% genuine products with no replicas, backed by
+                        active local support.</p>
+                </div>
+                <div class="doc-card">
+                    <h3>Frictionless Ordering</h3>
+                    <p>Using a direct WhatsApp order integration to bypass payment gateways, eliminating cart
+                        abandonment and checkout friction.</p>
+                </div>
+                <div class="doc-card">
+                    <h3>Local SEO Dominance</h3>
+                    <p>Positioning on Page 1 of Google for local searches to capture high-intent buyers looking for
+                        hardware accessories.</p>
+                </div>
+                <div class="doc-card">
+                    <h3>Nationwide Distribution</h3>
+                    <p>Scaling standard logistics from Multan to major metropolitan centers (Lahore, Karachi, Islamabad)
+                        and remote towns.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">Key
+                Project Indicators</h3>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-val">1</div>
+                    <div class="stat-label">Developer</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">12</div>
+                    <div class="stat-label">Active SKUs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">6</div>
+                    <div class="stat-label">SEO Blogs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">2026</div>
+                    <div class="stat-label">Launch Year</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">PKR</div>
+                    <div class="stat-label">Currency</div>
+                </div>
+            </div>
+
+            <div class="page-footer">Page 2 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+        <div class="page-break-indicator">Page Break (A4 Print Boundary)</div>
+
+
+        <!-- ============================================================
+         SECTION 2: TECH STACK & ARCHITECTURE (PAGE 3)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">02 — Tech Stack & Architecture</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 02</div>
+                <h2 class="section-heading-text">System Architecture & Technical Stack</h2>
+            </div>
+
+            <p>
+                The website is engineered using <strong>native, vanilla technologies</strong>. The absence of
+                third-party
+                frameworks, compilers, or compilation toolchains keeps the code readable, extremely lightweight, and
+                stable.
+                The system employs a client-side database model to deliver instantaneous page updates on the homepage.
+            </p>
+
+            <div class="table-wrap">
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%">Layer / Area</th>
+                            <th style="width: 35%">Technology Selected</th>
+                            <th style="width: 40%">Purpose & Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Markup</strong></td>
+                            <td>HTML5 (Semantic spec)</td>
+                            <td>Provides page structure, SEO hooks, and structural layout definitions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Styling</strong></td>
+                            <td>CSS3 (Vanilla custom variables)</td>
+                            <td>Handles responsiveness, layouts, micro-animations, and visual themes.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Core Logic</strong></td>
+                            <td>JavaScript (ES6+ Native API)</td>
+                            <td>Controls client-side filtering, sorting, product detail views, and WhatsApp CTAs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Media CDN</strong></td>
+                            <td>Cloudinary Image CDN</td>
+                            <td>Delivers compressed, responsive, and lazy-loaded visual assets dynamically.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Typography</strong></td>
+                            <td>Google Fonts (Orbitron / Poppins)</td>
+                            <td>Renders corporate styling and highly legible descriptions across viewports.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Structured Data</strong></td>
+                            <td>JSON-LD Schema.org formats</td>
+                            <td>Injects metadata to secure rich search snippets and local maps indexes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-family: var(--font-sans);">Directory
+                Structure</h3>
+            <div class="file-tree">THE COMPUTER SHOP/ <span class="tree-comment"># Root Workspace Directory</span>
+                ├── css/
+                │ └── style.css <span class="tree-comment"># Core layout and UI styling (32 KB)</span>
+                ├── js/
+                │ └── script.js <span class="tree-comment"># Catalog database and frontend logic (31 KB)</span>
+                ├── products/
+                │ ├── samsung-45w-super-fast-charger.html
+                │ ├── xiaomi-120w-fast-charger.html
+                │ └── ... <span class="tree-comment"># 10 additional product detail files</span>
+                ├── blog/
+                │ ├── best-computer-accessories-in-multan.html
+                │ └── ... <span class="tree-comment"># 5 additional educational articles</span>
+                ├── sitemap.xml <span class="tree-comment"># Indexed URLs generated for crawlers</span>
+                ├── robots.txt <span class="tree-comment"># Directives governing search engine bot behavior</span>
+                └── index.html <span class="tree-comment"># Main landing file (Core Catalog Interface)</span></div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-family: var(--font-sans);">Database
+                Design</h3>
+            <p>
+                Inventory is defined using an in-memory client-side data array inside <code>js/script.js</code>. This
+                guarantees
+                instantaneous page updates, zero database connection latency, and simplified updates.
+            </p>
+
+            <div class="code-block">
+                <div class="code-block-header">js/script.js (Snippet)</div>
+                <pre>const productsDatabase = [
+  {
+    id: 1,
+    name: "XTRIKE ME MP-005 GAMING MOUSE PAD MEDIUM 320x270x2MM",
+    price: 799,
+    discount: "15% OFF",
+    category: "computer",
+    inStock: true,
+    images: [ "https://res.cloudinary.com/dyrncibsu/image/upload/..." ],
+    desc: "XTRIKE ME MP-005 Gaming Mouse Pad features a smooth low-friction..."
+  },
+  // ... 11 additional product structures mapped here
+];</pre>
+            </div>
+
+            <div class="page-footer">Page 3 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+        <div class="page-break-indicator">Page Break (A4 Print Boundary)</div>
+
+
+        <!-- ============================================================
+         SECTION 3: PERFORMANCE, SEO & LIVE SITE (PAGE 4)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">03 — Performance, SEO & Live Verification</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 03</div>
+                <h2 class="section-heading-text">Performance & Search Engine Optimization</h2>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-bottom: 6px; font-family: var(--font-sans);">Speed & Optimization
+                Strategies</h3>
+            <p>
+                The storefront is built to achieve high performance scores. Load times are key for
+                retaining customers on mobile data networks across Pakistan. Optimization features include:
+            </p>
+
+            <ul class="bullet-list">
+                <li><strong>Minimal Package Footprint:</strong> The entire production codebase (HTML, CSS, JS) requires
+                    under 90KB
+                    of total transfer volume, loading in milliseconds even on poor 3G connections.</li>
+                <li><strong>Preloading Assets:</strong> Main CSS files and Google Web Fonts are declared as preloaded
+                    assets in the HTML
+                    head (<code>&lt;link rel="preload"&gt;</code>) to avoid render-blocking delays.</li>
+                <li><strong>Lazy Image Decoding:</strong> Images use the HTML5 <code>loading="lazy"</code> attribute,
+                    postponing
+                    image retrieval until they enter the user's viewport.</li>
+                <li><strong>Cloudinary CDN:</strong> Images are optimized, resized, and cached on a globally distributed
+                    CDN, reducing
+                    origin server load times.</li>
+                <li><strong>Layout Shift Prevention:</strong> <code>width</code> and <code>height</code> properties are
+                    specified on
+                    image tags to reserve layout space, achieving a zero Cumulative Layout Shift (CLS) score.</li>
+            </ul>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-family: var(--font-sans);">Search
+                Engine Optimization Framework</h3>
+            <p>
+                To secure organic buyers without a marketing budget, the platform uses structured metadata,
+                local search mapping, and a semantic structure to rank on Page 1 of Google.
+            </p>
+
+            <ul class="bullet-list">
+                <li><strong>JSON-LD Schema Markup:</strong> The website contains schema blocks describing the business:
+                    <code>Organization</code>, <code>LocalBusiness</code>, <code>FAQPage</code>, and
+                    <code>BreadcrumbList</code>.
+                    This metadata helps secure search engine rich snippets.
+                </li>
+                <li><strong>Local SEO signals:</strong> Explicit geospatial coordinates (30.1575° N, 71.5249° E) and
+                    physical address
+                    definitions (Sher Shah Road, Multan) map the storefront to localized queries in South Punjab.</li>
+                <li><strong>Canonical Tags:</strong> Every subpage enforces a self-referential
+                    <code>&lt;link rel="canonical"&gt;</code>,
+                    eliminating duplicate indexing paths.
+                </li>
+                <li><strong>Sitemaps & Directives:</strong> A clean <code>sitemap.xml</code> lists all canonical URLs,
+                    coupled with a
+                    conforming <code>robots.txt</code> directing search engine crawler behavior.</li>
+                <li><strong>Dedicated Landing Templates:</strong> Landing templates target transactional search queries
+                    (e.g. <code>chargers-multan.html</code>,
+                    <code>cables-multan.html</code>) to funnel targeted traffic directly.
+                </li>
+            </ul>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 6px; font-family: var(--font-sans);">Responsive
+                Design Hierarchy</h3>
+            <p>
+                The interface employs a mobile-first responsive layout to adapt across screens:
+            </p>
+            <div class="card-grid">
+                <div class="doc-card" style="padding: 10px 15px;">
+                    <h3 style="font-size: 8.5pt;">Mobile (&lt; 480px)</h3>
+                    <p style="font-size: 8pt; line-height: 1.45;">Single column layouts, hidden side drawer filters,
+                        touch swipe inputs for banners, and larger touch areas for comfortable mobile navigation.</p>
+                </div>
+                <div class="doc-card" style="padding: 10px 15px;">
+                    <h3 style="font-size: 8.5pt;">Desktop (&gt; 1024px)</h3>
+                    <p style="font-size: 8pt; line-height: 1.45;">Fixed three-column product grid display, persistent
+                        left filter sidebar (24% width), and large-format hover grids for product details.</p>
+                </div>
+            </div>
+
+            <div class="page-footer">Page 4 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+        <div class="page-break-indicator">Page Break (A4 Print Boundary)</div>
+
+
+        <!-- ============================================================
+         SECTION 4: FEATURES & FUNCTIONALITY (PAGE 5)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">04 — Features & Functionality</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 04</div>
+                <h2 class="section-heading-text">Operational Features & Customer Experience</h2>
+            </div>
+
+            <p>
+                The customer experience is designed to minimize user friction. The front-end contains
+                features that guide the user from search and selection to order dispatch.
+            </p>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">Core
+                Application Features</h3>
+            <ul class="bullet-list">
+                <li><strong>Dynamic Filtering & Sorting:</strong> Instant client-side catalog filtering by category,
+                    search text,
+                    and minimum stock availability. Sorting handles prices (low-to-high, high-to-low) with instant DOM
+                    updates.</li>
+                <li><strong>Smooth Theme Switching:</strong> A Light and Dark theme toggle using CSS Custom Properties
+                    and <code>localStorage</code> persistent states.</li>
+                <li><strong>Image Zoom Lightbox:</strong> Custom overlay trigger on product images, allowing customers
+                    to inspect product quality in high resolution.</li>
+                <li><strong>Promo Carousel Banner:</strong> A touch-supported, auto-advancing carousel displaying
+                    featured offers on the homepage.</li>
+                <li><strong>Navigation Drawers:</strong> Screen-optimized hamburger menu and filter drawers with smooth
+                    CSS transition overlays.</li>
+            </ul>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">
+                Frictionless WhatsApp Ordering Process</h3>
+            <p>
+                Rather than standard shopping carts, which have high abandonment rates on local stores, the site
+                routes customers directly to the operator's WhatsApp. This handles the transaction through direct
+                messaging:
+            </p>
+
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-num">1</div>
+                    <div class="flow-body">
+                        <h4>Customer Selects Product</h4>
+                        <p>The buyer browses the catalog, reviews the image gallery, and clicks the prominent WhatsApp
+                            order button on the product details page.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-num">2</div>
+                    <div class="flow-body">
+                        <h4>Automated API Dispatch</h4>
+                        <p>JavaScript reads the product details (name, price, current discount) and constructs a
+                            structured URL, opening a chat link with the pre-filled order request.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-num">3</div>
+                    <div class="flow-body">
+                        <h4>Fulfillment & Confirmation</h4>
+                        <p>The customer sends the message containing the order information. Muneeb Ahmad confirms stock
+                            availability and notes delivery details directly, completing the transaction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <p>
+                    <strong>Order API Message Structure:</strong><br>
+                    <code>Assalam-o-Alaikum! The Computer Shop Multan, I would like to order this item: [Product Name], Price: [Price], Offer: [Discount]. Please confirm current status for dispatch coordinates!</code>
+                </p>
+            </div>
+
+            <div class="page-footer">Page 5 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+        <div class="page-break-indicator">Page Break (A4 Print Boundary)</div>
+
+
+        <!-- ============================================================
+         SECTION 5: PRODUCT CATALOGUE (PAGE 6)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">05 — Product Catalogue</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 05</div>
+                <h2 class="section-heading-text">Product Catalogue & SEO Landing Map</h2>
+            </div>
+
+            <p>
+                The storefront contains 12 active product listings. The inventory represents the primary computer
+                and mobile accessories in stock.
+            </p>
+
+            <div class="table-wrap">
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">ID</th>
+                            <th style="width: 45%">Product Description & Specifications</th>
+                            <th style="width: 15%">Price (PKR)</th>
+                            <th style="width: 15%">Discount</th>
+                            <th style="width: 20%">Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><strong>XTRIKE ME MP-005 Gaming Mouse Pad</strong> — Medium 320x270x2mm</td>
+                            <td>Rs. 799</td>
+                            <td>15% OFF</td>
+                            <td>Computer Gear</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><strong>Xiaomi 120W EU Plug Quick Wall Charger</strong> — with cable, QC3.0</td>
+                            <td>Rs. 1,299</td>
+                            <td>10% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><strong>Samsung Type-C to Type-C Original Cable</strong> — Black, 100cm</td>
+                            <td>Rs. 499</td>
+                            <td>5% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><strong>Samsung 45W EU Pin PD Super Fast Charger</strong> — GaN technology</td>
+                            <td>Rs. 799</td>
+                            <td>20% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td><strong>Samsung 25W US Pin Original PD Adapter</strong> — Type-C interface</td>
+                            <td>Rs. 799</td>
+                            <td>12% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td><strong>Remax RC-C189 65W 4-in-1 Multi Cable</strong> — Braided wire, 1m</td>
+                            <td>Rs. 799</td>
+                            <td>15% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td><strong>Razer Goliathus Control Mouse Pad Small</strong> — 245x320x4mm</td>
+                            <td>Rs. 599</td>
+                            <td>15% OFF</td>
+                            <td>Computer Gear</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td><strong>Logitech Mouse Pad Big</strong> — Washable cloth, 250x290x2mm</td>
+                            <td>Rs. 499</td>
+                            <td>5% OFF</td>
+                            <td>Computer Gear</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td><strong>Gionee Type-C Original Wired Handsfree</strong> — Built-in microphone</td>
+                            <td>Rs. 559</td>
+                            <td>5% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><strong>Gionee Wired Handsfree Original</strong> — Universal 3.5mm stereo jack</td>
+                            <td>Rs. 399</td>
+                            <td>5% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><strong>SpeedX SP-S188L 3-in-1 Power Bank</strong> — 22.5W, 10000mAh, LED display</td>
+                            <td>Rs. 2,700</td>
+                            <td>10% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><strong>SpeedX SP-S185 Super Fast Power Bank</strong> — 22.5W, 10000mAh, PD 20W</td>
+                            <td>Rs. 2,999</td>
+                            <td>12% OFF</td>
+                            <td>Mobile Gear</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">SEO
+                Content Hub (Articles)</h3>
+            <p>
+                The blog subdirectory drives organic traffic. Educational buying guides target high-intent search
+                queries.
+            </p>
+
+            <div class="table-wrap">
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%">Article Title</th>
+                            <th style="width: 30%">Target SEO Keyword Phrase</th>
+                            <th style="width: 30%">Target Audience Group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Best Computer Accessories in Multan</strong></td>
+                            <td>computer accessories Multan</td>
+                            <td>Local computer buyers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best Mobile Accessories in Pakistan</strong></td>
+                            <td>mobile accessories Pakistan</td>
+                            <td>National accessory shoppers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fast Charger Buying Guide</strong></td>
+                            <td>best fast charger Pakistan</td>
+                            <td>Mobile device owners</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gaming Mouse Pad Buying Guide</strong></td>
+                            <td>gaming mouse pad Pakistan</td>
+                            <td>PC Gamers & Esports enthusiasts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HDMI Cable Buying Guide</strong></td>
+                            <td>HDMI cable Pakistan</td>
+                            <td>Home media & Display setup</td>
+                        </tr>
+                        <tr>
+                            <td><strong>USB Hub Buying Guide</strong></td>
+                            <td>USB hub for laptop Pakistan</td>
+                            <td>Freelancers, students & Workstations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="page-footer">Page 6 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+        <div class="page-break-indicator">Page Break (A4 Print Boundary)</div>
+
+
+        <!-- ============================================================
+         SECTION 6: BUSINESS & CONTACT (PAGE 7)
+         ============================================================ -->
+        <div class="page">
+            <div class="page-header">
+                <span class="section-title">06 — Business & Contact</span>
+                <span>The Computer Shop Multan</span>
+            </div>
+
+            <div class="section-title-wrap">
+                <div class="section-num">Section 06</div>
+                <h2 class="section-heading-text">Business Operations & Verified Credentials</h2>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-bottom: 8px; font-family: var(--font-sans);">Official Business Registry
+                Profile</h3>
+            <div class="table-wrap">
+                <table class="doc-table">
+                    <tbody>
+                        <tr>
+                            <td style="width: 30%"><strong>Commercial Title</strong></td>
+                            <td style="width: 70%">The Computer Shop Multan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Principal Address</strong></td>
+                            <td>Sher Shah Road, Multan, Punjab 59200, Pakistan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WhatsApp Order Line</strong></td>
+                            <td>+92 307 0655275</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Active Web Portal</strong></td>
+                            <td><a href="https://multantech.store" target="_blank">multantech.store</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Founder & Operator</strong></td>
+                            <td>Muneeb Ahmad</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operational Hours</strong></td>
+                            <td>Monday through Saturday, 11:00 AM – 9:00 PM (PKT)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Commercial Model</strong></td>
+                            <td>Online E-Commerce & Retail Sales (Direct WhatsApp Commerce)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">Logistics
+                & Fulfillment Channels</h3>
+            <ul class="bullet-list">
+                <li><strong>Multan Local Dispatch:</strong> Priority courier runs within Multan city limit. Orders
+                    confirmed
+                    during operating hours are dispatched for same-day or next-day delivery.</li>
+                <li><strong>Nationwide Shipping:</strong> Standard ground courier delivery to major hubs including
+                    Lahore, Karachi, Rawalpindi,
+                    Islamabad, Faisalabad, Peshawar, Quetta, and adjacent regions.</li>
+                <li><strong>Safe Transit Packaging:</strong> Items are double-packaged to ensure hardware arrives in
+                    perfect condition.</li>
+            </ul>
+
+            <h3 style="font-size: 11pt; margin-top: 15px; margin-bottom: 8px; font-family: var(--font-sans);">Corporate
+                Trust Indicators</h3>
+            <ul class="bullet-list">
+                <li><strong>100% Authenticity Guarantee:</strong> The shop sells only genuine products with distributor
+                    warranties.</li>
+                <li><strong>Google Search Verification:</strong> The domain is registered with Google Search Console,
+                    verifying
+                    domain ownership and business presence.</li>
+                <li><strong>Structured Schema Registration:</strong> Registered under LocalBusiness schema format,
+                    qualifying for Google maps indices.</li>
+                <li><strong>Documented Client Policies:</strong> The business is bound by written Terms & Conditions
+                    (<code>ToC.html</code>),
+                    ensuring buyer transparency.</li>
+            </ul>
+
+            <div class="callout" style="margin-top: 25px; border-left-color: #555;">
+                <p>
+                    <strong>Legal Protection & Intellectual Property:</strong><br>
+                    © 2026 The Computer Shop Multan. All rights reserved. The website storefront, dynamic layouts, logo,
+                    database,
+                    and documentation assets are the proprietary work of Muneeb Ahmad. Unauthorized copying,
+                    modification, or distribution
+                    is prohibited. Product names, trademarks, and associated visual assets (Samsung, Xiaomi, Razer,
+                    Logitech, Gionee) are
+                    properties of their respective corporate owners.
+                </p>
+            </div>
+
+            <div class="page-footer">Page 7 &nbsp;·&nbsp; The Computer Shop Multan — Project Documentation</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
