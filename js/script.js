@@ -219,6 +219,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474034/301756535688_b7jmkg.jpg"
         ],
         desc: "V200 Ultra Smart Watch features a stunning 2.2-inch square TFT display (240x296), IP68 waterproof rating, Bluetooth 5.2 for calls, heart rate monitoring, blood pressure & oxygen tracking, and 300+ dial options. Powered by the WearFit Pro app, it supports Android 5.0+ & iOS 10.0+, offers 65-day standby, 220mAh battery, wireless charging, sleep monitoring, sports mode, and multi-language support. Zinc alloy body with silica gel strap."
+    },
+    {
+        id: 16,
+        name: "X8 PLUS ULTRA SMART WATCH SERIES 8 NFC 2.08 INCH ALWAYS-ON DISPLAY & WIRELESS CHARGING 49MM WITH WEARFIT PRO APP ORANGE",
+        price: 1999,
+        discount: "5% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479496/4bb34f06af1775616506_ebjuac.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479507/101756535357_inrqag.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479511/201756535358_jclyhe.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479513/301756535358_ljpsct.jpg"
+        ],
+        desc: "X8 Plus Ultra Smart Watch Series 8 features a stylish 49mm design, 2.08-inch TFT display (240x296) with Always-on function, NFC, IP67 waterproof rating, and Bluetooth 5.2. Enjoy a smooth menu, wireless charging, and compatibility with Android and iOS smartphones via the WearFit Pro app. Includes built-in loudspeaker and motor for calls and notifications."
     }
 ];
 
@@ -237,7 +252,8 @@ const productSlugs = {
     12: "speedx-sp-s185-225w-power-bank",
     13: "imported-power-cable-laptop-1.5m",
     14: "imported-power-cable-desktop-pc-1.5m",
-    15: "v200-ultra-smartwatch-orange"
+    15: "v200-ultra-smartwatch-orange",
+    16: "x8-plus-ultra-smartwatch-orange"
 };
 
 let selectedCategory = "all";
