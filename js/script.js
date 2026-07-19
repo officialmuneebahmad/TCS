@@ -174,6 +174,36 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1781871731/Luxury_commercial_technology_product_advertisement_202606191721_fadzix.jpg"
         ],
         desc: "SpeedX SP-S185 22.5W 10000mAh Super Fast Charging Power Bank features Apple PD 20W and Android 22.5W super fast charging with a built-in two-way Type-C cable and smart LED digital display. Charges up to 50% in 30 minutes."
+    },
+    {
+        id: 13,
+        name: "IMPORTED POWER CABLE FOR LAPTOP 1.5M",
+        price: 300,
+        discount: "5% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784434279/5d876c22181775541577_mizdhr.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784434305/101755762301_ryi9d2.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784434320/201755762301_hryfsi.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784434328/301755762301_jnbizn.jpg"
+        ],
+        desc: "Features high quality components making this cable suitable for use in both the home and professional environments with a wide range of electrical products. This type of connector has a 2.5 Amp. current rating and are commonly used in computer equipment including laptop, Notebook and power supply applications and portable projectors. 100% brand new power cable cord. Light weight and compact design. Insulation material: PVC. Connector AMP/Voltage: 2.5A 250V."
+    },
+    {
+        id: 14,
+        name: "IMPORTED POWER CABLE FOR DESKTOP PC COMPUTER 1.5M",
+        price: 320,
+        discount: "5% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784451958/28a312bded1775538817_muknrx.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784451969/101755762430_xaznqq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452039/201755762430_xrto2n.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452047/301755762430_hcwrfk.jpg"
+        ],
+        desc: "100% brand new imported power cable cord for desktop PC computers. Features a pure copper conductor for superior electrical conductivity, stable power delivery, and minimal heat generation. Durable PVC insulation protects against wear, bending, and environmental stress. Lightweight and compact design makes cable management easy for both home and office desktop setups. Standard 3-pin IEC C13 connector fits the vast majority of desktop PC power supplies, monitors, and UPS systems."
     }
 ];
 
@@ -189,7 +219,9 @@ const productSlugs = {
     9: "gionee-type-c-wired-handsfree",
     10: "gionee-wired-handsfree-original",
     11: "speedx-sp-s188l-3in1-power-bank",
-    12: "speedx-sp-s185-225w-power-bank"
+    12: "speedx-sp-s185-225w-power-bank",
+    13: "imported-power-cable-laptop-1.5m",
+    14: "imported-power-cable-desktop-pc-1.5m"
 };
 
 let selectedCategory = "all";
