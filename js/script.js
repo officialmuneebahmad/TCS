@@ -204,6 +204,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452047/301755762430_hcwrfk.jpg"
         ],
         desc: "100% brand new imported power cable cord for desktop PC computers. Features a pure copper conductor for superior electrical conductivity, stable power delivery, and minimal heat generation. Durable PVC insulation protects against wear, bending, and environmental stress. Lightweight and compact design makes cable management easy for both home and office desktop setups. Standard 3-pin IEC C13 connector fits the vast majority of desktop PC power supplies, monitors, and UPS systems."
+    },
+    {
+        id: 15,
+        name: "V200 NEW FASHION ULTRA 2.2 LARGE SCREEN IP68 WATERPROOF SPORT SMART WATCH WITH WEARFIT PRO APP ORANGE",
+        price: 1600,
+        discount: "10% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474010/201756535687_m1nke3.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474021/dfaf364b8c1775617544_zowkts.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474033/101756535685_fcf3wz.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474034/301756535688_b7jmkg.jpg"
+        ],
+        desc: "V200 Ultra Smart Watch features a stunning 2.2-inch square TFT display (240x296), IP68 waterproof rating, Bluetooth 5.2 for calls, heart rate monitoring, blood pressure & oxygen tracking, and 300+ dial options. Powered by the WearFit Pro app, it supports Android 5.0+ & iOS 10.0+, offers 65-day standby, 220mAh battery, wireless charging, sleep monitoring, sports mode, and multi-language support. Zinc alloy body with silica gel strap."
     }
 ];
 
@@ -221,7 +236,8 @@ const productSlugs = {
     11: "speedx-sp-s188l-3in1-power-bank",
     12: "speedx-sp-s185-225w-power-bank",
     13: "imported-power-cable-laptop-1.5m",
-    14: "imported-power-cable-desktop-pc-1.5m"
+    14: "imported-power-cable-desktop-pc-1.5m",
+    15: "v200-ultra-smartwatch-orange"
 };
 
 let selectedCategory = "all";
