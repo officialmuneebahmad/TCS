@@ -234,6 +234,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479513/301756535358_ljpsct.jpg"
         ],
         desc: "X8 Plus Ultra Smart Watch Series 8 features a stylish 49mm design, 2.08-inch TFT display (240x296) with Always-on function, NFC, IP67 waterproof rating, and Bluetooth 5.2. Enjoy a smooth menu, wireless charging, and compatibility with Android and iOS smartphones via the WearFit Pro app. Includes built-in loudspeaker and motor for calls and notifications."
+    },
+    {
+        id: 17,
+        name: "2.2 INCH X8 ULTRA MAX WITH COMPASS SMART WATCH SERIES 8 NFC ALWAYS-ON DISPLAY & WIRELESS CHARGING WITH WEARFIT PRO APP ORANGE",
+        price: 2200,
+        discount: "9% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483705/00d493f53b1775615970_pyywai.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483719/101756535146_ubhacn.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483724/201756535146_gw6dxd.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483726/301756535146_qduh0y.jpg"
+        ],
+        desc: "X8 Ultra Max adds many functions, such as Strap Lock, Real Screw, body temperature, GPS Positioning, Altitude barometer, compass, Video Control, and a 2.2 inch large screen."
     }
 ];
 
@@ -253,7 +268,8 @@ const productSlugs = {
     13: "imported-power-cable-laptop-1.5m",
     14: "imported-power-cable-desktop-pc-1.5m",
     15: "v200-ultra-smartwatch-orange",
-    16: "x8-plus-ultra-smartwatch-orange"
+    16: "x8-plus-ultra-smartwatch-orange",
+    17: "x8-ultra-max-smartwatch-orange"
 };
 
 let selectedCategory = "all";
@@ -261,6 +277,8 @@ let activeProductGlobal = null;
 let slideIndex = 0;
 const totalSlides = 4;
 let carouselInterval;
+let currentDisplayLimit = 8;
+let currentFilteredProducts = [];
 
 // UI Target Component Selectors
 const homeView = document.getElementById('home-view');
@@ -507,7 +525,10 @@ function filterProducts() {
         processedItems.sort((a, b) => b.price - a.price);
     }
 
-    renderProductsGrid(processedItems, productsGrid);
+    currentFilteredProducts = processedItems;
+    currentDisplayLimit = 8;
+
+    renderProductsGrid(currentFilteredProducts, productsGrid);
 }
 
 function renderProductsGrid(itemsList, targetGrid) {
@@ -521,7 +542,14 @@ function renderProductsGrid(itemsList, targetGrid) {
 
     const prefix = getPathPrefix();
 
-    itemsList.forEach(item => {
+    let displayItems = itemsList;
+    let isMainGrid = (targetGrid === productsGrid);
+
+    if (isMainGrid) {
+        displayItems = itemsList.slice(0, currentDisplayLimit);
+    }
+
+    displayItems.forEach(item => {
         const card = document.createElement('a');
         card.className = 'product-card';
         card.href = `${prefix}products/${productSlugs[item.id]}.html`;
@@ -537,6 +565,22 @@ function renderProductsGrid(itemsList, targetGrid) {
                 `;
         targetGrid.appendChild(card);
     });
+
+    if (isMainGrid) {
+        const loadMoreContainer = document.getElementById('load-more-container');
+        if (loadMoreContainer) {
+            if (currentDisplayLimit < itemsList.length) {
+                loadMoreContainer.innerHTML = `<button onclick="loadMoreProducts()" style="padding: 10px 20px; font-size: 1rem; border-radius: 5px; background-color: var(--primary-blue); color: #fff; border: none; cursor: pointer; font-family: 'Poppins', sans-serif;">Load More</button>`;
+            } else {
+                loadMoreContainer.innerHTML = "";
+            }
+        }
+    }
+}
+
+function loadMoreProducts() {
+    currentDisplayLimit += 8;
+    renderProductsGrid(currentFilteredProducts, productsGrid);
 }
 
 function viewProductDetails(productId) {
