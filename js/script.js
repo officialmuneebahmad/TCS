@@ -294,6 +294,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568763/3ce256df06f1755774753_m7eeij.jpg"
         ],
         desc: "RGB gaming headset with 50mm drivers, noise-reduction omnidirectional microphone, and braided 2m cable. Compatible with PS5, PS4, Xbox, Switch, and PC via 3.5mm CTIA."
+    },
+    {
+        id: 21,
+        name: "ROMOSS SENSE 8P+ PLUS 30000MAH 18W PD + QC FAST CHARGING POWER BANK",
+        price: 5999,
+        discount: "12% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569432/cc7bd0048d1776510783_zh8imj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569421/3cc7bd0048d1776078819_mfh8z9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569416/2cc7bd0048d1776078819_aq5j9y.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569430/1cc7bd0048d1776078819_ymrwmn.jpg"
+        ],
+        desc: "30000mAh power bank with 18W PD + QC fast charging. 3 inputs (Micro-USB, Lightning, Type-C), 3 outputs, LED digital display. Charges 3 devices simultaneously."
     }
 ];
 
@@ -317,7 +332,8 @@ const productSlugs = {
     17: "x8-ultra-max-smartwatch-orange",
     18: "vga-cable-male-to-male-1.5m-blue",
     19: "speedx-alfa-w114-wifi-usb-adapter",
-    20: "xtrike-me-gh712-rgb-gaming-headset-white"
+    20: "xtrike-me-gh712-rgb-gaming-headset-white",
+    21: "romoss-sense-8p-plus-30000mah-power-bank"
 };
 
 let selectedCategory = "all";
