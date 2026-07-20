@@ -279,6 +279,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568210/201756447917_yg1a2r.jpg"
         ],
         desc: "WiFi USB Adapter with 3dBi external antenna and RTL8188FTV-VC chipset. 300Mbps wireless N speeds. Compatible with Raspberry Pi, IPTV MAG250/254, Skybox, Windows, Mac and Linux."
+    },
+    {
+        id: 20,
+        name: "XTRIKE ME GH712 RGB GAMING HEADSET WITH NOISE REDUCTION MICROPHONE WHITE",
+        price: 3999,
+        discount: "15% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568721/1d655452721774350114_g3ct4s.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568739/1ce256df06f1755774752_xdy9nd.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568744/2ce256df06f1755774752_l6h1lz.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568763/3ce256df06f1755774753_m7eeij.jpg"
+        ],
+        desc: "RGB gaming headset with 50mm drivers, noise-reduction omnidirectional microphone, and braided 2m cable. Compatible with PS5, PS4, Xbox, Switch, and PC via 3.5mm CTIA."
     }
 ];
 
@@ -301,7 +316,8 @@ const productSlugs = {
     16: "x8-plus-ultra-smartwatch-orange",
     17: "x8-ultra-max-smartwatch-orange",
     18: "vga-cable-male-to-male-1.5m-blue",
-    19: "speedx-alfa-w114-wifi-usb-adapter"
+    19: "speedx-alfa-w114-wifi-usb-adapter",
+    20: "xtrike-me-gh712-rgb-gaming-headset-white"
 };
 
 let selectedCategory = "all";
