@@ -249,6 +249,36 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483726/301756535146_qduh0y.jpg"
         ],
         desc: "X8 Ultra Max adds many functions, such as Strap Lock, Real Screw, body temperature, GPS Positioning, Altitude barometer, compass, Video Control, and a 2.2 inch large screen."
+    },
+    {
+        id: 18,
+        name: "VGA CABLE MALE TO MALE 1.5M BLUE",
+        price: 200,
+        discount: "5% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567278/2a0612cfe811782193851_ra4vms.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567285/3a0612cfe811782193851_ctc6jh.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567290/1a0612cfe811782193851_ur37p6.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567293/a0612cfe811782193851_ztnewj.jpg"
+        ],
+        desc: "The VGA 3+4 connection cables are widely used in HD TVs, set-top boxes, HD players, computers, projectors, etc. Screw-in VGA cable with 15P male input and male output for secure connection."
+    },
+    {
+        id: 19,
+        name: "SPEEDX ALFA W114 3DBI RTL8188FTV-VC ANTENNA WIFI USB ADAPTER 300MBPS",
+        price: 799,
+        discount: "10% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567898/f9112823f61775560487_azugj9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567889/101756447917_h4ntup.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568205/301756447917_jogqwt.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568210/201756447917_yg1a2r.jpg"
+        ],
+        desc: "WiFi USB Adapter with 3dBi external antenna and RTL8188FTV-VC chipset. 300Mbps wireless N speeds. Compatible with Raspberry Pi, IPTV MAG250/254, Skybox, Windows, Mac and Linux."
     }
 ];
 
@@ -269,7 +299,9 @@ const productSlugs = {
     14: "imported-power-cable-desktop-pc-1.5m",
     15: "v200-ultra-smartwatch-orange",
     16: "x8-plus-ultra-smartwatch-orange",
-    17: "x8-ultra-max-smartwatch-orange"
+    17: "x8-ultra-max-smartwatch-orange",
+    18: "vga-cable-male-to-male-1.5m-blue",
+    19: "speedx-alfa-w114-wifi-usb-adapter"
 };
 
 let selectedCategory = "all";
