@@ -120,6 +120,21 @@ const productsDatabase = [
     },
     {
         id: 9,
+        name: "XTRIKE ME GH-509 WIRED STEREO GAMING HEADSET WITH MICROPHONE AND RGB BACKLIGHT BLACK",
+        price: 2999,
+        discount: "10% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653010/2c473fd39341774349668_e7anbm.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784652981/c473fd39341774349668_jexuky.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784652982/1c473fd39341774349668_ekdo56.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653012/3c473fd39341774349668_esg9e4.jpg"
+        ],
+        desc: "Xtrike Me GH-509 Over-Ear Gaming Headset – Built for gamers, streamers, and everyday music lovers who demand clear sound and comfort. Featuring a 3.5mm wired connection and dynamic RGB lighting, it delivers universal compatibility and rich stereo sound."
+    },
+    {
+        id: 10,
         name: "GIONEE TYPE C ORIGINAL WIRED HAND FREE",
         price: 559,
         discount: "5% OFF",
@@ -133,7 +148,7 @@ const productsDatabase = [
         desc: "GIONEE Type-C Wired Handsfree delivers clear high-definition sound with deep bass and crisp audio for music, calls, videos, and gaming. Designed for modern USB Type-C devices, it provides stable connectivity, a built-in microphone, and convenient in-line controls for easy hands-free use. Its lightweight ergonomic design with soft silicone earbuds ensures a secure and comfortable fit during long listening sessions."
     },
     {
-        id: 10,
+        id: 11,
         name: "GIONEE WIRED HAND FREE ORIGINAL",
         price: 399,
         discount: "5% OFF",
@@ -147,7 +162,7 @@ const productsDatabase = [
         desc: "Universal 3.5mm Stereo Earphones deliver powerful Hi-Fi sound with deep bass, clear audio quality, and a built-in microphone for calls and music control. Designed for maximum comfort and everyday performance, these earphones provide a secure fit for long listening sessions. Compatible with all 3.5mm devices, they are perfect for gaming, music, videos, and hands-free calling."
     },
     {
-        id: 11,
+        id: 12,
         name: "SPEEDX SP-S188L 3IN1 22.5W 10000MAH FAST CHARGING POWER BANK",
         price: 2700,
         discount: "10% OFF",
@@ -162,7 +177,7 @@ const productsDatabase = [
         desc: "Stay powered up on the go with the SpeedX SP-S188L 3-in-1 Power Bank. Designed with a sleek and durable body, this portable charger ensures your devices never run out of battery when you need them the most."
     },
     {
-        id: 12,
+        id: 13,
         name: "SPEEDX SP-S185 22.5W 10000MAH SUPER FAST CHARGING POWER BANK",
         price: 2999,
         discount: "12% OFF",
@@ -176,7 +191,7 @@ const productsDatabase = [
         desc: "SpeedX SP-S185 22.5W 10000mAh Super Fast Charging Power Bank features Apple PD 20W and Android 22.5W super fast charging with a built-in two-way Type-C cable and smart LED digital display. Charges up to 50% in 30 minutes."
     },
     {
-        id: 13,
+        id: 14,
         name: "IMPORTED POWER CABLE FOR LAPTOP 1.5M",
         price: 300,
         discount: "5% OFF",
@@ -191,7 +206,7 @@ const productsDatabase = [
         desc: "Features high quality components making this cable suitable for use in both the home and professional environments with a wide range of electrical products. This type of connector has a 2.5 Amp. current rating and are commonly used in computer equipment including laptop, Notebook and power supply applications and portable projectors. 100% brand new power cable cord. Light weight and compact design. Insulation material: PVC. Connector AMP/Voltage: 2.5A 250V."
     },
     {
-        id: 14,
+        id: 15,
         name: "IMPORTED POWER CABLE FOR DESKTOP PC COMPUTER 1.5M",
         price: 320,
         discount: "5% OFF",
@@ -201,12 +216,12 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784451958/28a312bded1775538817_muknrx.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784451969/101755762430_xaznqq.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452039/201755762430_xrto2n.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452047/301755762430_hcwrfk.jpg"
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784452047/301756535358_ljpsct.jpg"
         ],
         desc: "100% brand new imported power cable cord for desktop PC computers. Features a pure copper conductor for superior electrical conductivity, stable power delivery, and minimal heat generation. Durable PVC insulation protects against wear, bending, and environmental stress. Lightweight and compact design makes cable management easy for both home and office desktop setups. Standard 3-pin IEC C13 connector fits the vast majority of desktop PC power supplies, monitors, and UPS systems."
     },
     {
-        id: 15,
+        id: 16,
         name: "V200 NEW FASHION ULTRA 2.2 LARGE SCREEN IP68 WATERPROOF SPORT SMART WATCH WITH WEARFIT PRO APP ORANGE",
         price: 1600,
         discount: "10% OFF",
@@ -221,7 +236,7 @@ const productsDatabase = [
         desc: "V200 Ultra Smart Watch features a stunning 2.2-inch square TFT display (240x296), IP68 waterproof rating, Bluetooth 5.2 for calls, heart rate monitoring, blood pressure & oxygen tracking, and 300+ dial options. Powered by the WearFit Pro app, it supports Android 5.0+ & iOS 10.0+, offers 65-day standby, 220mAh battery, wireless charging, sleep monitoring, sports mode, and multi-language support. Zinc alloy body with silica gel strap."
     },
     {
-        id: 16,
+        id: 17,
         name: "X8 PLUS ULTRA SMART WATCH SERIES 8 NFC 2.08 INCH ALWAYS-ON DISPLAY & WIRELESS CHARGING 49MM WITH WEARFIT PRO APP ORANGE",
         price: 1999,
         discount: "5% OFF",
@@ -236,7 +251,7 @@ const productsDatabase = [
         desc: "X8 Plus Ultra Smart Watch Series 8 features a stylish 49mm design, 2.08-inch TFT display (240x296) with Always-on function, NFC, IP67 waterproof rating, and Bluetooth 5.2. Enjoy a smooth menu, wireless charging, and compatibility with Android and iOS smartphones via the WearFit Pro app. Includes built-in loudspeaker and motor for calls and notifications."
     },
     {
-        id: 17,
+        id: 18,
         name: "2.2 INCH X8 ULTRA MAX WITH COMPASS SMART WATCH SERIES 8 NFC ALWAYS-ON DISPLAY & WIRELESS CHARGING WITH WEARFIT PRO APP ORANGE",
         price: 2200,
         discount: "9% OFF",
@@ -251,7 +266,7 @@ const productsDatabase = [
         desc: "X8 Ultra Max adds many functions, such as Strap Lock, Real Screw, body temperature, GPS Positioning, Altitude barometer, compass, Video Control, and a 2.2 inch large screen."
     },
     {
-        id: 18,
+        id: 19,
         name: "VGA CABLE MALE TO MALE 1.5M BLUE",
         price: 200,
         discount: "5% OFF",
@@ -266,7 +281,7 @@ const productsDatabase = [
         desc: "The VGA 3+4 connection cables are widely used in HD TVs, set-top boxes, HD players, computers, projectors, etc. Screw-in VGA cable with 15P male input and male output for secure connection."
     },
     {
-        id: 19,
+        id: 20,
         name: "SPEEDX ALFA W114 3DBI RTL8188FTV-VC ANTENNA WIFI USB ADAPTER 300MBPS",
         price: 799,
         discount: "10% OFF",
@@ -281,7 +296,7 @@ const productsDatabase = [
         desc: "WiFi USB Adapter with 3dBi external antenna and RTL8188FTV-VC chipset. 300Mbps wireless N speeds. Compatible with Raspberry Pi, IPTV MAG250/254, Skybox, Windows, Mac and Linux."
     },
     {
-        id: 20,
+        id: 21,
         name: "XTRIKE ME GH712 RGB GAMING HEADSET WITH NOISE REDUCTION MICROPHONE WHITE",
         price: 3999,
         discount: "15% OFF",
@@ -296,7 +311,7 @@ const productsDatabase = [
         desc: "RGB gaming headset with 50mm drivers, noise-reduction omnidirectional microphone, and braided 2m cable. Compatible with PS5, PS4, Xbox, Switch, and PC via 3.5mm CTIA."
     },
     {
-        id: 21,
+        id: 22,
         name: "ROMOSS SENSE 8P+ PLUS 30000MAH 18W PD + QC FAST CHARGING POWER BANK",
         price: 5999,
         discount: "12% OFF",
@@ -309,6 +324,83 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569430/1cc7bd0048d1776078819_ymrwmn.jpg"
         ],
         desc: "30000mAh power bank with 18W PD + QC fast charging. 3 inputs (Micro-USB, Lightning, Type-C), 3 outputs, LED digital display. Charges 3 devices simultaneously."
+    },
+    {
+        id: 23,
+        name: "XTRIKE ME HD-215 BLUETOOTH 5.3V WIRELESS HEADSET COMFORTABLE & ERGONOMIC DESIGN",
+        price: 2499,
+        discount: "5% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653245/d034cef0131773897924_d3xwvu.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653264/1d034cef0131773897925_gndver.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653267/2d034cef0131773897925_hxae5a.jpg"
+        ],
+        desc: "Xtrike Me HD-215 Bluetooth 5.3 Wireless Headset – Stereo Sound & Comfort. Experience premium audio freedom designed for gamers, music lovers, and professionals. Foldable, portable, and equipped with noise isolation technology for clean listening."
+    },
+    {
+        id: 24,
+        name: "XTRIKE-ME GH-513W WH TRI-MODE ( BT 6.0, 2.4GH WIRELESS AND WIRED ) GAMING HEADSET",
+        price: 4999,
+        discount: "15% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653521/1056056411774349907_eilzjr.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653568/11056056411774349953_c6gikj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654203/pomelli_photoshoot_image_9_16_0721_fk1xtr.png",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654214/pomelli_photoshoot_image_9_16_0721_1_mgmrpu.png",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654222/pomelli_photoshoot_image_9_16_0721_2_czvnaa.png"
+        ],
+        desc: "Experience immersive audio and seamless connectivity with the GH-513W WH Tri-Mode Gaming Headset. Engineered with Bluetooth 6.0, 2.4G wireless, and Type-C wired connectivity, it features 40mm speakers, dual EQ modes, and wide multi-device compatibility."
+    },
+    {
+        id: 25,
+        name: "ONIKUMA K19 RGB WIRED STEREO GAMING HEADSET TRUE NOISE CANCELLATION, USB+3.5MM AUDIO PLUG FOR PS4/PC/XBOX ONE CONTROLLER/LAPTOP, BLACK",
+        price: 3499,
+        discount: "10% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654593/98164bcfe51774350607_roro5o.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654625/101755608072_zkd0yj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654674/201755608073_fsescx.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654709/301755608073_xp5zod.jpg"
+        ],
+        desc: "ONIKUMA K19 RGB wired gaming headset with true noise cancellation, 50mm audio drivers, dazzling RGB LED lights, and dual USB+3.5mm plug. Multi-platform compatible with PS4, Xbox One, PC, Nintendo Switch, tablets, and smartphones. Plug-and-play with inline volume and mic mute control."
+    },
+    {
+        id: 26,
+        name: "NIA WH700 OVER EAR WIRELESS STEREO BLUETOOTH HEADPHONES WITH MIC, FM RADIO & TF CARD SUPPORT",
+        price: 2799,
+        discount: "5% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655097/7a296413351773901391_qtei2x.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655184/101755331698_cvtjft.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655211/201755331698_dv6lfc.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655217/301755331698_shfle9.jpg"
+        ],
+        desc: "NIA WH700 over-ear wireless Bluetooth 5.0 headphones with built-in microphone, FM radio, TF card playback, IPX-4 waterproof rating, and stereo sound. Compatible with mobile phones, PC, tablets, and portable media players. Volume control and inline call control included."
+    },
+    {
+        id: 27,
+        name: "NIA S4000 BLUETOOTH HEADSET WIRELESS & WIRED FM RADIO TF CARD APP CONTROL",
+        price: 3499,
+        discount: "9% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655890/pomelli_photoshoot_image_1_1_0721_2_mn4xwr.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655878/pomelli_photoshoot_image_1_1_0721_1_aklk8c.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655449/301755331667_bjzh2c.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655465/201755331606_nll5qq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655467/f85dd0403f1773899359_bvorgt.jpg"
+        ],
+        desc: "NIA S4000 Bluetooth headset with wireless and wired dual-mode connection, FM Radio, TF card playback, APP control, and 40mm HD drivers. 6–8 hour playback, 200-hour standby, 10M wireless range and 2-hour fast charge."
     }
 ];
 
@@ -321,19 +413,25 @@ const productSlugs = {
     6: "remax-rc-c189-65w-cable",
     7: "razer-mouse-pad-small",
     8: "logitech-mouse-pad-big",
-    9: "gionee-type-c-wired-handsfree",
-    10: "gionee-wired-handsfree-original",
-    11: "speedx-sp-s188l-3in1-power-bank",
-    12: "speedx-sp-s185-225w-power-bank",
-    13: "imported-power-cable-laptop-1.5m",
-    14: "imported-power-cable-desktop-pc-1.5m",
-    15: "v200-ultra-smartwatch-orange",
-    16: "x8-plus-ultra-smartwatch-orange",
-    17: "x8-ultra-max-smartwatch-orange",
-    18: "vga-cable-male-to-male-1.5m-blue",
-    19: "speedx-alfa-w114-wifi-usb-adapter",
-    20: "xtrike-me-gh712-rgb-gaming-headset-white",
-    21: "romoss-sense-8p-plus-30000mah-power-bank"
+    9: "xtrike-me-gh-509-gaming-headset",
+    10: "gionee-type-c-wired-handsfree",
+    11: "gionee-wired-handsfree-original",
+    12: "speedx-sp-s188l-3in1-power-bank",
+    13: "speedx-sp-s185-225w-power-bank",
+    14: "imported-power-cable-laptop-1.5m",
+    15: "imported-power-cable-desktop-pc-1.5m",
+    16: "v200-ultra-smartwatch-orange",
+    17: "x8-plus-ultra-smartwatch-orange",
+    18: "x8-ultra-max-smartwatch-orange",
+    19: "vga-cable-male-to-male-1.5m-blue",
+    20: "speedx-alfa-w114-wifi-usb-adapter",
+    21: "xtrike-me-gh712-rgb-gaming-headset-white",
+    22: "romoss-sense-8p-plus-30000mah-power-bank",
+    23: "xtrike-me-hd-215-bluetooth-headset",
+    24: "xtrike-me-gh-513w-tri-mode-headset",
+    25: "onikuma-k19-rgb-gaming-headset",
+    26: "nia-wh700-wireless-bluetooth-headphones",
+    27: "nia-s4000-bluetooth-headset"
 };
 
 let selectedCategory = "all";
