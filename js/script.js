@@ -459,6 +459,21 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890837/301755323946_i4b7s8.jpg"
         ],
         desc: "Apple AirPods 4 with active noise cancellation (ANC), H2 chip, adaptive audio, spatial audio, force sensor control, and wireless charging case."
+    },
+    {
+        id: 32,
+        name: "SAMSUNG GALAXY BUDS3 PRO R630 WIRELESS CHARGING EARBUDS BLACK",
+        price: 2399,
+        discount: "20% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918143/4b988bcd0b1773828240_rpwap8.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918152/101755326570_oidcbh.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918165/24b988bcd0b1755499344_o8ryib.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918168/301755326570_nxwgyq.jpg"
+        ],
+        desc: "Samsung Galaxy Buds3 Pro with Galaxy AI-powered Adaptive Noise Cancellation, adaptive equalizer, real-time translation, intuitive touch controls, wireless charging case, and all-day comfort design."
     }
 ];
 
@@ -493,7 +508,8 @@ const productSlugs = {
     28: "xtrike-me-kb-512-bk-keyboard",
     29: "logitech-wireless-combo-keyboard-mk290",
     30: "apple-wireless-keyboard-mouse-mini",
-    31: "apple-airpods-4"
+    31: "apple-airpods-4",
+    32: "samsung-galaxy-buds3-pro-r630"
 };
 
 let selectedCategory = "all";
