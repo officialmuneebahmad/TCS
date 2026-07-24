@@ -503,6 +503,20 @@ const totalSlides = 4;
 let carouselInterval;
 let currentDisplayLimit = 8;
 let currentFilteredProducts = [];
+let isLoadingMore = false;
+let loadMoreObserver = null;
+
+// Restore state when user navigates back
+(function restoreStateOnBack() {
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    if (navEntry && navEntry.type === 'back_forward') {
+        const saved = sessionStorage.getItem('tcs_display_limit');
+        if (saved) currentDisplayLimit = parseInt(saved, 10);
+    } else {
+        sessionStorage.removeItem('tcs_display_limit');
+        sessionStorage.removeItem('tcs_scroll_pos');
+    }
+})();
 
 // UI Target Component Selectors
 const homeView = document.getElementById('home-view');
@@ -750,9 +764,26 @@ function filterProducts() {
     }
 
     currentFilteredProducts = processedItems;
-    currentDisplayLimit = 8;
+
+    // Only reset limit if this is NOT a back-navigation restore
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    const isBack = navEntry && navEntry.type === 'back_forward';
+    if (!isBack) {
+        currentDisplayLimit = 8;
+    }
 
     renderProductsGrid(currentFilteredProducts, productsGrid);
+
+    // Restore scroll position after products render
+    if (isBack) {
+        const savedScroll = sessionStorage.getItem('tcs_scroll_pos');
+        if (savedScroll) {
+            requestAnimationFrame(() => window.scrollTo(0, parseInt(savedScroll, 10)));
+        }
+        // Clear flags so future filter changes reset normally
+        sessionStorage.removeItem('tcs_display_limit');
+        sessionStorage.removeItem('tcs_scroll_pos');
+    }
 }
 
 function renderProductsGrid(itemsList, targetGrid) {
@@ -761,23 +792,22 @@ function renderProductsGrid(itemsList, targetGrid) {
 
     if (itemsList.length === 0) {
         targetGrid.innerHTML = `<div class="no-results"><i class="fas fa-search-minus" style="font-size:1.8rem; margin-bottom:8px; display:block; color:var(--neon-blue);"></i> No products matched selection bounds.</div>`;
+        updateLoadMoreUI(0, 0);
         return;
     }
 
     const prefix = getPathPrefix();
-
-    let displayItems = itemsList;
-    let isMainGrid = (targetGrid === productsGrid);
-
-    if (isMainGrid) {
-        displayItems = itemsList.slice(0, currentDisplayLimit);
-    }
+    const isMainGrid = (targetGrid === productsGrid);
+    let displayItems = isMainGrid ? itemsList.slice(0, currentDisplayLimit) : itemsList;
 
     displayItems.forEach(item => {
         const card = document.createElement('a');
         card.className = 'product-card';
         card.href = `${prefix}products/${productSlugs[item.id]}.html`;
-
+        card.addEventListener('click', () => {
+            sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
+            sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
+        });
         card.innerHTML = `
                     <div>
                         <div class="discount-badge">${item.discount}</div>
@@ -791,20 +821,118 @@ function renderProductsGrid(itemsList, targetGrid) {
     });
 
     if (isMainGrid) {
-        const loadMoreContainer = document.getElementById('load-more-container');
-        if (loadMoreContainer) {
-            if (currentDisplayLimit < itemsList.length) {
-                loadMoreContainer.innerHTML = `<button onclick="loadMoreProducts()" style="padding: 10px 20px; font-size: 1rem; border-radius: 5px; background-color: var(--primary-blue); color: #fff; border: none; cursor: pointer; font-family: 'Poppins', sans-serif;">Load More</button>`;
-            } else {
-                loadMoreContainer.innerHTML = "";
-            }
+        updateLoadMoreUI(displayItems.length, itemsList.length);
+        setupIntersectionObserver();
+    }
+}
+
+function updateLoadMoreUI(shown, total) {
+    const progressEl = document.getElementById('products-progress');
+    const btnEl = document.getElementById('load-more-btn');
+    const endEl = document.getElementById('load-more-end');
+    const spinnerEl = document.getElementById('load-more-spinner');
+
+    if (spinnerEl) spinnerEl.classList.remove('visible');
+
+    if (total === 0) {
+        if (progressEl) progressEl.innerHTML = '';
+        if (btnEl) btnEl.style.display = 'none';
+        if (endEl) endEl.classList.remove('visible');
+        return;
+    }
+
+    if (progressEl) {
+        progressEl.innerHTML = `Showing <span>${shown}</span> of <span>${total}</span> products`;
+    }
+
+    if (shown < total) {
+        if (btnEl) {
+            btnEl.style.display = 'inline-block';
+            btnEl.textContent = 'Load More';
+            btnEl.style.cssText = 'display:inline-block; padding:10px 28px; font-size:0.95rem; border-radius:8px; background:var(--primary-blue); color:#fff; border:none; cursor:pointer; font-family:Poppins,sans-serif; transition:opacity 0.2s;';
+        }
+        if (endEl) endEl.classList.remove('visible');
+    } else {
+        if (btnEl) btnEl.style.display = 'none';
+        if (endEl) {
+            endEl.style.display = 'block';
+            requestAnimationFrame(() => endEl.classList.add('visible'));
         }
     }
 }
 
+function setupIntersectionObserver() {
+    if (loadMoreObserver) loadMoreObserver.disconnect();
+    const sentinel = document.getElementById('load-more-container');
+    if (!sentinel) return;
+
+    const shown = Math.min(currentDisplayLimit, currentFilteredProducts.length);
+    const total = currentFilteredProducts.length;
+    if (shown >= total) return;
+
+    loadMoreObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isLoadingMore) {
+                loadMoreProducts();
+            }
+        });
+    }, { rootMargin: '0px 0px 300px 0px', threshold: 0 });
+
+    loadMoreObserver.observe(sentinel);
+}
+
 function loadMoreProducts() {
-    currentDisplayLimit += 8;
-    renderProductsGrid(currentFilteredProducts, productsGrid);
+    if (isLoadingMore) return;
+    const total = currentFilteredProducts.length;
+    if (currentDisplayLimit >= total) return;
+
+    isLoadingMore = true;
+
+    const spinnerEl = document.getElementById('load-more-spinner');
+    const btnEl = document.getElementById('load-more-btn');
+    if (spinnerEl) spinnerEl.classList.add('visible');
+    if (btnEl) btnEl.style.display = 'none';
+
+    // Simulate a brief fetch delay for smooth UX
+    setTimeout(() => {
+        const prevLimit = currentDisplayLimit;
+        currentDisplayLimit = Math.min(currentDisplayLimit + 8, total);
+        const prefix = getPathPrefix();
+
+        // Append only NEW cards with fade-in
+        const newItems = currentFilteredProducts.slice(prevLimit, currentDisplayLimit);
+        newItems.forEach((item, i) => {
+            const card = document.createElement('a');
+            card.className = 'product-card fade-in-new';
+            card.style.animationDelay = `${i * 60}ms`;
+            card.href = `${prefix}products/${productSlugs[item.id]}.html`;
+            card.addEventListener('click', () => {
+                sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
+                sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
+            });
+            card.innerHTML = `
+                        <div>
+                            <div class="discount-badge">${item.discount}</div>
+                            ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
+                            <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
+                            <div class="product-name">${item.name}</div>
+                        </div>
+                        <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
+                    `;
+            productsGrid.appendChild(card);
+        });
+
+        updateLoadMoreUI(currentDisplayLimit, total);
+
+        isLoadingMore = false;
+
+        // Re-attach observer if there are still more items
+        if (currentDisplayLimit < total) {
+            setupIntersectionObserver();
+        } else if (loadMoreObserver) {
+            loadMoreObserver.disconnect();
+        }
+    }, 350);
 }
 
 function viewProductDetails(productId) {

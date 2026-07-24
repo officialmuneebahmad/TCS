@@ -1139,6 +1139,8 @@
             transform: scale(1);
         }
 
+
+
         .lightbox-zoomed-img {
             max-width: 100%;
             max-height: 85vh;
@@ -1180,4 +1182,72 @@
                 background: rgba(11, 15, 25, 0.7);
                 border-color: rgba(255, 255, 255, 0.1);
             }
+        }
+
+        /* =========================================
+           LOAD MORE ENHANCEMENTS
+           ========================================= */
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card.fade-in-new {
+            animation: fadeInUp 0.4s ease both;
+        }
+
+        #products-progress {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            letter-spacing: 0.03em;
+        }
+
+        #products-progress span {
+            font-weight: 700;
+            color: var(--neon-blue);
+        }
+
+        #load-more-spinner {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        #load-more-spinner.visible {
+            display: flex;
+        }
+
+        .spinner-ring {
+            width: 22px;
+            height: 22px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--neon-blue);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #load-more-end {
+            display: none;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            padding: 14px 0 4px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #load-more-end.visible {
+            display: block;
+            opacity: 1;
         }
