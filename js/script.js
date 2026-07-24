@@ -401,6 +401,50 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655467/f85dd0403f1773899359_bvorgt.jpg"
         ],
         desc: "NIA S4000 Bluetooth headset with wireless and wired dual-mode connection, FM Radio, TF card playback, APP control, and 40mm HD drivers. 6–8 hour playback, 200-hour standby, 10M wireless range and 2-hour fast charge."
+    },
+    {
+        id: 28,
+        name: "XTRIKE ME KB-512 BK 108 KEY WIRED MECHANICAL FEEL USB-C KEYBOARD BLACK",
+        price: 3299,
+        discount: "12% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888760/6da9c0870b1774697120_gjtvuj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888785/301755687512_bcfmum.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888787/201755687512_ezyldl.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888795/101755687512_intonq.jpg"
+        ],
+        desc: "Xtrike Me KB-512 BK 108-Key Wired Membrane Keyboard - USB-C, Mute Switch with Mechanical Feel, F1-F12 Multimedia Keys, Durable Construction, Compact Design - Black"
+    },
+    {
+        id: 29,
+        name: "LOGITECH WIRELESS COMBO KEYBOARD MK290",
+        price: 2799,
+        discount: "9% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889286/85ed2a32ea1774698053_wrutt3.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889334/101755755073_lks4e1.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889396/301755755073_q0nrb0.jpg"
+        ],
+        desc: "Logitech Wireless Combo Keyboard MK290 features a complete wireless keyboard and optical mouse setup with long battery life. High reliability, plug-and-play, and programmable hot keys."
+    },
+    {
+        id: 30,
+        name: "APPLE WIRELESS KEYBOARD MOUSE MINI",
+        price: 2399,
+        discount: "10% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889826/a342ab6cb41774698323_i7c9tu.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889816/101755755252_v68zjj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889857/201755755252_cqq9ja.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889860/301755755253_l0lbf7.jpg"
+        ],
+        desc: "Apple Wireless Keyboard Mouse Mini features an integrated ergonomic tilt, thin enclosure, crisp tactile feel, and compact design. Dual support for Apple, Android, Windows, and general USB platforms."
     }
 ];
 
@@ -431,7 +475,10 @@ const productSlugs = {
     24: "xtrike-me-gh-513w-tri-mode-headset",
     25: "onikuma-k19-rgb-gaming-headset",
     26: "nia-wh700-wireless-bluetooth-headphones",
-    27: "nia-s4000-bluetooth-headset"
+    27: "nia-s4000-bluetooth-headset",
+    28: "xtrike-me-kb-512-bk-keyboard",
+    29: "logitech-wireless-combo-keyboard-mk290",
+    30: "apple-wireless-keyboard-mouse-mini"
 };
 
 let selectedCategory = "all";
