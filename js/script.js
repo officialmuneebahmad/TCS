@@ -445,6 +445,20 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889860/301755755253_l0lbf7.jpg"
         ],
         desc: "Apple Wireless Keyboard Mouse Mini features an integrated ergonomic tilt, thin enclosure, crisp tactile feel, and compact design. Dual support for Apple, Android, Windows, and general USB platforms."
+    },
+    {
+        id: 31,
+        name: "APPLE AIRPODS 4 BT 5.3V USB-C & WIRELESS CHARGING CASE",
+        price: 2499,
+        discount: "15% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890785/4dbaa36c8d1764237267_zwb5sm.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890795/201755323945_ol8ia6.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890837/301755323946_i4b7s8.jpg"
+        ],
+        desc: "Apple AirPods 4 with active noise cancellation (ANC), H2 chip, adaptive audio, spatial audio, force sensor control, and wireless charging case."
     }
 ];
 
@@ -478,7 +492,8 @@ const productSlugs = {
     27: "nia-s4000-bluetooth-headset",
     28: "xtrike-me-kb-512-bk-keyboard",
     29: "logitech-wireless-combo-keyboard-mk290",
-    30: "apple-wireless-keyboard-mouse-mini"
+    30: "apple-wireless-keyboard-mouse-mini",
+    31: "apple-airpods-4"
 };
 
 let selectedCategory = "all";
