@@ -534,6 +534,36 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967803/301755329489_wmezwh.jpg"
         ],
         desc: "Xiaomi Mi True Wireless Earbuds Basic 2 featuring Bluetooth 5.0, 7.2mm custom dynamic sound drivers, automatic pairing, anti-sweat IPX4 rating, one-button tactile control, and voice assistant support."
+    },
+    {
+        id: 37,
+        name: "FIBER PATCHCORD SC/UPC SM DUPLEX DUAL CORE OPTICAL CABLE 5M",
+        price: 999,
+        discount: "5% OFF",
+        category: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968407/77cce9e5481775558715_ultumg.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968417/101756447170_frpkik.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968425/201756447170_gwfezu.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968427/377cce9e5481775558715_wshhf0.jpg"
+        ],
+        desc: "High-performance SC/UPC Single Mode Duplex Dual Core Fiber Optic Patchcord 5m. Ideal for telecom networks, FTTH, LAN/MAN, CATV, and data centers with minimal signal loss and high temperature stability."
+    },
+    {
+        id: 38,
+        name: "REMAX RM-703A TYPE C LIGHTWEIGHT HANDFREE",
+        price: 1199,
+        discount: "5% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968785/301756540031_s8bysj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968782/101756540030_jxuqba.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968779/201756540030_ta2p11.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968766/bbc6d5b6921775716718_j1zgwm.jpg"
+        ],
+        desc: "Remax RM-703a Type-C Wired Headphones featuring digital analyzer DAC chip for lossless audio, 360° surround sound, audio-video sync, three-button inline control, clear voice microphone, and 1.2m durable cord."
     }
 ];
 
@@ -573,7 +603,9 @@ const productSlugs = {
     33: "lenovo-he05-neckband-headphone",
     34: "samsung-galaxy-buds-fe-sm-r400n-white",
     35: "lenovo-lecoo-ew301-tws-wireless-earbuds",
-    36: "xiaomi-mi-true-wireless-earbuds-basic-2"
+    36: "xiaomi-mi-true-wireless-earbuds-basic-2",
+    37: "fiber-patchcord-sc-upc-sm-duplex-5m",
+    38: "remax-rm-703a-type-c-lightweight-handfree"
 };
 
 let selectedCategory = "all";
