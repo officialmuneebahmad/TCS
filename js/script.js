@@ -474,6 +474,66 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918168/301755326570_nxwgyq.jpg"
         ],
         desc: "Samsung Galaxy Buds3 Pro with Galaxy AI-powered Adaptive Noise Cancellation, adaptive equalizer, real-time translation, intuitive touch controls, wireless charging case, and all-day comfort design."
+    },
+    {
+        id: 33,
+        name: "LENOVO HE05 NECKBAND HEADPHONE (ORIGINAL)",
+        price: 1250,
+        discount: "5% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964030/9f8c504afb1773829346_d72wll.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964033/101755327649_mdmqou.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964037/201755327649_b1f7fj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964044/301755327649_kbim9k.jpg"
+        ],
+        desc: "Original Lenovo HE05 Wireless Neckband Headphone featuring Bluetooth 5.0, CVC noise canceling microphone, IPX5 waterproof rating, 8 hours playback time, and ergonomic magnetic earbud design."
+    },
+    {
+        id: 34,
+        name: "SAMSUNG GALAXY BUDS FE WIRELESS EARBUDS SM-R400N WHITE",
+        price: 2999,
+        discount: "10% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964882/37560109831764239455_tzhipn.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964885/137560109831755496861_outbp6.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964896/237560109831755496862_eaktpe.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964899/337560109831755496862_iycigr.jpg"
+        ],
+        desc: "New Samsung Galaxy Buds FE SM-R400N in White featuring Active Noise Cancellation (ANC), 3-mic DNN clear calling, boosted bass diaphragm, up to 30 hours battery, and SmartThings Find support."
+    },
+    {
+        id: 35,
+        name: "LENOVO LECOO EW301 TWS WIRELESS BLUETOOTH EARBUDS",
+        price: 1499,
+        discount: "None",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967544/b986fccd751763810953_e610xa.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967608/101755327494_yujcbc.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967613/201755327494_qk5hls.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967615/301755327494_u2b9jb.jpg"
+        ],
+        desc: "Lenovo Lecoo EW301 TWS True Wireless Bluetooth 5.0 Earbuds with smart touch control, built-in microphone, 10m range, 3 hours playback time per earbud, and compact charging case."
+    },
+    {
+        id: 36,
+        name: "XIAOMI MI TRUE WIRELESS EARBUDS BASIC 2 BLUETOOTH 5.0 HEADPHONES ANTI-SWEAT IPX4",
+        price: 3499,
+        discount: "7% OFF",
+        category: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967765/88705f22731764408878_wg7txj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967782/101755329488_vxidvo.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967797/201755329489_bhg8vk.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967803/301755329489_wmezwh.jpg"
+        ],
+        desc: "Xiaomi Mi True Wireless Earbuds Basic 2 featuring Bluetooth 5.0, 7.2mm custom dynamic sound drivers, automatic pairing, anti-sweat IPX4 rating, one-button tactile control, and voice assistant support."
     }
 ];
 
@@ -509,7 +569,11 @@ const productSlugs = {
     29: "logitech-wireless-combo-keyboard-mk290",
     30: "apple-wireless-keyboard-mouse-mini",
     31: "apple-airpods-4",
-    32: "samsung-galaxy-buds3-pro-r630"
+    32: "samsung-galaxy-buds3-pro-r630",
+    33: "lenovo-he05-neckband-headphone",
+    34: "samsung-galaxy-buds-fe-sm-r400n-white",
+    35: "lenovo-lecoo-ew301-tws-wireless-earbuds",
+    36: "xiaomi-mi-true-wireless-earbuds-basic-2"
 };
 
 let selectedCategory = "all";
