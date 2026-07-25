@@ -5,7 +5,8 @@ const productsDatabase = [
         name: "XTRIKE ME MP-005 GAMING MOUSE PAD MEDIUM 320x270x2MM",
         price: 799,
         discount: "15% OFF",
-        category: "computer",
+        category: "mousepads",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779272616/Create_Image_same_as_uploaded_202605131259_eg7fku.jpg",
@@ -23,7 +24,8 @@ const productsDatabase = [
         name: "XIAOMI 120W EU PLUG QC3.0 FAST QUICK WALL CHARGER WITH CABLE",
         price: 1299,
         discount: "10% OFF",
-        category: "mobile",
+        category: "adopters",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779273316/A_professional_8K_HDR__Hero__202605131519_iyvjlk.jpg",
@@ -39,7 +41,8 @@ const productsDatabase = [
         name: "SAMSUNG TYPE-C TO TYPE-C ORIGINAL CABLE",
         price: 499,
         discount: "5% OFF",
-        category: "mobile",
+        category: "cables",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276318/A_professional_8K_HDR__Hero__202605151521_1_tjas1r.jpg",
@@ -53,7 +56,8 @@ const productsDatabase = [
         name: "Samsung 45W EU PIN PD Super Fast Charger",
         price: 799,
         discount: "20% OFF",
-        category: "mobile",
+        category: "adopters",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276537/0bc3e2d2aa1776508857_sdp4ap.jpg",
@@ -67,7 +71,8 @@ const productsDatabase = [
         name: "SAMSUNG 25W US PIN ORIGINAL PD ADOPTER USB-C",
         price: 799,
         discount: "12% OFF",
-        category: "mobile",
+        category: "adopters",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779276864/A_professional_8K_HDR_studio_202605151707_xsymlv.jpg",
@@ -81,7 +86,8 @@ const productsDatabase = [
         name: "REMAX RC-C189 65W 4 IN 1 MULTI FUNCTIONAL DATA CABLE BLACK",
         price: 799,
         discount: "15% OFF",
-        category: "mobile",
+        category: "cables",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277250/c7413799011776412794_o1ht5x.jpg",
@@ -95,7 +101,8 @@ const productsDatabase = [
         name: "Razer mouse pad small with box 245x320x4mm",
         price: 599,
         discount: "15% OFF",
-        category: "computer",
+        category: "mousepads",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779277587/6c853af4061774944046_hxh5ez.jpg",
@@ -109,7 +116,8 @@ const productsDatabase = [
         name: "LOGITECH MOUSE PAD BIG 250x290x2mm",
         price: 499,
         discount: "5% OFF",
-        category: "computer",
+        category: "mousepads",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278187/6601054f4e1774943891_woejco.jpg",
@@ -123,7 +131,8 @@ const productsDatabase = [
         name: "XTRIKE ME GH-509 WIRED STEREO GAMING HEADSET WITH MICROPHONE AND RGB BACKLIGHT BLACK",
         price: 2999,
         discount: "10% OFF",
-        category: "computer",
+        category: "headsets",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653010/2c473fd39341774349668_e7anbm.jpg",
@@ -138,7 +147,8 @@ const productsDatabase = [
         name: "GIONEE TYPE C ORIGINAL WIRED HAND FREE",
         price: 559,
         discount: "5% OFF",
-        category: "mobile",
+        category: "handfrees",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278506/7543bbf8f31775716898_g6d7l6.jpg",
@@ -152,7 +162,8 @@ const productsDatabase = [
         name: "GIONEE WIRED HAND FREE ORIGINAL",
         price: 399,
         discount: "5% OFF",
-        category: "mobile",
+        category: "handfrees",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1779278903/477ccdde521775718752_gocbtq.jpg",
@@ -166,7 +177,8 @@ const productsDatabase = [
         name: "SPEEDX SP-S188L 3IN1 22.5W 10000MAH FAST CHARGING POWER BANK",
         price: 2700,
         discount: "10% OFF",
-        category: "mobile",
+        category: "powerbanks",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1781869841/91d6e6d5c81775564704_wbg8lo.jpg",
@@ -181,7 +193,8 @@ const productsDatabase = [
         name: "SPEEDX SP-S185 22.5W 10000MAH SUPER FAST CHARGING POWER BANK",
         price: 2999,
         discount: "12% OFF",
-        category: "mobile",
+        category: "powerbanks",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1781871743/68b8b967401775565059_v9oh5j.jpg",
@@ -195,7 +208,8 @@ const productsDatabase = [
         name: "IMPORTED POWER CABLE FOR LAPTOP 1.5M",
         price: 300,
         discount: "5% OFF",
-        category: "computer",
+        category: "cables",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784434279/5d876c22181775541577_mizdhr.jpg",
@@ -210,7 +224,8 @@ const productsDatabase = [
         name: "IMPORTED POWER CABLE FOR DESKTOP PC COMPUTER 1.5M",
         price: 320,
         discount: "5% OFF",
-        category: "computer",
+        category: "cables",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784451958/28a312bded1775538817_muknrx.jpg",
@@ -225,7 +240,8 @@ const productsDatabase = [
         name: "V200 NEW FASHION ULTRA 2.2 LARGE SCREEN IP68 WATERPROOF SPORT SMART WATCH WITH WEARFIT PRO APP ORANGE",
         price: 1600,
         discount: "10% OFF",
-        category: "mobile",
+        category: "smartwatches",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784474010/201756535687_m1nke3.jpg",
@@ -240,7 +256,8 @@ const productsDatabase = [
         name: "X8 PLUS ULTRA SMART WATCH SERIES 8 NFC 2.08 INCH ALWAYS-ON DISPLAY & WIRELESS CHARGING 49MM WITH WEARFIT PRO APP ORANGE",
         price: 1999,
         discount: "5% OFF",
-        category: "mobile",
+        category: "smartwatches",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784479496/4bb34f06af1775616506_ebjuac.jpg",
@@ -255,7 +272,8 @@ const productsDatabase = [
         name: "2.2 INCH X8 ULTRA MAX WITH COMPASS SMART WATCH SERIES 8 NFC ALWAYS-ON DISPLAY & WIRELESS CHARGING WITH WEARFIT PRO APP ORANGE",
         price: 2200,
         discount: "9% OFF",
-        category: "mobile",
+        category: "smartwatches",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784483705/00d493f53b1775615970_pyywai.jpg",
@@ -270,7 +288,8 @@ const productsDatabase = [
         name: "VGA CABLE MALE TO MALE 1.5M BLUE",
         price: 200,
         discount: "5% OFF",
-        category: "computer",
+        category: "cables",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567278/2a0612cfe811782193851_ra4vms.jpg",
@@ -285,7 +304,8 @@ const productsDatabase = [
         name: "SPEEDX ALFA W114 3DBI RTL8188FTV-VC ANTENNA WIFI USB ADAPTER 300MBPS",
         price: 799,
         discount: "10% OFF",
-        category: "computer",
+        category: "networking",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784567898/f9112823f61775560487_azugj9.jpg",
@@ -300,7 +320,8 @@ const productsDatabase = [
         name: "XTRIKE ME GH712 RGB GAMING HEADSET WITH NOISE REDUCTION MICROPHONE WHITE",
         price: 3999,
         discount: "15% OFF",
-        category: "computer",
+        category: "headsets",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784568721/1d655452721774350114_g3ct4s.jpg",
@@ -315,7 +336,8 @@ const productsDatabase = [
         name: "ROMOSS SENSE 8P+ PLUS 30000MAH 18W PD + QC FAST CHARGING POWER BANK",
         price: 5999,
         discount: "12% OFF",
-        category: "mobile",
+        category: "powerbanks",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784569432/cc7bd0048d1776510783_zh8imj.jpg",
@@ -330,7 +352,8 @@ const productsDatabase = [
         name: "XTRIKE ME HD-215 BLUETOOTH 5.3V WIRELESS HEADSET COMFORTABLE & ERGONOMIC DESIGN",
         price: 2499,
         discount: "5% OFF",
-        category: "mobile",
+        category: "headsets",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653245/d034cef0131773897924_d3xwvu.jpg",
@@ -344,7 +367,8 @@ const productsDatabase = [
         name: "XTRIKE-ME GH-513W WH TRI-MODE ( BT 6.0, 2.4GH WIRELESS AND WIRED ) GAMING HEADSET",
         price: 4999,
         discount: "15% OFF",
-        category: "computer",
+        category: "headsets",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784653521/1056056411774349907_eilzjr.jpg",
@@ -360,7 +384,8 @@ const productsDatabase = [
         name: "ONIKUMA K19 RGB WIRED STEREO GAMING HEADSET TRUE NOISE CANCELLATION, USB+3.5MM AUDIO PLUG FOR PS4/PC/XBOX ONE CONTROLLER/LAPTOP, BLACK",
         price: 3499,
         discount: "10% OFF",
-        category: "computer",
+        category: "headsets",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784654593/98164bcfe51774350607_roro5o.jpg",
@@ -375,7 +400,8 @@ const productsDatabase = [
         name: "NIA WH700 OVER EAR WIRELESS STEREO BLUETOOTH HEADPHONES WITH MIC, FM RADIO & TF CARD SUPPORT",
         price: 2799,
         discount: "5% OFF",
-        category: "mobile",
+        category: "headsets",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655097/7a296413351773901391_qtei2x.jpg",
@@ -390,7 +416,8 @@ const productsDatabase = [
         name: "NIA S4000 BLUETOOTH HEADSET WIRELESS & WIRED FM RADIO TF CARD APP CONTROL",
         price: 3499,
         discount: "9% OFF",
-        category: "mobile",
+        category: "headsets",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
@@ -407,7 +434,8 @@ const productsDatabase = [
         name: "XTRIKE ME KB-512 BK 108 KEY WIRED MECHANICAL FEEL USB-C KEYBOARD BLACK",
         price: 3299,
         discount: "12% OFF",
-        category: "computer",
+        category: "keyboards",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888760/6da9c0870b1774697120_gjtvuj.jpg",
@@ -422,7 +450,8 @@ const productsDatabase = [
         name: "LOGITECH WIRELESS COMBO KEYBOARD MK290",
         price: 2799,
         discount: "9% OFF",
-        category: "computer",
+        category: "keyboards",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889286/85ed2a32ea1774698053_wrutt3.jpg",
@@ -436,7 +465,8 @@ const productsDatabase = [
         name: "APPLE WIRELESS KEYBOARD MOUSE MINI",
         price: 2399,
         discount: "10% OFF",
-        category: "computer",
+        category: "keyboards",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889826/a342ab6cb41774698323_i7c9tu.jpg",
@@ -451,7 +481,8 @@ const productsDatabase = [
         name: "APPLE AIRPODS 4 BT 5.3V USB-C & WIRELESS CHARGING CASE",
         price: 2499,
         discount: "15% OFF",
-        category: "mobile",
+        category: "airbuds",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890785/4dbaa36c8d1764237267_zwb5sm.jpg",
@@ -465,7 +496,8 @@ const productsDatabase = [
         name: "SAMSUNG GALAXY BUDS3 PRO R630 WIRELESS CHARGING EARBUDS BLACK",
         price: 2399,
         discount: "20% OFF",
-        category: "mobile",
+        category: "airbuds",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918143/4b988bcd0b1773828240_rpwap8.jpg",
@@ -480,7 +512,8 @@ const productsDatabase = [
         name: "LENOVO HE05 NECKBAND HEADPHONE (ORIGINAL)",
         price: 1250,
         discount: "5% OFF",
-        category: "mobile",
+        category: "handfrees",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964030/9f8c504afb1773829346_d72wll.jpg",
@@ -495,7 +528,8 @@ const productsDatabase = [
         name: "SAMSUNG GALAXY BUDS FE WIRELESS EARBUDS SM-R400N WHITE",
         price: 2999,
         discount: "10% OFF",
-        category: "mobile",
+        category: "airbuds",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964882/37560109831764239455_tzhipn.jpg",
@@ -510,7 +544,8 @@ const productsDatabase = [
         name: "LENOVO LECOO EW301 TWS WIRELESS BLUETOOTH EARBUDS",
         price: 1499,
         discount: "None",
-        category: "mobile",
+        category: "airbuds",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967544/b986fccd751763810953_e610xa.jpg",
@@ -525,7 +560,8 @@ const productsDatabase = [
         name: "XIAOMI MI TRUE WIRELESS EARBUDS BASIC 2 BLUETOOTH 5.0 HEADPHONES ANTI-SWEAT IPX4",
         price: 3499,
         discount: "7% OFF",
-        category: "mobile",
+        category: "airbuds",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967765/88705f22731764408878_wg7txj.jpg",
@@ -540,7 +576,8 @@ const productsDatabase = [
         name: "FIBER PATCHCORD SC/UPC SM DUPLEX DUAL CORE OPTICAL CABLE 5M",
         price: 999,
         discount: "5% OFF",
-        category: "computer",
+        category: "networking",
+        parentCategory: "computer",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968407/77cce9e5481775558715_ultumg.jpg",
@@ -555,7 +592,8 @@ const productsDatabase = [
         name: "REMAX RM-703A TYPE C LIGHTWEIGHT HANDFREE",
         price: 1199,
         discount: "5% OFF",
-        category: "mobile",
+        category: "handfrees",
+        parentCategory: "mobile",
         inStock: true,
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968785/301756540031_s8bysj.jpg",
@@ -608,7 +646,25 @@ const productSlugs = {
     38: "remax-rm-703a-type-c-lightweight-handfree"
 };
 
+const categoryTitlesMap = {
+    all: "Top Selling Products",
+    computer: "Computer Accessories",
+    mobile: "Mobile Accessories",
+    networking: "Networking Gear & Adapters",
+    headsets: "Gaming & Bluetooth Headsets",
+    airbuds: "Wireless Airbuds & TWS",
+    handfrees: "Handsfree & Earphones",
+    keyboards: "Keyboards & Combos",
+    smartwatches: "Smartwatches & Wearables",
+    cables: "Cables & Cord Accessories",
+    adopters: "Fast Chargers & Adapters",
+    mousepads: "Gaming & Office Mousepads",
+    powerbanks: "Power Banks & Portable Chargers"
+};
+
 let selectedCategory = "all";
+let selectedBrand = "all";
+let filterLoadingTimeout = null;
 let activeProductGlobal = null;
 let slideIndex = 0;
 const totalSlides = 4;
@@ -696,28 +752,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initSavedTheme();
+    setupDropdownMenus();
 });
+
+
+/* --- TOUCH & CLICK DROPDOWN CONTROLLER FOR MOBILE AND DESKTOP --- */
+function setupDropdownMenus() {
+    const dropdownBtns = document.querySelectorAll('.nav-dropdown > .nav-btn');
+    
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const parent = btn.parentElement;
+            const isOpen = parent.classList.contains('show-dropdown');
+            
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('show-dropdown'));
+            
+            if (!isOpen) {
+                parent.classList.add('show-dropdown');
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('show-dropdown'));
+        }
+    });
+}
 
 /* --- BURGER DRAWER UTILITY CONTROL --- */
 function toggleNavMenu() {
-    if (mobileNavDrawer) mobileNavDrawer.classList.toggle('open');
-    if (navOverlay) navOverlay.classList.toggle('show');
+    const drawer = document.getElementById('mobile-navigation-drawer');
+    const overlay = document.getElementById('nav-overlay');
+    if (drawer) drawer.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('show');
 }
 
-function toggleFilterSidebar() {
-    if (window.innerWidth < 1025 && filterSidebar && filterOverlay) {
-        filterSidebar.classList.toggle('open');
-        filterOverlay.classList.toggle('show');
+function toggleAccordion(headerEl) {
+    if (!headerEl) return;
+    headerEl.classList.toggle('open');
+    const icon = headerEl.querySelector('.accordion-icon');
+    if (icon) icon.classList.toggle('open');
+    const subMenu = headerEl.nextElementSibling;
+    if (subMenu) {
+        subMenu.classList.toggle('open');
     }
-}
-
-function filterProductsWithMobileClose() {
-    filterProducts();
-    setTimeout(() => {
-        if (filterSidebar && filterSidebar.classList.contains('open')) {
-            toggleFilterSidebar();
-        }
-    }, 300);
 }
 
 /* --- TRUE DAY & NIGHT THEME ALGORITHM --- */
@@ -817,36 +898,56 @@ function changeCategory(category) {
 
     selectedCategory = category;
 
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('show-dropdown'));
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    if (category === 'all') {
-        const btn = document.getElementById('btn-home');
-        if (btn) btn.classList.add('active');
-    }
-    if (category === 'computer') {
-        const btn = document.getElementById('btn-computer');
-        if (btn) btn.classList.add('active');
-    }
-    if (category === 'mobile') {
-        const btn = document.getElementById('btn-mobile');
-        if (btn) btn.classList.add('active');
-    }
+
+    const activeNavBtn = document.getElementById('btn-' + category) || (category === 'all' ? document.getElementById('btn-home') : null);
+    if (activeNavBtn) activeNavBtn.classList.add('active');
 
     const gridTitle = document.getElementById('grid-title');
-    if (gridTitle) {
-        if (category === 'all') gridTitle.innerText = "Top Selling Products";
-        if (category === 'computer') gridTitle.innerText = "Computer Accessories";
-        if (category === 'mobile') gridTitle.innerText = "Mobile Accessories";
-    }
+    if (gridTitle) gridTitle.innerText = categoryTitlesMap[category] || "Products";
 
     if (mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
         toggleNavMenu();
     }
 
     showHome();
-    filterProducts();
+    filterProducts(true);
 }
 
-function filterProducts() {
+function filterProducts(showLoadingAnimation = true) {
+    if (!productsGrid) return;
+    const fullscreenOverlay = document.getElementById('full-screen-loading-overlay');
+
+    if (showLoadingAnimation && fullscreenOverlay) {
+        if (filterLoadingTimeout) clearTimeout(filterLoadingTimeout);
+        fullscreenOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        filterLoadingTimeout = setTimeout(() => {
+            fullscreenOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+            executeFilterAndRender();
+
+            // Smooth auto-scroll down to products section
+            const gridTitle = document.getElementById('grid-title');
+            if (gridTitle) {
+                const headerOffset = 90;
+                const elementPosition = gridTitle.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 2000);
+    } else {
+        if (fullscreenOverlay) fullscreenOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+        executeFilterAndRender();
+    }
+}
+function executeFilterAndRender() {
     if (!productsGrid) return;
     const searchInput = document.getElementById('search-input');
     const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -857,16 +958,22 @@ function filterProducts() {
     const priceSlider = document.getElementById('price-slider');
     const maxPriceVal = priceSlider ? parseInt(priceSlider.value) : 20000;
 
+    const selectedBrandRadio = document.querySelector('input[name="brand-radio"]:checked');
+    selectedBrand = selectedBrandRadio ? selectedBrandRadio.value.toLowerCase() : 'all';
+
     const priceLimit = document.getElementById('price-limit');
     if (priceLimit) priceLimit.innerText = `Rs. ${maxPriceVal.toLocaleString()}`;
 
     let processedItems = productsDatabase.filter(prod => {
         const queryMatch = prod.name.toLowerCase().includes(searchQuery);
-        const categoryMatch = (selectedCategory === "all") || (prod.category === selectedCategory);
+        const categoryMatch = (selectedCategory === "all") || 
+                              (prod.category === selectedCategory) || 
+                              (prod.parentCategory === selectedCategory);
+        const brandMatch = (selectedBrand === "all") || prod.name.toLowerCase().includes(selectedBrand);
         const stockMatch = !isStockChecked || prod.inStock;
         const priceMatch = prod.price <= maxPriceVal;
 
-        return queryMatch && categoryMatch && stockMatch && priceMatch;
+        return queryMatch && categoryMatch && brandMatch && stockMatch && priceMatch;
     });
 
     if (sortSelection === "low-high") {
@@ -877,7 +984,6 @@ function filterProducts() {
 
     currentFilteredProducts = processedItems;
 
-    // Only reset limit if this is NOT a back-navigation restore
     const navEntry = performance.getEntriesByType('navigation')[0];
     const isBack = navEntry && navEntry.type === 'back_forward';
     if (!isBack) {
@@ -886,18 +992,15 @@ function filterProducts() {
 
     renderProductsGrid(currentFilteredProducts, productsGrid);
 
-    // Restore scroll position after products render
     if (isBack) {
         const savedScroll = sessionStorage.getItem('tcs_scroll_pos');
         if (savedScroll) {
             requestAnimationFrame(() => window.scrollTo(0, parseInt(savedScroll, 10)));
         }
-        // Clear flags so future filter changes reset normally
         sessionStorage.removeItem('tcs_display_limit');
         sessionStorage.removeItem('tcs_scroll_pos');
     }
 }
-
 function renderProductsGrid(itemsList, targetGrid) {
     if (!targetGrid) return;
     targetGrid.innerHTML = "";
