@@ -420,8 +420,8 @@ const productsDatabase = [
         parentCategory: "mobile",
         inStock: true,
         images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655890/pomelli_photoshoot_image_1_1_0721_2_mn4xwr.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655878/pomelli_photoshoot_image_1_1_0721_1_aklk8c.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655449/301755331667_bjzh2c.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655465/201755331606_nll5qq.jpg",
@@ -596,9 +596,6 @@ const productsDatabase = [
         parentCategory: "mobile",
         inStock: true,
         images: [
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655890/pomelli_photoshoot_image_1_1_0721_2_mn4xwr.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655878/pomelli_photoshoot_image_1_1_0721_1_aklk8c.jpg",
@@ -607,180 +604,6 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655467/f85dd0403f1773899359_bvorgt.jpg"
         ],
         desc: "NIA S4000 Bluetooth headset with wireless and wired dual-mode connection, FM Radio, TF card playback, APP control, and 40mm HD drivers. 6–8 hour playback, 200-hour standby, 10M wireless range and 2-hour fast charge."
-    },
-    {
-        id: 28,
-        name: "XTRIKE ME KB-512 BK 108 KEY WIRED MECHANICAL FEEL USB-C KEYBOARD BLACK",
-        price: 3299,
-        discount: "12% OFF",
-        category: "keyboards",
-        parentCategory: "computer",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888760/6da9c0870b1774697120_gjtvuj.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888785/301755687512_bcfmum.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888787/201755687512_ezyldl.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784888795/101755687512_intonq.jpg"
-        ],
-        desc: "Xtrike Me KB-512 BK 108-Key Wired Membrane Keyboard - USB-C, Mute Switch with Mechanical Feel, F1-F12 Multimedia Keys, Durable Construction, Compact Design - Black"
-    },
-    {
-        id: 29,
-        name: "LOGITECH WIRELESS COMBO KEYBOARD MK290",
-        price: 2799,
-        discount: "9% OFF",
-        category: "keyboards",
-        parentCategory: "computer",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889286/85ed2a32ea1774698053_wrutt3.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889334/101755755073_lks4e1.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889396/301755755073_q0nrb0.jpg"
-        ],
-        desc: "Logitech Wireless Combo Keyboard MK290 features a complete wireless keyboard and optical mouse setup with long battery life. High reliability, plug-and-play, and programmable hot keys."
-    },
-    {
-        id: 30,
-        name: "APPLE WIRELESS KEYBOARD MOUSE MINI",
-        price: 2399,
-        discount: "10% OFF",
-        category: "keyboards",
-        parentCategory: "computer",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889826/a342ab6cb41774698323_i7c9tu.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889816/101755755252_v68zjj.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889857/201755755252_cqq9ja.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784889860/301755755253_l0lbf7.jpg"
-        ],
-        desc: "Apple Wireless Keyboard Mouse Mini features an integrated ergonomic tilt, thin enclosure, crisp tactile feel, and compact design. Dual support for Apple, Android, Windows, and general USB platforms."
-    },
-    {
-        id: 31,
-        name: "APPLE AIRPODS 4 BT 5.3V USB-C & WIRELESS CHARGING CASE",
-        price: 2499,
-        discount: "15% OFF",
-        category: "airbuds",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890785/4dbaa36c8d1764237267_zwb5sm.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890795/201755323945_ol8ia6.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784890837/301755323946_i4b7s8.jpg"
-        ],
-        desc: "Apple AirPods 4 with active noise cancellation (ANC), H2 chip, adaptive audio, spatial audio, force sensor control, and wireless charging case."
-    },
-    {
-        id: 32,
-        name: "SAMSUNG GALAXY BUDS3 PRO R630 WIRELESS CHARGING EARBUDS BLACK",
-        price: 2399,
-        discount: "20% OFF",
-        category: "airbuds",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918143/4b988bcd0b1773828240_rpwap8.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918152/101755326570_oidcbh.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918165/24b988bcd0b1755499344_o8ryib.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784918168/301755326570_nxwgyq.jpg"
-        ],
-        desc: "Samsung Galaxy Buds3 Pro with Galaxy AI-powered Adaptive Noise Cancellation, adaptive equalizer, real-time translation, intuitive touch controls, wireless charging case, and all-day comfort design."
-    },
-    {
-        id: 33,
-        name: "LENOVO HE05 NECKBAND HEADPHONE (ORIGINAL)",
-        price: 1250,
-        discount: "5% OFF",
-        category: "handfrees",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964030/9f8c504afb1773829346_d72wll.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964033/101755327649_mdmqou.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964037/201755327649_b1f7fj.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964044/301755327649_kbim9k.jpg"
-        ],
-        desc: "Original Lenovo HE05 Wireless Neckband Headphone featuring Bluetooth 5.0, CVC noise canceling microphone, IPX5 waterproof rating, 8 hours playback time, and ergonomic magnetic earbud design."
-    },
-    {
-        id: 34,
-        name: "SAMSUNG GALAXY BUDS FE WIRELESS EARBUDS SM-R400N WHITE",
-        price: 2999,
-        discount: "10% OFF",
-        category: "airbuds",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964882/37560109831764239455_tzhipn.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964885/137560109831755496861_outbp6.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964896/237560109831755496862_eaktpe.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784964899/337560109831755496862_iycigr.jpg"
-        ],
-        desc: "New Samsung Galaxy Buds FE SM-R400N in White featuring Active Noise Cancellation (ANC), 3-mic DNN clear calling, boosted bass diaphragm, up to 30 hours battery, and SmartThings Find support."
-    },
-    {
-        id: 35,
-        name: "LENOVO LECOO EW301 TWS WIRELESS BLUETOOTH EARBUDS",
-        price: 1499,
-        discount: "None",
-        category: "airbuds",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967544/b986fccd751763810953_e610xa.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967608/101755327494_yujcbc.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967613/201755327494_qk5hls.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967615/301755327494_u2b9jb.jpg"
-        ],
-        desc: "Lenovo Lecoo EW301 TWS True Wireless Bluetooth 5.0 Earbuds with smart touch control, built-in microphone, 10m range, 3 hours playback time per earbud, and compact charging case."
-    },
-    {
-        id: 36,
-        name: "XIAOMI MI TRUE WIRELESS EARBUDS BASIC 2 BLUETOOTH 5.0 HEADPHONES ANTI-SWEAT IPX4",
-        price: 3499,
-        discount: "7% OFF",
-        category: "airbuds",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967765/88705f22731764408878_wg7txj.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967782/101755329488_vxidvo.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967797/201755329489_bhg8vk.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784967803/301755329489_wmezwh.jpg"
-        ],
-        desc: "Xiaomi Mi True Wireless Earbuds Basic 2 featuring Bluetooth 5.0, 7.2mm custom dynamic sound drivers, automatic pairing, anti-sweat IPX4 rating, one-button tactile control, and voice assistant support."
-    },
-    {
-        id: 37,
-        name: "FIBER PATCHCORD SC/UPC SM DUPLEX DUAL CORE OPTICAL CABLE 5M",
-        price: 999,
-        discount: "5% OFF",
-        category: "networking",
-        parentCategory: "computer",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968407/77cce9e5481775558715_ultumg.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968417/101756447170_frpkik.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968425/201756447170_gwfezu.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968427/377cce9e5481775558715_wshhf0.jpg"
-        ],
-        desc: "High-performance SC/UPC Single Mode Duplex Dual Core Fiber Optic Patchcord 5m. Ideal for telecom networks, FTTH, LAN/MAN, CATV, and data centers with minimal signal loss and high temperature stability."
-    },
-    {
-        id: 38,
-        name: "REMAX RM-703A TYPE C LIGHTWEIGHT HANDFREE",
-        price: 1199,
-        discount: "5% OFF",
-        category: "handfrees",
-        parentCategory: "mobile",
-        inStock: true,
-        images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968785/301756540031_s8bysj.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968782/101756540030_jxuqba.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968779/201756540030_ta2p11.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968766/bbc6d5b6921775716718_j1zgwm.jpg"
-        ],
-        desc: "Remax RM-703a Type-C Wired Headphones featuring digital analyzer DAC chip for lossless audio, 360° surround sound, audio-video sync, three-button inline control, clear voice microphone, and 1.2m durable cord."
     },
     {
         id: 39,
@@ -813,6 +636,54 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1785232563/301755676178_vdyipn.jpg"
         ],
         desc: "Seagate Expansion Portable HDD with USB 3.0 interface delivering up to 120MB/s. 2.5 inch compact form factor, plug & play, bus-powered, 120GB to 1TB capacity. Compatible with Windows 7/8/10/11 (Mac requires reformat)."
+    },
+    {
+        id: 41,
+        name: "HP PAVILION BLUE PIN LAPTOP CHARGER 19.5V 3.33A 65W (PIN SIZE 4.5*3.0)",
+        price: 1399,
+        discount: "5% OFF",
+        category: "adopters",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785235272/16e4d48e791775024578_tyispm.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785235287/101755760134_sgjwd4.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785235304/201755760134_etguml.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785235318/301755760134_gfijpk.jpg"
+        ],
+        desc: "HP Pavilion Laptop Charger 19.5V 3.33A 65W with 4.5mm x 3.0mm Blue Pin connector. Durable power supply adapter compatible with HP Pavilion Sleekbook 14, 15 series and various HP laptops."
+    },
+    {
+        id: 42,
+        name: "LENOVO 65W USB-C AC LAPTOP CHARGER",
+        price: 1999,
+        discount: "7% OFF",
+        category: "adopters",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785236779/27167b2ced1775478343_ccxqva.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785236786/101755760707_y8tsxp.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785236793/201755760707_urf3yj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785236795/301755760707_dsnta5.jpg"
+        ],
+        desc: "Lenovo 65W USB-C AC Laptop Charger Adapter. Smart multi-voltage output (20V 3.25A / 15V 3A / 9V 2A / 5V 2A). Compatible with Lenovo ThinkPad T480, E480, X1 Carbon, Yoga 720/920, and IdeaPad USB-C laptops."
+    },
+    {
+        id: 43,
+        name: "HP 65W TYPE-C AC ADAPTER LAPTOP CHARGER",
+        price: 1999,
+        discount: "10% OFF",
+        category: "adopters",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785237202/fc9cfa83a21775024636_drg84y.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785237209/101755760216_tdxiie.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785237220/201755760216_o0bbqh.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785237222/301755760217_hkn8hj.jpg"
+        ],
+        desc: "HP 65W Type-C AC Adapter Laptop Charger. Features smart PD multi-voltage output up to 20V 3.25A with built-in surge protection. Compact lightweight power supply for HP Spectre, Envy, Pavilion Type-C laptops."
     }
 ];
 
@@ -856,7 +727,10 @@ const productSlugs = {
     37: "fiber-patchcord-sc-upc-sm-duplex-5m",
     38: "remax-rm-703a-type-c-lightweight-handfree",
     39: "m2-ssd-enclosure-usb-3-1-gen2",
-    40: "seagate-expansion-hdd-usb3-2-5inch-external"
+    40: "seagate-expansion-hdd-usb3-2-5inch-external",
+    41: "hp-pavilion-blue-pin-laptop-charger-65w",
+    42: "lenovo-65w-usb-c-ac-laptop-charger",
+    43: "hp-65w-type-c-ac-adapter-laptop-charger"
 };
 
 const categoryTitlesMap = {
@@ -972,16 +846,16 @@ document.addEventListener("DOMContentLoaded", () => {
 /* --- TOUCH & CLICK DROPDOWN CONTROLLER FOR MOBILE AND DESKTOP --- */
 function setupDropdownMenus() {
     const dropdownBtns = document.querySelectorAll('.nav-dropdown > .nav-btn');
-    
+
     dropdownBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             const parent = btn.parentElement;
             const isOpen = parent.classList.contains('show-dropdown');
-            
+
             document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('show-dropdown'));
-            
+
             if (!isOpen) {
                 parent.classList.add('show-dropdown');
             }
@@ -1179,9 +1053,9 @@ function executeFilterAndRender() {
 
     let processedItems = productsDatabase.filter(prod => {
         const queryMatch = prod.name.toLowerCase().includes(searchQuery);
-        const categoryMatch = (selectedCategory === "all") || 
-                              (prod.category === selectedCategory) || 
-                              (prod.parentCategory === selectedCategory);
+        const categoryMatch = (selectedCategory === "all") ||
+            (prod.category === selectedCategory) ||
+            (prod.parentCategory === selectedCategory);
         const brandMatch = (selectedBrand === "all") || prod.name.toLowerCase().includes(selectedBrand);
         const stockMatch = !isStockChecked || prod.inStock;
         const priceMatch = prod.price <= maxPriceVal;

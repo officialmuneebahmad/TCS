@@ -664,8 +664,9 @@ header {
 
 .product-img {
     width: 100%;
-    height: 110px;
-    object-fit: contain;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 8px;
 }
 
@@ -1074,7 +1075,7 @@ footer {
     }
 
     .product-img {
-        height: 130px;
+        height: 180px;
     }
 
     .carousel-wrapper {
@@ -1648,7 +1649,7 @@ footer {
     }
 
     .product-img {
-        height: 110px;
+        height: 140px;
     }
 
     .product-name {
