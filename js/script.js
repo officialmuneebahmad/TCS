@@ -596,14 +596,12 @@ const productsDatabase = [
         parentCategory: "mobile",
         inStock: true,
         images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655865/pomelli_photoshoot_image_1_1_0721_ghxu4x.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655890/pomelli_photoshoot_image_1_1_0721_2_mn4xwr.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655878/pomelli_photoshoot_image_1_1_0721_1_aklk8c.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655449/301755331667_bjzh2c.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655465/201755331606_nll5qq.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784655467/f85dd0403f1773899359_bvorgt.jpg"
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968766/bbc6d5b6921775716718_j1zgwm.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968779/201756540030_ta2p11.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968782/101756540030_jxuqba.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1784968785/301756540031_s8bysj.jpg"
         ],
-        desc: "NIA S4000 Bluetooth headset with wireless and wired dual-mode connection, FM Radio, TF card playback, APP control, and 40mm HD drivers. 6–8 hour playback, 200-hour standby, 10M wireless range and 2-hour fast charge."
+        desc: "REMAX RM-703 Wired Headphones featuring 360° surround sound, digital analyzer chip for lossless audio, zero AV latency for gaming, 3-button wire control, and 1.2m comfortable lightweight design."
     },
     {
         id: 39,
@@ -684,6 +682,38 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1785237222/301755760217_hkn8hj.jpg"
         ],
         desc: "HP 65W Type-C AC Adapter Laptop Charger. Features smart PD multi-voltage output up to 20V 3.25A with built-in surge protection. Compact lightweight power supply for HP Spectre, Envy, Pavilion Type-C laptops."
+    },
+    {
+        id: 44,
+        name: "HP CENTRINO PIN CHARGER 19V 4.7A 90W (PIN 7.4X5.0)",
+        price: 1499,
+        discount: "10% OFF",
+        category: "adopters",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785289596/c37a0e4aac1775024488_ut915p.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785289606/101755759995_yaw5no.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785289619/201755759995_p98arq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785289621/301755759995_uwo95k.jpg"
+        ],
+        desc: "Standard HP Centrino Laptop Charger 19V 4.7A 90W with 7.4mm x 5.0mm pin. Durable AC adapter with standard voltage control, compatible with HP Centrino pin laptops."
+    },
+    {
+        id: 45,
+        name: "DELL 65W USB-C POWER ADAPTER LAPTOP CHARGER",
+        price: 2299,
+        discount: "5% OFF",
+        category: "adopters",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785290705/efa2812ada1775476974_fuvm2h.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785290721/101755760297_a6bnba.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785290724/201755760297_vktcmi.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1785290729/301755760438_sndvgt.jpg"
+        ],
+        desc: "Dell 65W USB-C Power Adapter Laptop Charger with smart voltage technology. Delivers 5V/3A, 9V/3A, 15V/3A or 20V/3.25A automatically. Compatible with USB-C enabled Dell laptops and tablets."
     }
 ];
 
@@ -730,7 +760,9 @@ const productSlugs = {
     40: "seagate-expansion-hdd-usb3-2-5inch-external",
     41: "hp-pavilion-blue-pin-laptop-charger-65w",
     42: "lenovo-65w-usb-c-ac-laptop-charger",
-    43: "hp-65w-type-c-ac-adapter-laptop-charger"
+    43: "hp-65w-type-c-ac-adapter-laptop-charger",
+    44: "hp-centrino-pin-laptop-charger-90w",
+    45: "dell-65w-usb-c-power-adapter-laptop-charger"
 };
 
 const categoryTitlesMap = {
@@ -746,7 +778,8 @@ const categoryTitlesMap = {
     cables: "Cables & Cord Accessories",
     adopters: "Fast Chargers & Adapters",
     mousepads: "Gaming & Office Mousepads",
-    powerbanks: "Power Banks & Portable Chargers"
+    powerbanks: "Power Banks & Portable Chargers",
+    laptopchargers: "Laptop Chargers"
 };
 
 let selectedCategory = "all";
@@ -761,17 +794,13 @@ let currentFilteredProducts = [];
 let isLoadingMore = false;
 let loadMoreObserver = null;
 
-// Restore state when user navigates back
-(function restoreStateOnBack() {
-    const navEntry = performance.getEntriesByType('navigation')[0];
-    if (navEntry && navEntry.type === 'back_forward') {
-        const saved = sessionStorage.getItem('tcs_display_limit');
-        if (saved) currentDisplayLimit = parseInt(saved, 10);
-    } else {
-        sessionStorage.removeItem('tcs_display_limit');
-        sessionStorage.removeItem('tcs_scroll_pos');
+// bfcache restore (Safari/iOS): page is restored from cache, re-trigger render
+// executeFilterAndRender will read sessionStorage and restore scroll
+window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+        filterProducts(false);
     }
-})();
+});
 
 // UI Target Component Selectors
 const homeView = document.getElementById('home-view');
@@ -1055,7 +1084,8 @@ function executeFilterAndRender() {
         const queryMatch = prod.name.toLowerCase().includes(searchQuery);
         const categoryMatch = (selectedCategory === "all") ||
             (prod.category === selectedCategory) ||
-            (prod.parentCategory === selectedCategory);
+            (prod.parentCategory === selectedCategory) ||
+            (selectedCategory === "laptopchargers" && prod.category === "adopters" && prod.parentCategory === "computer");
         const brandMatch = (selectedBrand === "all") || prod.name.toLowerCase().includes(selectedBrand);
         const stockMatch = !isStockChecked || prod.inStock;
         const priceMatch = prod.price <= maxPriceVal;
@@ -1071,21 +1101,24 @@ function executeFilterAndRender() {
 
     currentFilteredProducts = processedItems;
 
-    const navEntry = performance.getEntriesByType('navigation')[0];
-    const isBack = navEntry && navEntry.type === 'back_forward';
-    if (!isBack) {
+    // Scroll restore: if tcs_scroll_pos exists, we came back from a product page
+    const savedScroll = sessionStorage.getItem('tcs_scroll_pos');
+    const savedLimit = sessionStorage.getItem('tcs_display_limit');
+    if (savedScroll && savedLimit) {
+        currentDisplayLimit = parseInt(savedLimit, 10);
+    } else {
         currentDisplayLimit = 8;
     }
 
     renderProductsGrid(currentFilteredProducts, productsGrid);
 
-    if (isBack) {
-        const savedScroll = sessionStorage.getItem('tcs_scroll_pos');
-        if (savedScroll) {
-            requestAnimationFrame(() => window.scrollTo(0, parseInt(savedScroll, 10)));
-        }
+    if (savedScroll) {
+        const scrollTarget = parseInt(savedScroll, 10);
         sessionStorage.removeItem('tcs_display_limit');
         sessionStorage.removeItem('tcs_scroll_pos');
+        // Use multiple attempts to ensure scroll after images paint
+        setTimeout(() => window.scrollTo({ top: scrollTarget, behavior: 'instant' }), 80);
+        setTimeout(() => window.scrollTo({ top: scrollTarget, behavior: 'instant' }), 300);
     }
 }
 function renderProductsGrid(itemsList, targetGrid) {
