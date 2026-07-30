@@ -187,7 +187,7 @@
         <!-- Search Bar (visible on all sizes) -->
         <div class="search-wrapper-row">
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search tech gear..." oninput="filterProducts()"
+                <input type="text" id="search-input" placeholder="Search tech gear..." oninput="filterProducts(false)"
                     aria-label="Search Products">
                 <i class="fas fa-search"></i>
             </div>
@@ -406,7 +406,7 @@
                     <div class="filter-group">
                         <label style="font-weight: 600;">Max Price Scroller</label>
                         <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider"
-                            oninput="filterProducts()">
+                            oninput="filterProducts(false)">
                         <div class="price-labels">
                             <span>Rs. 1,000</span>
                             <span id="price-limit" style="font-weight: bold; color: var(--neon-blue);">Rs. 20,000</span>

@@ -869,8 +869,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSavedTheme();
     setupDropdownMenus();
+    setupFloatingButtons();
+    setupGoBackButton();
 });
 
+/* --- DYNAMIC FLOATING ACTION BUTTONS CONTROLLER --- */
+function setupFloatingButtons() {
+    if (!document.getElementById('floating-whatsapp-btn')) {
+        const waBtn = document.createElement('a');
+        waBtn.id = 'floating-whatsapp-btn';
+        waBtn.className = 'floating-btn-container floating-whatsapp';
+        waBtn.href = 'https://wa.me/923070655275?text=Assalam-o-Alaikum!%20The%20Computer%20Shop%20Multan,%20I%20have%20an%20inquiry.';
+        waBtn.target = '_blank';
+        waBtn.rel = 'noopener noreferrer';
+        waBtn.ariaLabel = 'Contact Us on WhatsApp';
+        waBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+        document.body.appendChild(waBtn);
+    }
+
+    if (!document.getElementById('floating-scroll-top-btn')) {
+        const scrollTopBtn = document.createElement('button');
+        scrollTopBtn.id = 'floating-scroll-top-btn';
+        scrollTopBtn.className = 'floating-btn-container floating-scroll-top';
+        scrollTopBtn.ariaLabel = 'Scroll to top';
+        scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        document.body.appendChild(scrollTopBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+    }
+}
 
 /* --- TOUCH & CLICK DROPDOWN CONTROLLER FOR MOBILE AND DESKTOP --- */
 function setupDropdownMenus() {
@@ -1029,6 +1065,27 @@ function changeCategory(category) {
 
     showHome();
     filterProducts(true);
+}
+
+function toggleFilterSidebar() {
+    const sidebar = document.getElementById('filter-sidebar');
+    const overlay = document.getElementById('filter-overlay');
+    if (sidebar) sidebar.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('show');
+}
+
+function filterProductsWithMobileClose() {
+    filterProducts(true);
+    if (window.innerWidth <= 1024) {
+        const sidebar = document.getElementById('filter-sidebar');
+        const overlay = document.getElementById('filter-overlay');
+        if (sidebar && sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+        }
+        if (overlay && overlay.classList.contains('show')) {
+            overlay.classList.remove('show');
+        }
+    }
 }
 
 function filterProducts(showLoadingAnimation = true) {
@@ -1397,15 +1454,46 @@ function shareProduct() {
     }
 }
 
+/* --- GO BACK BUTTON CONTROLLER --- */
+function setupGoBackButton() {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (breadcrumb && !document.querySelector('.btn-go-back')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'breadcrumb-bar-row';
+        breadcrumb.parentNode.insertBefore(wrapper, breadcrumb);
+        wrapper.appendChild(breadcrumb);
+        breadcrumb.style.marginBottom = '0';
+
+        const backBtn = document.createElement('button');
+        backBtn.className = 'btn-go-back';
+        backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Go Back';
+        backBtn.onclick = goBackOrHome;
+        wrapper.appendChild(backBtn);
+    }
+}
+
+function goBackOrHome() {
+    if (document.referrer && document.referrer.includes(window.location.host)) {
+        window.history.back();
+    } else {
+        const prefix = getPathPrefix();
+        window.location.href = `${prefix}index.html`;
+    }
+}
+
 // LIGHTBOX PRODUCT IMAGE ZOOM CONTROLLER
 document.addEventListener("DOMContentLoaded", () => {
     const mainImg = document.getElementById('detail-img-main');
     if (mainImg) {
         mainImg.style.cursor = 'zoom-in';
-        mainImg.addEventListener('click', () => {
-            openImageZoomLightbox(mainImg.src);
-        });
     }
+
+    document.body.addEventListener('click', (e) => {
+        const clickedImg = e.target.closest('#detail-img-main, .main-detail-img-wrapper img');
+        if (clickedImg && clickedImg.src) {
+            openImageZoomLightbox(clickedImg.src);
+        }
+    });
 });
 
 function openImageZoomLightbox(imgUrl) {
