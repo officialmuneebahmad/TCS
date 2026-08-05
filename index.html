@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNC745QS1T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNC745QS1T');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,7 +60,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
 
-    <link rel="icon" type="image/png" href="https://multantech.store/favicon.png">
 
     <!-- Schema.org Structured Data Graph -->
     <script type="application/ld+json">
@@ -81,7 +89,7 @@
           },
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://multantech.store/index.html?search={search_term_string}",
+            "target": "https://multantech.store/?search={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         },
@@ -231,7 +239,7 @@
                                     class="fas fa-mouse"></i> Mousepads</a></li>
                         <li><a href="javascript:void(0)" onclick="changeCategory('cables')"><i class="fas fa-plug"></i>
                                 Cables &amp; Power</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('laptopchargers')"><i class="fas fa-laptop"></i> Laptop Chargers</a></li>
+                        <li><a href="javascript:void(0)" id="btn-laptopchargers" onclick="changeCategory('laptopchargers')"><i class="fas fa-laptop"></i> Laptop Chargers</a></li>
                     </ul>
                 </li>
             </ul>

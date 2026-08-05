@@ -1202,7 +1202,7 @@ function renderProductsGrid(itemsList, targetGrid) {
         });
         card.innerHTML = `
                     <div>
-                        <div class="discount-badge">${item.discount}</div>
+                        ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
                         ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
                         <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
                         <div class="product-name">${item.name}</div>
@@ -1304,7 +1304,7 @@ function loadMoreProducts() {
             });
             card.innerHTML = `
                         <div>
-                            <div class="discount-badge">${item.discount}</div>
+                            ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
                             ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
                             <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
                             <div class="product-name">${item.name}</div>
@@ -1343,7 +1343,14 @@ function viewProductDetails(productId) {
     const detailPrice = document.getElementById('detail-price');
     if (detailPrice) detailPrice.innerText = `Rs. ${product.price.toLocaleString()}`;
     const detailDiscount = document.getElementById('detail-discount-tag');
-    if (detailDiscount) detailDiscount.innerText = product.discount;
+    if (detailDiscount) {
+        if (product.discount && product.discount !== 'None') {
+            detailDiscount.innerText = product.discount;
+            detailDiscount.style.display = '';
+        } else {
+            detailDiscount.style.display = 'none';
+        }
+    }
     const detailDesc = document.getElementById('detail-desc');
     if (detailDesc) detailDesc.innerText = product.desc;
 
@@ -1357,7 +1364,7 @@ function viewProductDetails(productId) {
             const thumb = document.createElement('img');
             thumb.className = `thumb-img ${index === 0 ? 'active' : ''}`;
             thumb.src = imgUrl;
-            thumb.alt = `Thumbnail ${index + 1}`;
+            thumb.alt = `${product.name} – image ${index + 1}`;
             thumb.onclick = () => {
                 document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
@@ -1367,7 +1374,9 @@ function viewProductDetails(productId) {
         });
     }
 
-    const relatedItems = productsDatabase.filter(p => p.id !== product.id).slice(0, 3);
+    const sameCatItems = productsDatabase.filter(p => p.id !== product.id && p.category === product.category);
+    const otherItems   = productsDatabase.filter(p => p.id !== product.id && p.category !== product.category);
+    const relatedItems = sameCatItems.concat(otherItems).slice(0, 3);
     if (relatedGrid) renderProductsGrid(relatedItems, relatedGrid);
 }
 
