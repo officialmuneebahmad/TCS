@@ -787,7 +787,7 @@ let selectedBrand = "all";
 let filterLoadingTimeout = null;
 let activeProductGlobal = null;
 let slideIndex = 0;
-const totalSlides = 4;
+const totalSlides = 9;
 let carouselInterval;
 let currentDisplayLimit = 8;
 let currentFilteredProducts = [];
@@ -989,6 +989,15 @@ function setupTouchSwipeGestures() {
     let touchStartX = 0;
     let touchEndX = 0;
 
+    // Pause on hover
+    carouselSection.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+    carouselSection.addEventListener('mouseleave', () => {
+        startCarouselTimer();
+    });
+
+    // Pause on touch and focus
     carouselSection.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
         clearInterval(carouselInterval);
@@ -1000,24 +1009,66 @@ function setupTouchSwipeGestures() {
         startCarouselTimer();
     }, { passive: true });
 
+    carouselSection.addEventListener('focusin', () => {
+        clearInterval(carouselInterval);
+    });
+    carouselSection.addEventListener('focusout', () => {
+        startCarouselTimer();
+    });
+
+    // Keyboard navigation when focused
+    carouselSection.tabIndex = 0; // Make focusable
+    carouselSection.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+
     function handleSwipeGesture() {
         const swipeThreshold = 40;
         if (touchStartX - touchEndX > swipeThreshold) {
-            slideIndex = (slideIndex + 1) % totalSlides;
-            updateCarouselPosition();
+            nextSlide();
         } else if (touchEndX - touchStartX > swipeThreshold) {
-            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-            updateCarouselPosition();
+            prevSlide();
         }
     }
 }
 
+// Pause on visibility change
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        clearInterval(carouselInterval);
+    } else {
+        startCarouselTimer();
+    }
+});
+
 function startCarouselTimer() {
     if (!carouselSection) return;
+    clearInterval(carouselInterval);
+    // Respect prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
     carouselInterval = setInterval(() => {
-        slideIndex = (slideIndex + 1) % totalSlides;
-        updateCarouselPosition();
+        nextSlide();
     }, 5000);
+}
+
+function prevSlide() {
+    clearInterval(carouselInterval);
+    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+    updateCarouselPosition();
+    startCarouselTimer();
+}
+
+function nextSlide() {
+    clearInterval(carouselInterval);
+    slideIndex = (slideIndex + 1) % totalSlides;
+    updateCarouselPosition();
+    startCarouselTimer();
 }
 
 function jumpToSlide(indexTarget) {
@@ -1029,7 +1080,19 @@ function jumpToSlide(indexTarget) {
 
 function updateCarouselPosition() {
     if (!carouselTrack) return;
-    carouselTrack.style.transform = `translateX(-${slideIndex * 25}%)`;
+    const offsetPercent = slideIndex * (100 / totalSlides);
+    carouselTrack.style.transform = `translateX(-${offsetPercent}%)`;
+    
+    // Update aria-hidden attributes
+    const slides = carouselTrack.querySelectorAll('.carousel-slide');
+    slides.forEach((slide, idx) => {
+        if (idx === slideIndex) {
+            slide.setAttribute('aria-hidden', 'false');
+        } else {
+            slide.setAttribute('aria-hidden', 'true');
+        }
+    });
+
     const dots = document.querySelectorAll('#carousel-dots-group .dot');
     dots.forEach((dot, idx) => {
         if (idx === slideIndex) {
@@ -1200,12 +1263,21 @@ function renderProductsGrid(itemsList, targetGrid) {
             sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
             sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
         });
+
+        const img1 = item.images[0];
+        const img2 = item.images.length > 1 ? item.images[1] : item.images[0];
+
         card.innerHTML = `
-                    <div>
+                    <div class="product-card-top">
                         ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
                         ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
-                        <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
-                        <div class="product-name">${item.name}</div>
+                        <div class="product-img-wrapper">
+                            <img src="${img1}" alt="${item.name}" class="product-img img-primary" loading="lazy" width="150" height="110">
+                            <img src="${img2}" alt="${item.name} alternate view" class="product-img img-secondary" loading="lazy" width="150" height="110">
+                        </div>
+                        <div class="product-info-wrapper">
+                            <div class="product-name">${item.name}</div>
+                        </div>
                     </div>
                     <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
                 `;
@@ -1302,12 +1374,21 @@ function loadMoreProducts() {
                 sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
                 sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
             });
+
+            const img1 = item.images[0];
+            const img2 = item.images.length > 1 ? item.images[1] : item.images[0];
+
             card.innerHTML = `
-                        <div>
+                        <div class="product-card-top">
                             ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
                             ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
-                            <img src="${item.images[0]}" alt="${item.name}" class="product-img" loading="lazy" width="150" height="110">
-                            <div class="product-name">${item.name}</div>
+                            <div class="product-img-wrapper">
+                                <img src="${img1}" alt="${item.name}" class="product-img img-primary" loading="lazy" width="150" height="110">
+                                <img src="${img2}" alt="${item.name} alternate view" class="product-img img-secondary" loading="lazy" width="150" height="110">
+                            </div>
+                            <div class="product-info-wrapper">
+                                <div class="product-name">${item.name}</div>
+                            </div>
                         </div>
                         <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
                     `;
