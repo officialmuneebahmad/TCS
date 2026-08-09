@@ -58,6 +58,13 @@
             "itemCondition": "https://schema.org/NewCondition",
             "availability": "https://schema.org/InStock",
             "url": "https://multantech.store/products/vga-cable-male-to-male-1.5m-blue.html"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "47",
+            "bestRating": "5",
+            "worstRating": "1"
           }
         },
         {
@@ -237,13 +244,19 @@
                     <i class="fas fa-share-alt"></i> Share this Product
                 </button>
                 
-                <div class="star-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>(4.8/5 Customer Feedback Matrix)</span>
+                <div class="star-rating" id="product-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <a href="#product-rating" aria-label="4.8 out of 5 stars, 47 Customer Ratings" style="display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:inherit;cursor:pointer;">
+                        <i class="fas fa-star" style="color:#f59e0b;"></i>
+                        <i class="fas fa-star" style="color:#f59e0b;"></i>
+                        <i class="fas fa-star" style="color:#f59e0b;"></i>
+                        <i class="fas fa-star" style="color:#f59e0b;"></i>
+                        <i class="fas fa-star-half-alt" style="color:#f59e0b;"></i>
+                        <span itemprop="ratingValue" content="4.8" style="font-weight:600;color:#f59e0b;">4.8</span>
+                        <span style="color:var(--text-light);">/</span>
+                        <span itemprop="bestRating" content="5" style="color:var(--text-light);">5</span>
+                        <meta itemprop="reviewCount" content="47">
+                        <span style="font-size:0.82rem;color:var(--text-light);margin-left:4px;">(47 Customer Ratings)</span>
+                    </a>
                 </div>
             </div>
         </div>
