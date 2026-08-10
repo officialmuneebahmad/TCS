@@ -646,14 +646,64 @@ header {
     .horizontal-filter-toolbar {
         flex-direction: column;
         align-items: stretch;
+        padding: 14px 16px;
+        gap: 12px;
     }
-    .toolbar-left-group,
-    .toolbar-right-group {
+
+    /* Row 1: Sort + Stock side by side */
+    .toolbar-left-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
+        gap: 10px;
     }
+
+    .toolbar-left-group .sorting-wrapper {
+        flex: 1;
+    }
+
+    .toolbar-select {
+        width: 100%;
+        font-size: 0.82rem;
+    }
+
+    .stock-toggle-label {
+        white-space: nowrap;
+        font-size: 0.82rem;
+    }
+
+    /* Row 2: Price slider full width, compact */
+    .toolbar-right-group {
+        width: 100%;
+    }
+
+    .price-scroller-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .price-label-text {
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
     .price-slider-row {
+        width: 100%;
         flex-grow: 1;
+    }
+
+    .range-slider {
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .price-labels-row {
+        margin-top: 3px;
+        font-size: 0.72rem;
     }
 }
 
@@ -1206,7 +1256,8 @@ footer {
     }
 
     .product-img-wrapper {
-        height: 230px;
+        /* Let aspect-ratio:1/1 control height — no fixed px override */
+        aspect-ratio: 1 / 1;
     }
 }
 
@@ -1769,7 +1820,8 @@ footer {
     }
 
     .product-img {
-        height: 140px;
+        /* No fixed height — let the 1/1 wrapper control it */
+        height: 100%;
     }
 
     .product-name {
