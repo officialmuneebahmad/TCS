@@ -278,6 +278,11 @@
         <!-- Desktop Navigation Bar with Dropdowns -->
         <nav class="desktop-nav">
             <ul class="desktop-nav-list">
+                <li>
+                    <button class="nav-btn home-nav-btn" id="btn-home" onclick="changeCategory('all')">
+                        <i class="fas fa-home"></i> HOME
+                    </button>
+                </li>
                 <li class="nav-dropdown">
                     <button class="nav-btn" id="btn-mobile" onclick="changeCategory('mobile')">
                         MOBILE GEAR <i class="fas fa-chevron-down dropdown-arrow"></i>
@@ -495,73 +500,98 @@
         <!-- Main Product Catalog Interface -->
         <div id="home-view">
             <div class="main-container">
-                <div class="mobile-filter-trigger" onclick="toggleFilterSidebar()">
-                    <i class="fas fa-sliders-h"></i> SHOW FILTERS & SORTING
-                </div>
-
-                <aside class="sidebar" id="filter-sidebar">
-                    <button class="sidebar-close-btn" onclick="toggleFilterSidebar()"><i
-                            class="fas fa-times"></i></button>
-                    <h3>Filters</h3>
-
-                    <div class="filter-group">
-                        <span class="sidebar-cat-label">Brands & Companies</span>
-                        <label><input type="radio" name="brand-radio" value="all" checked
-                                onchange="filterProductsWithMobileClose()"> All Brands</label>
-                        <label><input type="radio" name="brand-radio" value="apple"
-                                onchange="filterProductsWithMobileClose()"> Apple</label>
-                        <label><input type="radio" name="brand-radio" value="samsung"
-                                onchange="filterProductsWithMobileClose()"> Samsung</label>
-                        <label><input type="radio" name="brand-radio" value="xiaomi"
-                                onchange="filterProductsWithMobileClose()"> Xiaomi</label>
-                        <label><input type="radio" name="brand-radio" value="logitech"
-                                onchange="filterProductsWithMobileClose()"> Logitech</label>
-                        <label><input type="radio" name="brand-radio" value="xtrike me"
-                                onchange="filterProductsWithMobileClose()"> Xtrike Me</label>
-                        <label><input type="radio" name="brand-radio" value="razer"
-                                onchange="filterProductsWithMobileClose()"> Razer</label>
-                        <label><input type="radio" name="brand-radio" value="remax"
-                                onchange="filterProductsWithMobileClose()"> Remax</label>
-                        <label><input type="radio" name="brand-radio" value="speedx"
-                                onchange="filterProductsWithMobileClose()"> SpeedX</label>
-                        <label><input type="radio" name="brand-radio" value="lenovo"
-                                onchange="filterProductsWithMobileClose()"> Lenovo</label>
-                        <label><input type="radio" name="brand-radio" value="romoss"
-                                onchange="filterProductsWithMobileClose()"> Romoss</label>
-                        <label><input type="radio" name="brand-radio" value="onikuma"
-                                onchange="filterProductsWithMobileClose()"> Onikuma</label>
-                        <label><input type="radio" name="brand-radio" value="gionee"
-                                onchange="filterProductsWithMobileClose()"> Gionee</label>
-                        <label><input type="radio" name="brand-radio" value="nia"
-                                onchange="filterProductsWithMobileClose()"> NIA</label>
-                    </div>
-
-                    <div class="filter-group">
-                        <span class="sidebar-cat-label">Sorting</span>
-                        <label><input type="radio" name="sort" value="default" checked
-                                onchange="filterProductsWithMobileClose()"> Default Sorting</label>
-                        <label><input type="radio" name="sort" value="low-high"
-                                onchange="filterProductsWithMobileClose()"> Price: Low to High</label>
-                        <label><input type="radio" name="sort" value="high-low"
-                                onchange="filterProductsWithMobileClose()"> Price: High to Low</label>
-                    </div>
-
-                    <div class="filter-group">
-                        <label><input type="checkbox" id="stock-filter" onchange="filterProductsWithMobileClose()">
-                            Available in Stock</label>
-                    </div>
-
-                    <div class="filter-group">
-                        <label style="font-weight: 600;">Max Price Scroller</label>
-                        <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider"
-                            oninput="filterProducts(false)">
-                        <div class="price-labels">
-                            <span>Rs. 1,000</span>
-                            <span id="price-limit" style="font-weight: bold; color: var(--neon-blue);">Rs. 20,000</span>
+                <!-- Brand logo selection row (placed above Premium Computer Accessories in Multan) -->
+                <div class="brands-logo-container">
+                    <div class="brand-item active" data-brand="all">
+                        <div class="brand-logo-circle brand-all">
+                            <i class="fas fa-th-large"></i>
                         </div>
+                        <span class="brand-name">All Brands</span>
                     </div>
-                </aside>
-
+                    <div class="brand-item" data-brand="apple">
+                        <div class="brand-logo-circle brand-img-circle">
+                            <img src="https://cdn.simpleicons.org/apple/000000"
+                                alt="Apple logo" loading="lazy">
+                        </div>
+                        <span class="brand-name">Apple</span>
+                    </div>
+                    <div class="brand-item" data-brand="samsung">
+                        <div class="brand-logo-circle brand-img-circle">
+                            <img src="https://cdn.simpleicons.org/samsung/1428A0"
+                                alt="Samsung logo" loading="lazy">
+                        </div>
+                        <span class="brand-name">Samsung</span>
+                    </div>
+                    <div class="brand-item" data-brand="xiaomi">
+                        <div class="brand-logo-circle brand-img-circle">
+                            <img src="https://cdn.simpleicons.org/xiaomi/FF6900"
+                                alt="Xiaomi logo" loading="lazy">
+                        </div>
+                        <span class="brand-name">Xiaomi</span>
+                    </div>
+                    <div class="brand-item" data-brand="logitech">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#ffffff; color:#000000; font-size:0.55rem; font-weight:900; letter-spacing:-0.3px;">
+                            LOGI<br>TECH
+                        </div>
+                        <span class="brand-name">Logitech</span>
+                    </div>
+                    <div class="brand-item" data-brand="xtrike me">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#1a1a2e; color:#e94560; font-size:0.55rem; font-weight:800; letter-spacing:-0.5px;">
+                            XTRIKE ME
+                        </div>
+                        <span class="brand-name">Xtrike Me</span>
+                    </div>
+                    <div class="brand-item" data-brand="razer">
+                        <div class="brand-logo-circle brand-img-circle">
+                            <img src="https://cdn.simpleicons.org/razer/44D62C"
+                                alt="Razer logo" loading="lazy">
+                        </div>
+                        <span class="brand-name">Razer</span>
+                    </div>
+                    <div class="brand-item" data-brand="remax">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#c8001a; color:#fff; font-size:0.75rem; font-weight:800; letter-spacing:0px;">
+                            REMAX
+                        </div>
+                        <span class="brand-name">Remax</span>
+                    </div>
+                    <div class="brand-item" data-brand="speedx">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#003087; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:-0.5px;">
+                            SPEEDX
+                        </div>
+                        <span class="brand-name">SpeedX</span>
+                    </div>
+                    <div class="brand-item" data-brand="lenovo">
+                        <div class="brand-logo-circle brand-img-circle">
+                            <img src="https://cdn.simpleicons.org/lenovo/E2231A"
+                                alt="Lenovo logo" loading="lazy">
+                        </div>
+                        <span class="brand-name">Lenovo</span>
+                    </div>
+                    <div class="brand-item" data-brand="romoss">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#00539b; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:-0.5px;">
+                            ROMOSS
+                        </div>
+                        <span class="brand-name">Romoss</span>
+                    </div>
+                    <div class="brand-item" data-brand="onikuma">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#e00000; color:#fff; font-size:0.6rem; font-weight:800; letter-spacing:-0.5px;">
+                            ONIKUMA
+                        </div>
+                        <span class="brand-name">Onikuma</span>
+                    </div>
+                    <div class="brand-item" data-brand="gionee">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#0070c0; color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:0px;">
+                            GIONEE
+                        </div>
+                        <span class="brand-name">Gionee</span>
+                    </div>
+                    <div class="brand-item" data-brand="nia">
+                        <div class="brand-logo-circle brand-text-logo" style="background:#f7b500; color:#000; font-size:1rem; font-weight:900; letter-spacing:1px;">
+                            NIA
+                        </div>
+                        <span class="brand-name">NIA</span>
+                    </div>
+                </div>
 
                 <div class="main-content">
                     <section class="products-area">
@@ -570,6 +600,38 @@
                             style="text-align: center; color: var(--text-light); margin-bottom: 25px; font-size: 0.95rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                             Welcome to The Computer Shop Multan, your trusted local destination for authentic <strong>computer accessories in Multan</strong>. We source 100% genuine tech gear directly from global manufacturers to ensure premium performance and reliability.
                         </p>
+
+                        <!-- Modern Horizontal Toolbar above products grid -->
+                        <div class="horizontal-filter-toolbar">
+                            <div class="toolbar-left-group">
+                                <div class="sorting-wrapper">
+                                    <label for="sorting-select" class="sr-only">Sort Products</label>
+                                    <select id="sorting-select" class="toolbar-select" onchange="filterProducts(false)">
+                                        <option value="default">Default Sorting</option>
+                                        <option value="low-high">Price: Low to High</option>
+                                        <option value="high-low">Price: High to Low</option>
+                                    </select>
+                                </div>
+                                <div class="stock-wrapper">
+                                    <label class="stock-toggle-label">
+                                        <input type="checkbox" id="stock-filter" onchange="filterProducts(false)">
+                                        <span>Available in Stock</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="toolbar-right-group">
+                                <div class="price-scroller-wrapper">
+                                    <span class="price-label-text">Max Price Scroller</span>
+                                    <div class="price-slider-row">
+                                        <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts(false)">
+                                        <div class="price-labels-row">
+                                            <span>Rs. 1,000</span>
+                                            <span id="price-limit">Rs. 20,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <h2 class="section-title" id="grid-title"
                             style="font-size: 1.5rem; margin-bottom: 20px; margin-top: 30px;">Top Selling Products</h2>
