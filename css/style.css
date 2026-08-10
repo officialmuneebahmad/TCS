@@ -1175,8 +1175,15 @@ footer {
 }
 
 .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-size: 0.88rem;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 4px 0;
 }
 
 .footer-links a:hover {
@@ -1193,12 +1200,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: var(--transition);
 }
 
@@ -1717,6 +1724,7 @@ footer {
     cursor: pointer;
     transition: var(--transition);
     user-select: none;
+    min-height: 48px;
 }
 
 .accordion-header:hover {
@@ -1766,6 +1774,7 @@ footer {
     transition: var(--transition);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    min-height: 48px;
 }
 
 .accordion-sub-menu li a i {
@@ -2049,7 +2058,7 @@ footer {
 /* FAQ accordion */
 .faq-list { display: flex; flex-direction: column; gap: 10px; }
 .faq-item-detail { border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; }
-.faq-question { width: 100%; background: var(--bg-surface); border: none; text-align: left; padding: 14px 18px; font-size: 0.93rem; font-weight: 600; cursor: pointer; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Poppins', sans-serif; transition: var(--transition); }
+.faq-question { width: 100%; background: var(--bg-surface); border: none; text-align: left; padding: 14px 18px; font-size: 0.93rem; font-weight: 600; cursor: pointer; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Poppins', sans-serif; transition: var(--transition); min-height: 48px; }
 .faq-question:hover { background: var(--bg-input); color: var(--neon-blue); }
 .faq-question i { font-size: 0.8rem; transition: transform 0.3s ease; flex-shrink: 0; }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: var(--bg-input); }
@@ -2060,7 +2069,7 @@ footer {
 .image-lightbox-overlay.active { opacity: 1; visibility: visible; }
 .lightbox-img-container { position: relative; max-width: 90vw; max-height: 90vh; }
 .lightbox-zoomed-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.lightbox-close-btn { position: absolute; top: -14px; right: -14px; background: var(--neon-blue); color: #000; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 1.1rem; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: var(--transition); z-index: 10000; }
+.lightbox-close-btn { position: absolute; top: -14px; right: -14px; background: var(--neon-blue); color: #000; border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 1.1rem; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: var(--transition); z-index: 10000; }
 .lightbox-close-btn:hover { background: var(--primary-blue); color: #fff; transform: scale(1.1); }
 
 /* BREADCRUMB ROW & GO BACK BUTTON */
