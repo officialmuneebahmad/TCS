@@ -283,9 +283,9 @@
         <nav class="desktop-nav">
             <ul class="desktop-nav-list">
                 <li>
-                    <button class="nav-btn home-nav-btn" id="btn-home" onclick="changeCategory('all')">
+                    <a href="/" class="nav-btn home-nav-btn" id="btn-home" onclick="event.preventDefault(); changeCategory('all')">
                         <i class="fas fa-home"></i> HOME
-                    </button>
+                    </a>
                 </li>
                 <li class="nav-dropdown">
                     <button class="nav-btn" id="btn-mobile" onclick="changeCategory('mobile')">
@@ -351,7 +351,7 @@
             <button class="drawer-close-btn" onclick="toggleNavMenu()" aria-label="Close Navigation Menu"><i
                     class="fas fa-times"></i></button>
             <ul class="nav-menu">
-                <li><button class="nav-btn active" id="mobile-btn-home" onclick="changeCategory('all')">HOME</button>
+                <li><a href="/" class="nav-btn active" id="mobile-btn-home" style="display:block; text-align:left;" onclick="event.preventDefault(); changeCategory('all')">HOME</a>
                 </li>
 
                 <li class="drawer-accordion">
@@ -786,10 +786,23 @@
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="faqs.html">FAQs</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                     <li><a href="ToC.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Guides & Blogs</h3>
+                <ul class="footer-links">
+                    <li><a href="blog/gaming-mouse-buying-guide.html">Gaming Mouse Guide</a></li>
+                    <li><a href="blog/fast-charger-buying-guide.html">Fast Charger Guide</a></li>
+                    <li><a href="blog/best-computer-accessories-in-multan.html">Best PC Accessories</a></li>
+                    <li><a href="blog/usb-hub-buying-guide.html">USB Hub Guide</a></li>
+                    <li><a href="blog/hdmi-cable-buying-guide.html">HDMI Cable Guide</a></li>
+                    <li><a href="blog/best-mobile-accessories-in-pakistan.html">Best Mobile Gear</a></li>
                 </ul>
             </div>
 
