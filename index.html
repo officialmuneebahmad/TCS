@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNC745QS1T"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XNC745QS1T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -55,7 +55,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -240,6 +240,10 @@
       ]
     }
     </script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="5O22XRLda0SzKn0rdYxm4g" async></script>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
 
 <body>
@@ -288,17 +292,17 @@
                         MOBILE GEAR <i class="fas fa-chevron-down dropdown-arrow"></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)" onclick="changeCategory('adopters')"><i
+                        <li><a href="?category=adopters" onclick="event.preventDefault(); changeCategory('adopters')" ><i
                                     class="fas fa-charging-station"></i> Adopters</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('cables')"><i class="fas fa-plug"></i>
+                        <li><a href="?category=cables" onclick="event.preventDefault(); changeCategory('cables')" ><i class="fas fa-plug"></i>
                                 Charging Cables</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('airbuds')"><i
+                        <li><a href="?category=airbuds" onclick="event.preventDefault(); changeCategory('airbuds')" ><i
                                     class="fas fa-headphones-alt"></i> Airbuds</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('powerbanks')"><i
+                        <li><a href="?category=powerbanks" onclick="event.preventDefault(); changeCategory('powerbanks')" ><i
                                     class="fas fa-battery-full"></i> Powerbanks</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('handfrees')"><i
+                        <li><a href="?category=handfrees" onclick="event.preventDefault(); changeCategory('handfrees')" ><i
                                     class="fas fa-headphones"></i> Handsfree</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('smartwatches')"><i
+                        <li><a href="?category=smartwatches" onclick="event.preventDefault(); changeCategory('smartwatches')" ><i
                                     class="fas fa-stopwatch"></i> Smartwatches</a></li>
                     </ul>
                 </li>
@@ -308,15 +312,15 @@
                         COMPUTER GEAR <i class="fas fa-chevron-down dropdown-arrow"></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)" onclick="changeCategory('networking')"><i
+                        <li><a href="?category=networking" onclick="event.preventDefault(); changeCategory('networking')" ><i
                                     class="fas fa-network-wired"></i> Networking</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('headsets')"><i
+                        <li><a href="?category=headsets" onclick="event.preventDefault(); changeCategory('headsets')" ><i
                                     class="fas fa-headset"></i> Headsets</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('keyboards')"><i
+                        <li><a href="?category=keyboards" onclick="event.preventDefault(); changeCategory('keyboards')" ><i
                                     class="fas fa-keyboard"></i> Keyboards</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('mousepads')"><i
+                        <li><a href="?category=mousepads" onclick="event.preventDefault(); changeCategory('mousepads')" ><i
                                     class="fas fa-mouse"></i> Mousepads</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('cables')"><i class="fas fa-plug"></i>
+                        <li><a href="?category=cables" onclick="event.preventDefault(); changeCategory('cables')" ><i class="fas fa-plug"></i>
                                 Cables &amp; Power</a></li>
                         <li><a href="javascript:void(0)" id="btn-laptopchargers" onclick="changeCategory('laptopchargers')"><i class="fas fa-laptop"></i> Laptop Chargers</a></li>
                     </ul>
@@ -356,19 +360,19 @@
                         &nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-down accordion-icon"></i>
                     </div>
                     <ul class="accordion-sub-menu">
-                        <li><a href="javascript:void(0)" onclick="changeCategory('mobile')"><i
+                        <li><a href="?category=mobile" onclick="event.preventDefault(); changeCategory('mobile')" ><i
                                     class="fas fa-mobile-alt"></i> All Mobile Gear</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('adopters')"><i
+                        <li><a href="?category=adopters" onclick="event.preventDefault(); changeCategory('adopters')" ><i
                                     class="fas fa-charging-station"></i> 1. Adopters</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('cables')"><i class="fas fa-plug"></i>
+                        <li><a href="?category=cables" onclick="event.preventDefault(); changeCategory('cables')" ><i class="fas fa-plug"></i>
                                 2. Charging Cables</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('airbuds')"><i
+                        <li><a href="?category=airbuds" onclick="event.preventDefault(); changeCategory('airbuds')" ><i
                                     class="fas fa-headphones-alt"></i> 3. Airbuds</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('powerbanks')"><i
+                        <li><a href="?category=powerbanks" onclick="event.preventDefault(); changeCategory('powerbanks')" ><i
                                     class="fas fa-battery-full"></i> 4. Powerbanks</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('handfrees')"><i
+                        <li><a href="?category=handfrees" onclick="event.preventDefault(); changeCategory('handfrees')" ><i
                                     class="fas fa-headphones"></i> 5. Handsfree</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('smartwatches')"><i
+                        <li><a href="?category=smartwatches" onclick="event.preventDefault(); changeCategory('smartwatches')" ><i
                                     class="fas fa-stopwatch"></i> 6. Smartwatches</a></li>
                     </ul>
                 </li>
@@ -379,19 +383,19 @@
                         &nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-down accordion-icon"></i>
                     </div>
                     <ul class="accordion-sub-menu">
-                        <li><a href="javascript:void(0)" onclick="changeCategory('computer')"><i
+                        <li><a href="?category=computer" onclick="event.preventDefault(); changeCategory('computer')" ><i
                                     class="fas fa-desktop"></i> All Computer Gear</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('networking')"><i
+                        <li><a href="?category=networking" onclick="event.preventDefault(); changeCategory('networking')" ><i
                                     class="fas fa-network-wired"></i> 1. Networking</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('headsets')"><i
+                        <li><a href="?category=headsets" onclick="event.preventDefault(); changeCategory('headsets')" ><i
                                     class="fas fa-headset"></i> 2. Headsets</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('keyboards')"><i
+                        <li><a href="?category=keyboards" onclick="event.preventDefault(); changeCategory('keyboards')" ><i
                                     class="fas fa-keyboard"></i> 3. Keyboards</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('mousepads')"><i
+                        <li><a href="?category=mousepads" onclick="event.preventDefault(); changeCategory('mousepads')" ><i
                                     class="fas fa-mouse"></i> 4. Mousepads</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('cables')"><i class="fas fa-plug"></i>
+                        <li><a href="?category=cables" onclick="event.preventDefault(); changeCategory('cables')" ><i class="fas fa-plug"></i>
                                 5. Cables & Power</a></li>
-                        <li><a href="javascript:void(0)" onclick="changeCategory('laptopchargers')"><i class="fas fa-laptop"></i> 6. Laptop Chargers</a></li>
+                        <li><a href="?category=laptopchargers" onclick="event.preventDefault(); changeCategory('laptopchargers')" ><i class="fas fa-laptop"></i> 6. Laptop Chargers</a></li>
                     </ul>
                 </li>
 
@@ -415,64 +419,64 @@
                     </a>
                 </div>
                 <!-- Slide 2 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 9" aria-hidden="true">
-                    <a href="index.html?category=powerbanks">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 9" aria-hidden="true" inert>
+                    <a href="index.html?category=powerbanks" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245230/Power_bank_promotional_web_banner_202608090735_mqwl7p.jpg"
                              alt="Portable power bank for mobiles and laptops — The Computer Shop Multan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 3 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 9" aria-hidden="true">
-                    <a href="products/logitech-mouse-pad-big.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 9" aria-hidden="true" inert>
+                    <a href="products/logitech-mouse-pad-big.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245220/Logitech_mouse_pad_web_banner_202608090809_fo9d8c.jpg"
                              alt="Logitech mouse pad — computer accessories Multan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 4 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 9" aria-hidden="true">
-                    <a href="index.html?category=smartwatches">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 9" aria-hidden="true" inert>
+                    <a href="index.html?category=smartwatches" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245231/Smart_watch_product_banner_design_202608090728_ijqt30.jpg"
                              alt="Smart watch with fitness tracking — buy online in Multan, Pakistan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 5 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 9" aria-hidden="true">
-                    <a href="products/hp-pavilion-blue-pin-laptop-charger-65w.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 9" aria-hidden="true" inert>
+                    <a href="products/hp-pavilion-blue-pin-laptop-charger-65w.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245223/HP_laptop_charger_banner_layout_202608090724_ychxr2.jpg"
                              alt="HP laptop charger — original replacement charger Multan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 6 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="6 of 9" aria-hidden="true">
-                    <a href="products/xtrike-me-gh-509-gaming-headset.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="6 of 9" aria-hidden="true" inert>
+                    <a href="products/xtrike-me-gh-509-gaming-headset.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245220/Gaming_headset_banner_design_layout_202608090810_jx3kde.jpg"
                              alt="Gaming headset with mic — The Computer Shop Multan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 7 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="7 of 9" aria-hidden="true">
-                    <a href="products/xtrike-me-kb-512-bk-keyboard.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="7 of 9" aria-hidden="true" inert>
+                    <a href="products/xtrike-me-kb-512-bk-keyboard.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245216/Keyboard_banner_design_specs_2K_202608090753_r11zxw.jpg"
                              alt="Gaming and office keyboard — computer accessories store Multan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 8 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="8 of 9" aria-hidden="true">
-                    <a href="products/lenovo-lecoo-ew301-tws-wireless-earbuds.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="8 of 9" aria-hidden="true" inert>
+                    <a href="products/lenovo-lecoo-ew301-tws-wireless-earbuds.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245211/Lenovo_wireless_earbuds_banner_d__202608090719_dvsvme.jpg"
                              alt="Lenovo wireless earbuds — buy online Multan Pakistan"
                              width="1200" height="400" loading="lazy">
                     </a>
                 </div>
                 <!-- Slide 9 -->
-                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="9 of 9" aria-hidden="true">
-                    <a href="products/xtrike-me-gh-513w-tri-mode-headset.html">
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="9 of 9" aria-hidden="true" inert>
+                    <a href="products/xtrike-me-gh-513w-tri-mode-headset.html" tabindex="-1">
                         <img src="https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto,w_1200/v1786245210/Xtrike_Me_wireless_headset_banner_202608090749_1_yff2zh.jpg"
                              alt="Xtrike Me wireless headset — audio accessories Multan"
                              width="1200" height="400" loading="lazy">
@@ -621,9 +625,9 @@
                             </div>
                             <div class="toolbar-right-group">
                                 <div class="price-scroller-wrapper">
-                                    <span class="price-label-text">Max Price Scroller</span>
+                                    <label class="price-label-text" for="price-slider">Max Price Scroller</label>
                                     <div class="price-slider-row">
-                                        <input type="range" id="price-slider" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts(false)">
+                                        <input type="range" id="price-slider" aria-label="Max Price Scroller" min="1000" max="20000" value="20000" class="range-slider" oninput="filterProducts(false)">
                                         <div class="price-labels-row">
                                             <span>Rs. 1,000</span>
                                             <span id="price-limit">Rs. 20,000</span>

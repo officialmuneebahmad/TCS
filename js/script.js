@@ -1100,13 +1100,18 @@ function updateCarouselPosition() {
     const offsetPercent = slideIndex * (100 / totalSlides);
     carouselTrack.style.transform = `translateX(-${offsetPercent}%)`;
     
-    // Update aria-hidden attributes
+    // Update aria-hidden attributes and tabindex
     const slides = carouselTrack.querySelectorAll('.carousel-slide');
     slides.forEach((slide, idx) => {
+        const link = slide.querySelector('a');
         if (idx === slideIndex) {
             slide.setAttribute('aria-hidden', 'false');
+            slide.removeAttribute('inert');
+            if(link) link.setAttribute('tabindex', '0');
         } else {
             slide.setAttribute('aria-hidden', 'true');
+            slide.setAttribute('inert', '');
+            if(link) link.setAttribute('tabindex', '-1');
         }
     });
 
@@ -1180,19 +1185,21 @@ function filterProducts(showLoadingAnimation = true) {
         filterLoadingTimeout = setTimeout(() => {
             fullscreenOverlay.style.display = 'none';
             document.body.style.overflow = '';
-            executeFilterAndRender();
+                        executeFilterAndRender();
 
-            // Smooth auto-scroll down to products section
-            const gridTitle = document.getElementById('grid-title');
-            if (gridTitle) {
-                const headerOffset = 90;
-                const elementPosition = gridTitle.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            // Use requestAnimationFrame to avoid forced synchronous layout
+            requestAnimationFrame(() => {
+                const gridTitle = document.getElementById('grid-title');
+                if (gridTitle) {
+                    const headerOffset = 90;
+                    const elementPosition = gridTitle.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         }, 2000);
     } else {
         if (fullscreenOverlay) fullscreenOverlay.style.display = 'none';

@@ -402,13 +402,15 @@ header {
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
+    margin: 10px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.4);
     transition: var(--transition);
     cursor: pointer;
-    border: none;
+    border: 16px solid transparent;
+    background-clip: padding-box;
     position: relative;
 }
 
@@ -527,12 +529,11 @@ header {
 }
 
 .brand-name {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #111111;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    transition: var(--transition);
 }
 
 .brand-item:hover .brand-logo-circle,
@@ -2191,4 +2192,15 @@ footer {
 .floating-scroll-top:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 20px rgba(0, 157, 255, 0.5);
+}
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+  font-display: swap;
 }
