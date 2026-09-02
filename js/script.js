@@ -61,7 +61,7 @@ const productsDatabase = [
         discount: "20% OFF",
         category: "adopters",
         parentCategory: "mobile",
-        inStock: true,
+        inStock: false,
         alt: "Samsung 45W EU Pin PD Super Fast Charger — original smartphone charger Multan",
         images: [
             "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto/v1786295884/Samsung_fast_charger_product_photo_202608092153_gbnsaw.jpg",
@@ -1616,14 +1616,14 @@ function setupGoBackButton() {
         const wrapper = document.createElement('div');
         wrapper.className = 'breadcrumb-bar-row';
         breadcrumb.parentNode.insertBefore(wrapper, breadcrumb);
-        wrapper.appendChild(breadcrumb);
-        breadcrumb.style.marginBottom = '0';
-
         const backBtn = document.createElement('button');
         backBtn.className = 'btn-go-back';
         backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Go Back';
         backBtn.onclick = goBackOrHome;
         wrapper.appendChild(backBtn);
+
+        wrapper.appendChild(breadcrumb);
+        breadcrumb.style.marginBottom = '0';
     }
 }
 
