@@ -1307,10 +1307,50 @@ function renderProductsGrid(itemsList, targetGrid) {
         targetGrid.appendChild(card);
     });
 
+    // Inject JSON-LD Schema
+    injectProductSchema(displayItems, prefix);
+
     if (isMainGrid) {
         updateLoadMoreUI(displayItems.length, itemsList.length);
         setupIntersectionObserver();
     }
+}
+
+function injectProductSchema(products, prefix) {
+    const oldScript = document.getElementById('dynamic-product-schema');
+    if (oldScript) {
+        oldScript.remove();
+    }
+
+    if (products.length === 0) return;
+
+    const schemaData = {
+        "@context": "https://schema.org/",
+        "@graph": products.map(item => ({
+            "@type": "Product",
+            "name": item.name,
+            "image": item.images[0],
+            "description": item.desc || item.name,
+            "sku": item.id.toString(),
+            "brand": {
+                "@type": "Brand",
+                "name": item.name.split(' ')[0]
+            },
+            "offers": {
+                "@type": "Offer",
+                "url": `${window.location.origin}${prefix}products/${productSlugs[item.id]}.html`,
+                "priceCurrency": "PKR",
+                "price": item.price,
+                "availability": item.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+            }
+        }))
+    };
+
+    const script = document.createElement('script');
+    script.id = 'dynamic-product-schema';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
 }
 
 function updateLoadMoreUI(shown, total) {
