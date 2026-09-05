@@ -692,18 +692,18 @@ const productsDatabase = [
     {
         id: 44,
         name: "HP CENTRINO PIN CHARGER 19V 4.7A 90W (PIN 7.4X5.0)",
-        price: 1499,
-        discount: "10% OFF",
-        category: "adopters",
+        price: 1299,
+        discount: "5% OFF",
+        category: "laptopchargers",
         parentCategory: "computer",
         inStock: true,
         images: [
-            "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto//c37a0e4aac1775024488_ut915p.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto//101755759995_yaw5no.jpg",
-            "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto//201755759995_p98arq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788623364/101755759995_nqssle.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788623365/c37a0e4aac1775024488_dlrepl.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788623383/201755759995_bxxlox.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto//301755759995_uwo95k.jpg"
         ],
-        desc: "Standard HP Centrino Laptop Charger 19V 4.7A 90W with 7.4mm x 5.0mm pin. Durable AC adapter with standard voltage control, compatible with HP Centrino pin laptops."
+        desc: "This is a standard HP Centrino Laptop charger. Compatible with all the HP laptops with Centrino pin. Durable charger with standard output and input voltage."
     },
     {
         id: 45,
@@ -720,6 +720,86 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/f_auto,q_auto//301755760438_sndvgt.jpg"
         ],
         desc: "Dell 65W USB-C Power Adapter Laptop Charger with smart voltage technology. Delivers 5V/3A, 9V/3A, 15V/3A or 20V/3.25A automatically. Compatible with USB-C enabled Dell laptops and tablets."
+    },
+    {
+        id: 46,
+        name: "HP SLEEKBOOK LAPTOP CHARGER 19.5V 3.33A (PIN4.8*1.7)",
+        price: 1299,
+        discount: "5% OFF",
+        category: "laptopchargers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788616379/201755759942_tfvbbc.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788616407/301755759942_yhtwwj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788616373/101755759942_yfkbkt.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788616336/4e17f4f29d1775024364_dz0zvv.jpg"
+        ],
+        desc: "This is a standard HP Sleekbook Laptop charger. Features a durable charger with standard output and input voltage. Specifications/Compatibility: Voltage: 19.5V, Ampere: 3.33A, Watts: 65W."
+    },
+    {
+        id: 47,
+        name: "DELL LAPTOP CHARGER 19V 4.62A 90W (NEW PIN)",
+        price: 1699,
+        discount: "7% OFF",
+        category: "laptopchargers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788627164/301755760556_zuyig4.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788627190/101755760555_wricl3.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788627269/Screenshot_2025-11-21_203643_IKsG1sCmi_slobfc.avif",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788627164/301755760556_zuyig4.jpg"
+        ],
+        desc: "Dell Laptop Charger 19.5V 4.62A 90W. Standard input/output Dell slim charger with New Pin (4.5x3.0mm). Compatible with Dell Inspiron, Latitude, Vostro, and XPS series laptops."
+    },
+    {
+        id: 48,
+        name: "DELL LAPTOP CHARGER 19V 4.62A SLIM CHARGER (FAT PIN) 90W (PIN 7.4X5.0)",
+        price: 1599,
+        discount: "7% OFF",
+        category: "laptopchargers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629214/22961ad3f31775477862_us0buj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629208/1a155e2e1801755760507_iazip9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629216/2a155e2e1801755760507_px6c9b.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629214/22961ad3f31775477862_us0buj.jpg"
+        ],
+        desc: "Dell Laptop Charger (FAT PIN) 19V 4.62A. This is a standard input output Dell slim charger with 7.4x5.0mm pin. Durable charger with standard output and input voltage."
+    },
+    {
+        id: 49,
+        name: "APPLE 45W MAGSAFE 2 (T SHAPE) MACBOOK PRO LAPTOP CHARGER",
+        price: 3100,
+        discount: "10% OFF",
+        category: "laptopchargers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629587/708095efe11775479758_irnd5o.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629596/201755760921_ic84ej.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629655/301755760922_npnl4x.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788629587/708095efe11775479758_irnd5o.jpg"
+        ],
+        desc: "APPLE 45W MAGSAFE 2 Power adapter for MacBook models, featuring a magnetic DC connector, LED indicator, and neat cable management. Compatible with MacBook Air models (mid-2012 to early 2015)."
+    },
+    {
+        id: 50,
+        name: "XTRIKE ME HT-5050-B3 BLUETOOTH V4.2 RGB LED STRIP WITH APP CONTROL",
+        price: 1799,
+        discount: "3% OFF",
+        category: "gamingaccessories",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788630634/301756207217_vdalp8.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788630651/201756207217_p8i4c1.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788630644/101756207217_ckc7sn.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788630675/5bff1b197e1775551715_rlty4v.jpg"
+        ],
+        desc: "Xtrike Me 3M RGB LED Strip (HT-5050-B3). Enhance your gaming setup with dynamic USB-powered RGB lighting, 3-meter length, and Bluetooth app control from your smartphone."
     }
 ];
 
@@ -768,7 +848,12 @@ const productSlugs = {
     42: "lenovo-65w-usb-c-ac-laptop-charger",
     43: "hp-65w-type-c-ac-adapter-laptop-charger",
     44: "hp-centrino-pin-laptop-charger-90w",
-    45: "dell-65w-usb-c-power-adapter-laptop-charger"
+    45: "dell-65w-usb-c-power-adapter-laptop-charger",
+    46: "hp-sleekbook-laptop-charger-19.5v-3.33a",
+    47: "dell-laptop-charger-19.5v-4.62a-90w-new-pin",
+    48: "dell-laptop-charger-19v-4.62a-fat-pin-90w",
+    49: "apple-45w-magsafe-2-t-shape-macbook-charger",
+    50: "xtrike-me-ht-5050-b3-rgb-led-strip-app-control"
 };
 
 const categoryTitlesMap = {
@@ -785,7 +870,8 @@ const categoryTitlesMap = {
     adopters: "Fast Chargers & Adapters",
     mousepads: "Gaming & Office Mousepads",
     powerbanks: "Power Banks & Portable Chargers",
-    laptopchargers: "Laptop Chargers"
+    laptopchargers: "Laptop Chargers",
+    gamingaccessories: "Gaming Accessories"
 };
 
 let selectedCategory = "all";
