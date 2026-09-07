@@ -928,6 +928,69 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808170/301755519243_dtyqeg.jpg"
         ],
         desc: "JBL Flip6 Max Multifunction Bluetooth Speaker Subwoofer. Features a 2000mAh battery, waterproof design, Bluetooth 5.0, and massive 50W PMPO stereo sound."
+    },
+    {
+        id: 59,
+        name: "XTRIKE ME GM502 RGB WIRED GAMING MOUSE 12800 DPI",
+        price: 3500,
+        discount: "3% OFF",
+        category: "peripherals",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808571/04888497e41785326116_w1vgbw.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808582/204888497e41785324691_e1cqqh.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808585/104888497e41785324691_lebxs9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808588/304888497e41785324691_p3njtj.jpg"
+        ],
+        desc: "Xtrike Me GM502 RGB Wired Gaming Mouse. Features high-performance 12800 DPI optical sensor, ultra-fast 1000Hz polling rate, customizable RGB lighting, and programmable buttons."
+    },
+    {
+        id: 60,
+        name: "XTRIKE ME GM-323 RGB 12800 DPI WIRED GAMING MOUSE WITH 8 PROGRAMMABLE BUTTONS",
+        price: 2500,
+        discount: "12% OFF",
+        category: "peripherals",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808814/645b677a781774614559_sdlrcg.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808831/1645b677a781774614559_sjckt7.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808828/2645b677a781774614559_cs4xws.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808834/3645b677a781774614559_iagcdw.jpg"
+        ],
+        desc: "Xtrike Me GM-323 RGB Wired Gaming Mouse. Features high-precision 12800 DPI optical sensor, 8 programmable buttons, lightweight 69g design, and vibrant RGB backlighting."
+    },
+    {
+        id: 61,
+        name: "HP S5000 BLUETOOTH AND WIRELESS 2.4GHZ MOUSE",
+        price: 1000,
+        discount: "5% OFF",
+        category: "peripherals",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809046/852cf5a5201774615704_gqfuya.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809058/3852cf5a5201774615704_uipgdb.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809054/101755685726_jy0yur.jpg"
+        ],
+        desc: "HP S5000 Bluetooth and Wireless 2.4GHz Mouse. Features dual connectivity, 4-button configuration with DPI adjustment, compact design, and wide compatibility."
+    },
+    {
+        id: 62,
+        name: "DELL WIRELESS MOUSE WM428 HIGH COPY",
+        price: 1000,
+        discount: "5% OFF",
+        category: "peripherals",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809319/d24a4276bf1774616276_w7udrn.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809334/301755686116_u5roi3.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809328/201755686115_g6tldq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809339/101755686115_tysfe1.jpg"
+        ],
+        desc: "Dell Wireless Mouse WM428 (High Copy). Features a compact design for everyday use, plug-and-play USB RF connectivity, optical tracking, and ambidextrous 3-button layout."
     }
 ];
 
@@ -989,7 +1052,11 @@ const productSlugs = {
     55: "kisonli-led-803-wireless-16w-portable-soundbar",
     56: "kisonli-v310-multimedia-computer-speaker-system",
     57: "jbl-m3-mini-portable-bluetooth-speaker",
-    58: "jbl-flip6-max-multifunction-bluetooth-speaker"
+    58: "jbl-flip6-max-multifunction-bluetooth-speaker",
+    59: "xtrike-me-gm502-rgb-wired-gaming-mouse-12800dpi",
+    60: "xtrike-me-gm-323-rgb-wired-gaming-mouse-12800dpi",
+    61: "hp-s5000-bluetooth-wireless-2.4ghz-mouse",
+    62: "dell-wireless-mouse-wm428-high-copy"
 };
 
 const categoryTitlesMap = {
