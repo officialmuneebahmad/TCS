@@ -912,6 +912,22 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807702/301755583135_k0ew4p.jpg"
         ],
         desc: "JBL M3 Mini Portable Speaker. Super ultra compact design delivering loud sound and great bass. Features 3W output, built-in microphone, and Bluetooth connectivity."
+    },
+    {
+        id: 58,
+        name: "JBL FLIP6 MAX MULTIFUNCTION BLUETOOTH SPEAKER SUBWOOFER",
+        price: 3999,
+        discount: "10% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808160/101755519243_h24iam.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808167/201755519243_jtergs.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808165/971b5f2ac71773985643_xh2jaj.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788808170/301755519243_dtyqeg.jpg"
+        ],
+        desc: "JBL Flip6 Max Multifunction Bluetooth Speaker Subwoofer. Features a 2000mAh battery, waterproof design, Bluetooth 5.0, and massive 50W PMPO stereo sound."
     }
 ];
 
@@ -972,7 +988,8 @@ const productSlugs = {
     54: "kisonli-led-913-soundbar-rgb-bluetooth-speaker",
     55: "kisonli-led-803-wireless-16w-portable-soundbar",
     56: "kisonli-v310-multimedia-computer-speaker-system",
-    57: "jbl-m3-mini-portable-bluetooth-speaker"
+    57: "jbl-m3-mini-portable-bluetooth-speaker",
+    58: "jbl-flip6-max-multifunction-bluetooth-speaker"
 };
 
 const categoryTitlesMap = {
