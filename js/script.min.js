@@ -800,6 +800,118 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1788630675/5bff1b197e1775551715_rlty4v.jpg"
         ],
         desc: "Xtrike Me 3M RGB LED Strip (HT-5050-B3). Enhance your gaming setup with dynamic USB-powered RGB lighting, 3-meter length, and Bluetooth app control from your smartphone."
+    },
+    {
+        id: 51,
+        name: "XTRIKE ME SK-610 SUBWOOFER RGB STEREO WIRED GAMING SPEAKERS",
+        price: 4999,
+        discount: "5% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788766322/65fb318e8c1773904913_rd28gc.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788766427/165fb318e8c1755514184_m9pkle.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788766449/265fb318e8c1755514184_cvtouv.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788766453/365fb318e8c1755514185_qqpfwl.jpg"
+        ],
+        desc: "SK610 Computer Speakers with Subwoofer. Features colorful RGB lighting, a 5W subwoofer with superior bass, independent treble/bass control, and USB+AUX connectivity."
+    },
+    {
+        id: 52,
+        name: "KISONLI G15 PORTABLE MOBILE MUSIC BLUETOOTH DICE MINI SPEAKER",
+        price: 2999,
+        discount: "10% OFF",
+        category: "speakers",
+        parentCategory: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788792676/a98bfca5941773906163_lohmmm.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788792684/101755335164_jrjoex.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788792697/301755335165_whkkuu.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788792700/201755335164_gox460.jpg"
+        ],
+        desc: "Kisonli G15 Dice Speaker. A compact portable audio solution with 1200mAh rechargeable battery, Bluetooth, USB, TF card, and FM radio support, delivering up to 8W audio output."
+    },
+    {
+        id: 53,
+        name: "KISONLI Q26 10W BT/FM/USB/TF/TWS/RGB BLUETOOTH WITH HORN SMALL SPEAKER",
+        price: 2999,
+        discount: "5% OFF",
+        category: "speakers",
+        parentCategory: "mobile",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788793004/e55361c98d1773907796_s9oze9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788793008/101755338689_bkwuv7.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788793013/3c32a32e8581755515232_zje5vi.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788793015/2c32a32e8581755515232_qceffl.jpg"
+        ],
+        desc: "Kisonli Q26 Portable Bluetooth Speaker. Features 10W output, waterproof design, RGB LED lights, 1200mAh battery, TWS support, and multiple connectivity options (FM/USB/TF/AUX)."
+    },
+    {
+        id: 54,
+        name: "KISONLI LED-913 SOUND BAR BLUETOOTH GAMING COLORFUL LIGHT SPEAKER WITH RGB LIGHT",
+        price: 2999,
+        discount: "15% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788806550/307712e1f41773915276_far4ke.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788806576/201755341385_g0ur4h.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788806557/101755341385_pajgon.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788806579/301755341385_h6nidd.jpg"
+        ],
+        desc: "Kisonli LED-913 Sound Bar Bluetooth Speaker. Features 10W (5W*2) dual drivers, vibrant RGB lighting, 1200mAh battery (4-6hrs playtime), and multiple inputs (TF, USB, AUX, FM)."
+    },
+    {
+        id: 55,
+        name: "KISONLI LED-803 WIRELESS BT 16W PORTABLE SOUNDBAR SPEAKERS",
+        price: 3100,
+        discount: "7% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807034/441aab1eb71773915358_ivwqdq.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807054/301755341541_hyulk9.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807056/101755341541_dyr7y8.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807051/201755341541_ma37pa.jpg"
+        ],
+        desc: "Kisonli LED-803 Wireless Bluetooth Soundbar. Delivers 16W (8W*2) powerful sound with heavy bass, 1800mAh battery (5-7hrs playtime), Bluetooth 5.1, and versatile inputs."
+    },
+    {
+        id: 56,
+        name: "KISONLI V310 MULTIMEDIA COMPUTER SPEAKER SYSTEM",
+        price: 1199,
+        discount: "9% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807307/322cff93761773916994_pkwlzi.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807321/101755497227_ypic48.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807318/201755497227_az8o9e.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807323/301755497227_ufld29.jpg"
+        ],
+        desc: "Kisonli V310 Multimedia Computer Speaker System. Mini 2.0 channel desktop speakers with USB power, 3.5mm AUX connectivity, and a 90cm cable."
+    },
+    {
+        id: 57,
+        name: "JBL M3 MINI PORTABLE SPEAKER",
+        price: 1400,
+        discount: "5% OFF",
+        category: "speakers",
+        parentCategory: "computer",
+        inStock: true,
+        images: [
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807669/65ccb786471773986316_kyamvy.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807689/101755583134_bx2gsn.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807699/201755583134_m7tkkf.jpg",
+            "https://res.cloudinary.com/dyrncibsu/image/upload/v1788807702/301755583135_k0ew4p.jpg"
+        ],
+        desc: "JBL M3 Mini Portable Speaker. Super ultra compact design delivering loud sound and great bass. Features 3W output, built-in microphone, and Bluetooth connectivity."
     }
 ];
 
@@ -853,7 +965,14 @@ const productSlugs = {
     47: "dell-laptop-charger-19.5v-4.62a-90w-new-pin",
     48: "dell-laptop-charger-19v-4.62a-fat-pin-90w",
     49: "apple-45w-magsafe-2-t-shape-macbook-charger",
-    50: "xtrike-me-ht-5050-b3-rgb-led-strip-app-control"
+    50: "xtrike-me-ht-5050-b3-rgb-led-strip-app-control",
+    51: "xtrike-me-sk-610-subwoofer-rgb-stereo-gaming-speakers",
+    52: "kisonli-g15-portable-bluetooth-dice-mini-speaker",
+    53: "kisonli-q26-waterproof-10w-rgb-bluetooth-speaker",
+    54: "kisonli-led-913-soundbar-rgb-bluetooth-speaker",
+    55: "kisonli-led-803-wireless-16w-portable-soundbar",
+    56: "kisonli-v310-multimedia-computer-speaker-system",
+    57: "jbl-m3-mini-portable-bluetooth-speaker"
 };
 
 const categoryTitlesMap = {
@@ -871,7 +990,8 @@ const categoryTitlesMap = {
     mousepads: "Gaming & Office Mousepads",
     powerbanks: "Power Banks & Portable Chargers",
     laptopchargers: "Laptop Chargers",
-    gamingaccessories: "Gaming Accessories"
+    gamingaccessories: "Gaming Accessories",
+    speakers: "Bluetooth & USB Speakers"
 };
 
 let selectedCategory = "all";
@@ -1307,7 +1427,7 @@ function executeFilterAndRender() {
     const priceLimit = document.getElementById('price-limit');
     if (priceLimit) priceLimit.innerText = `Rs. ${maxPriceVal.toLocaleString()}`;
 
-    let processedItems = productsDatabase.filter(prod => {
+    let processedItems = productsDatabase.slice().reverse().filter(prod => {
         const queryMatch = prod.name.toLowerCase().includes(searchQuery);
         const categoryMatch = (selectedCategory === "all") ||
             (prod.category === selectedCategory) ||
