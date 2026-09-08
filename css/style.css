@@ -2223,3 +2223,36 @@ footer {
     text-align: center;
     font-size: 1.1em;
 }
+
+
+/* Related Products and Recently Viewed Sections */
+.related-products-section, .recently-viewed-section {
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.related-products-section h2, .recently-viewed-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--neon-blue, #00f3ff);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .related-products-section h2, .recently-viewed-section h2 {
+        font-size: 1.5rem;
+    }
+    .related-products-section, .recently-viewed-section {
+        padding: 30px 20px;
+    }
+}
+
+.btn-go-back {
+    transform: translateY(-2px);
+}

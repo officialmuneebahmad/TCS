@@ -1429,6 +1429,10 @@ function getPathPrefix() {
 
 // RUN SYSTEM INITIALIZATION CYCLES
 document.addEventListener("DOMContentLoaded", () => {
+    initProductTracking();
+    renderRecentlyViewed();
+    renderRelatedProducts();
+
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
     const categoryParam = urlParams.get('category');
@@ -1873,6 +1877,8 @@ function renderProductsGrid(itemsList, targetGrid) {
     const isMainGrid = (targetGrid === productsGrid);
     let displayItems = isMainGrid ? itemsList.slice(0, currentDisplayLimit) : itemsList;
 
+    const fragment = document.createDocumentFragment();
+
     displayItems.forEach(item => {
         const card = document.createElement('a');
         card.className = 'product-card';
@@ -1901,8 +1907,10 @@ function renderProductsGrid(itemsList, targetGrid) {
                     </div>
                     <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
                 `;
-        targetGrid.appendChild(card);
+        fragment.appendChild(card);
     });
+    
+    targetGrid.appendChild(fragment);
 
     // Inject JSON-LD Schema
     injectProductSchema(displayItems, prefix);
@@ -2298,4 +2306,103 @@ function openImageZoomLightbox(imgUrl) {
         }
     };
     document.addEventListener('keydown', handleEsc);
+}
+
+
+// --- RECENTLY VIEWED & RELATED PRODUCTS ---
+
+function initProductTracking() {
+    const path = window.location.pathname;
+    const isProductPage = path.includes('/products/');
+    
+    if (isProductPage) {
+        const slug = path.split('/').pop().replace('.html', '');
+        const productIdStr = Object.keys(productSlugs).find(key => productSlugs[key] === slug);
+        const productId = productIdStr ? parseInt(productIdStr, 10) : null;
+        
+        if (productId) {
+            let viewed = JSON.parse(localStorage.getItem('tcs_recently_viewed')) || [];
+            // Remove if already exists to move it to the top
+            viewed = viewed.filter(id => id !== productId);
+            viewed.unshift(productId);
+            if (viewed.length > 6) {
+                viewed = viewed.slice(0, 6);
+            }
+            localStorage.setItem('tcs_recently_viewed', JSON.stringify(viewed));
+        }
+    }
+}
+
+function renderRecentlyViewed() {
+    const container = document.getElementById('recently-viewed-container');
+    if (!container) return;
+    
+    const viewedIds = JSON.parse(localStorage.getItem('tcs_recently_viewed')) || [];
+    // Only render if there are products to show
+    if (viewedIds.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    const prefix = getPathPrefix();
+    
+    // Map IDs to product objects and filter out undefined ones
+    let displayItems = viewedIds.map(id => productsDatabase.find(p => p.id === id)).filter(p => p);
+    
+    // If we are on a product page, don't show the current product in recently viewed
+    const path = window.location.pathname;
+    const isProductPage = path.includes('/products/');
+    if (isProductPage) {
+        const currentSlug = path.split('/').pop().replace('.html', '');
+        const currentIdStr = Object.keys(productSlugs).find(key => productSlugs[key] === currentSlug);
+        const currentId = currentIdStr ? parseInt(currentIdStr, 10) : null;
+        displayItems = displayItems.filter(p => p.id !== currentId);
+    }
+    
+    if (displayItems.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    container.innerHTML = '<h2>Recently Viewed by You</h2><div class="grid" id="recently-viewed-grid"></div>';
+    const grid = document.getElementById('recently-viewed-grid');
+    
+    renderProductsGrid(displayItems, grid);
+}
+
+function renderRelatedProducts() {
+    const container = document.getElementById('related-products-container');
+    if (!container) return;
+    
+    const path = window.location.pathname;
+    const isProductPage = path.includes('/products/');
+    if (!isProductPage) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    const slug = path.split('/').pop().replace('.html', '');
+    const productIdStr = Object.keys(productSlugs).find(key => productSlugs[key] === slug);
+        const productId = productIdStr ? parseInt(productIdStr, 10) : null;
+    const currentProduct = productsDatabase.find(p => p.id === productId);
+    
+    if (!currentProduct) return;
+    
+    let related = productsDatabase.filter(p => 
+        (p.category === currentProduct.category || p.parentCategory === currentProduct.parentCategory) && 
+        p.id !== productId
+    );
+    
+    // Shuffle and pick 4
+    related = related.sort(() => 0.5 - Math.random()).slice(0, 4);
+    
+    if (related.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    container.innerHTML = '<h2>Other Related Products</h2><div class="grid" id="related-products-grid"></div>';
+    const grid = document.getElementById('related-products-grid');
+    
+    renderProductsGrid(related, grid);
 }
