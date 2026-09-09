@@ -5,7 +5,7 @@
     --bg-surface: #ffffff;
     --bg-input: #f4f7f6;
     --text-main: #333333;
-    --text-light: #777777;
+    --text-light: #595959;
     --border-color: #e0e0e0;
     --shadow-alpha: rgba(0, 0, 0, 0.05);
     --shadow-card: rgba(0, 0, 0, 0.03);
@@ -24,7 +24,7 @@
     --bg-surface: #131a26;
     --bg-input: #1e293b;
     --text-main: #f1f5f9;
-    --text-light: #94a3b8;
+    --text-light: #b0bfcf;
     --border-color: #334155;
     --shadow-alpha: rgba(0, 0, 0, 0.4);
     --shadow-card: rgba(0, 0, 0, 0.25);
@@ -335,6 +335,14 @@ header {
     box-shadow: 0 4px 15px var(--shadow-alpha);
 }
 
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        margin-left: 4%;
+        margin-right: 4%;
+        width: auto;
+    }
+}
+
 .carousel-container {
     display: flex;
     width: 900%; /* 9 slides */
@@ -398,21 +406,22 @@ header {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
+    gap: 4px;
     z-index: 5;
+    max-width: 90%;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
-    margin: 10px;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.4);
     transition: var(--transition);
     cursor: pointer;
-    border: 16px solid transparent;
-    background-clip: padding-box;
+    border: none;
     position: relative;
+    flex-shrink: 0;
 }
 
 /* Expand touch target to 48px x 48px without changing visible dot size */
@@ -428,8 +437,23 @@ header {
 
 .dot.active {
     background: var(--neon-blue);
-    width: 18px;
+    width: 16px;
     border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+    .carousel-dots {
+        gap: 2px;
+        bottom: 6px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 1px;
+    }
+    .dot.active {
+        width: 14px;
+    }
 }
 
 
@@ -535,6 +559,10 @@ header {
     color: #111111;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+}
+
+[data-theme="dark"] .brand-name {
+    color: var(--text-main);
 }
 
 .brand-item:hover .brand-logo-circle,
@@ -2255,4 +2283,14 @@ footer {
 
 .btn-go-back {
     transform: translateY(-2px);
+}
+
+.seo-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .seo-link {
+    color: var(--neon-blue);
 }
