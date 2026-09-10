@@ -1,0 +1,25 @@
+{
+  "name": "the-computer-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add_icons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officialmuneebahmad/TCS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/officialmuneebahmad/TCS/issues"
+  },
+  "homepage": "https://github.com/officialmuneebahmad/TCS#readme",
+  "dependencies": {
+    "googleapis": "^178.1.1",
+    "xml2js": "^0.6.2"
+  }
+}
