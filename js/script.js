@@ -2153,7 +2153,7 @@ function orderViaWhatsapp() {
         });
     }
 
-    const messageText = `Assalam-o-Alaikum! The Computer Shop Multan, I would like to order this item:\n\n` +
+    const messageText = `Assalam-o-Alaikum! Multan Tech Store, I would like to order this item:\n\n` +
         `*Product Name:* ${activeProductGlobal.name}\n` +
         `*Price:* Rs. ${activeProductGlobal.price.toLocaleString()}\n` +
         `*Offer:* ${activeProductGlobal.discount}\n\n` +
@@ -2171,7 +2171,7 @@ function directHelpWhatsapp() {
             method: 'WhatsApp'
         });
     }
-    const helpMsg = `Hello The Computer Shop Multan! I am browsing through your web store and need live support choosing a mobile or computer setup accessory. Can you help?`;
+    const helpMsg = `Hello Multan Tech Store! I am browsing through your web store and need live support choosing a mobile or computer setup accessory. Can you help?`;
     const storeMobileNum = "923070655275";
     window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(helpMsg)}`, '_blank');
 }
