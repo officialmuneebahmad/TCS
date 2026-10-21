@@ -2142,6 +2142,17 @@ function showHome() {
 function orderViaWhatsapp() {
     if (!activeProductGlobal) return;
 
+    if (typeof gtag === 'function') {
+        gtag('event', 'contact', {
+            event_category: 'engagement',
+            event_label: 'whatsapp_order',
+            method: 'WhatsApp',
+            value: activeProductGlobal.price,
+            currency: 'PKR',
+            item_name: activeProductGlobal.name
+        });
+    }
+
     const messageText = `Assalam-o-Alaikum! The Computer Shop Multan, I would like to order this item:\n\n` +
         `*Product Name:* ${activeProductGlobal.name}\n` +
         `*Price:* Rs. ${activeProductGlobal.price.toLocaleString()}\n` +
@@ -2153,6 +2164,13 @@ function orderViaWhatsapp() {
 }
 
 function directHelpWhatsapp() {
+    if (typeof gtag === 'function') {
+        gtag('event', 'contact', {
+            event_category: 'engagement',
+            event_label: 'whatsapp_help_inquiry',
+            method: 'WhatsApp'
+        });
+    }
     const helpMsg = `Hello The Computer Shop Multan! I am browsing through your web store and need live support choosing a mobile or computer setup accessory. Can you help?`;
     const storeMobileNum = "923070655275";
     window.open(`https://wa.me/${storeMobileNum}?text=${encodeURIComponent(helpMsg)}`, '_blank');
@@ -2406,3 +2424,25 @@ function renderRelatedProducts() {
     
     renderProductsGrid(related, grid);
 }
+
+
+// GA4 Phone Call and WhatsApp Global Interaction Tracking
+document.addEventListener('click', function(e) {
+    const callLink = e.target.closest('a[href^="tel:"]');
+    if (callLink && typeof gtag === 'function') {
+        gtag('event', 'contact', {
+            event_category: 'engagement',
+            event_label: 'phone_call_click',
+            method: 'Phone',
+            phone_number: callLink.getAttribute('href').replace('tel:', '')
+        });
+    }
+    const waLink = e.target.closest('a[href*="wa.me"]');
+    if (waLink && typeof gtag === 'function') {
+        gtag('event', 'contact', {
+            event_category: 'engagement',
+            event_label: 'whatsapp_link_click',
+            method: 'WhatsApp'
+        });
+    }
+});
