@@ -37,8 +37,12 @@
     <meta name="twitter:image" content="https://res.cloudinary.com/dyrncibsu/image/upload/q_auto,f_jpg/v1780552279/A_high-fidelity__professional_combination_mark_202605121257_vuhuog.jpg">
 
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
 
     <!-- Structured Data -->
@@ -84,10 +88,10 @@
     }
     </script>
     <style>
-        .contact-section { padding: 50px 4%; font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%); color: var(--text-main); }
+        .contact-section { padding: 50px 4%; font-family: var(--font-primary); background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%); color: var(--text-main); }
         .contact-container { max-width: 1000px; margin: 0 auto; }
         .header-block { text-align: center; margin-bottom: 40px; }
-        .main-title { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+        .main-title { font-family: var(--font-primary); font-size: 2.2rem; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
         .subtitle { color: var(--text-light); font-size: 0.95rem; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .card { background: var(--bg-surface); padding: 30px; border-radius: var(--border-radius); text-align: center; box-shadow: 0 4px 15px var(--shadow-card); border: 1px solid var(--border-color); transition: transform 0.3s ease; }
@@ -97,7 +101,7 @@
         [data-theme="dark"] .card-hours { border-top-color: var(--neon-blue); }
         .card-email { border-top: 5px solid #4a5568; }
         .icon { font-size: 2.5rem; margin-bottom: 15px; }
-        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
+        .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
         .card-text { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin-bottom: 20px; }
         .whatsapp-link { display: inline-block; background: #25d366; color: #fff; padding: 10px 25px; border-radius: 25px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
         .whatsapp-link:hover { background: #20ba56; }
@@ -107,7 +111,7 @@
         .email-link { color: var(--primary-blue); font-weight: 600; text-decoration: none; font-size: 0.95rem; word-break: break-all; }
         [data-theme="dark"] .email-link { color: var(--neon-blue); }
         .email-link:hover { text-decoration: underline; }
-        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-light); margin-bottom: 25px; font-family: 'Poppins', sans-serif; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-light); margin-bottom: 25px; font-family: var(--font-primary); }
         .breadcrumb a { color: var(--primary-blue); transition: var(--transition); }
         [data-theme="dark"] .breadcrumb a { color: var(--neon-blue); }
         .breadcrumb a:hover { text-decoration: underline; }
@@ -222,7 +226,7 @@
                     <li><a href="./about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                     <li><a href="./faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
                     <li><a href="./contact-us.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
-                    <li><a href="./ToC.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>
+                    <li><a href="./terms-and-conditions.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>
                     <li><a href="./cookie-policy.html"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
                     <li><a href="html-sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
                 </ul>

@@ -31,8 +31,12 @@
     <meta property="og:type" content="website">
 
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
 
     <!-- Schema.org Structured Data -->
@@ -90,25 +94,25 @@
     }
     </script>
     <style>
-        .landing-content { padding: 50px 4%; font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%); color: var(--text-main); }
+        .landing-content { padding: 50px 4%; font-family: var(--font-primary); background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%); color: var(--text-main); }
         .landing-container { max-width: 900px; margin: 0 auto; }
-        .main-title { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; text-align: center; }
+        .main-title { font-family: var(--font-primary); font-size: 2.2rem; text-transform: uppercase; font-weight: 700; margin-bottom: 15px; text-align: center; }
         .intro-text { font-size: 1.05rem; color: var(--text-light); line-height: 1.7; margin-bottom: 30px; text-align: center; }
         .content-section { margin-bottom: 40px; }
-        .content-section h2 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; margin-bottom: 15px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
+        .content-section h2 { font-family: var(--font-primary); font-size: 1.4rem; margin-bottom: 15px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
         .content-section p { font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 15px; }
         .feature-list { list-style: none; margin-bottom: 20px; }
         .feature-list li { margin-bottom: 10px; display: flex; align-items: flex-start; font-size: 0.95rem; }
         .feature-list i { color: var(--neon-blue); margin-right: 12px; margin-top: 4px; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; border: 1px solid var(--border-color); }
         .comparison-table th, .comparison-table td { padding: 12px; border: 1px solid var(--border-color); text-align: left; }
-        .comparison-table th { background: var(--bg-input); font-family: 'Orbitron', sans-serif; font-weight: 600; }
+        .comparison-table th { background: var(--bg-input); font-family: var(--font-primary); font-weight: 600; }
         .faq-box { background: var(--bg-surface); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--border-radius); margin-bottom: 15px; box-shadow: 0 4px 15px var(--shadow-card); }
         .faq-question { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
         .faq-answer { font-size: 0.92rem; color: var(--text-light); line-height: 1.6; }
         .cta-banner { background: var(--primary-blue); color: var(--white); padding: 40px 30px; border-radius: var(--border-radius); text-align: center; box-shadow: 0 4px 15px var(--shadow-alpha); margin-top: 40px; }
         [data-theme="dark"] .cta-banner { background: #131a26; border: 1px solid var(--neon-blue); }
-        .cta-title { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+        .cta-title { font-family: var(--font-primary); font-size: 1.3rem; margin-bottom: 10px; font-weight: 700; }
         [data-theme="dark"] .cta-title { color: var(--neon-blue); }
         .cta-desc { font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px; }
         .whatsapp-btn { display: inline-block; background: #25d366; color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; }
@@ -239,7 +243,7 @@
             <!-- Static Product Catalog Grid for Immediate Crawlability -->
             <!-- Static Product Catalog Grid for Immediate Crawlability -->
             <section class="category-product-catalog" style="margin: 40px auto; max-width: 1200px;">
-                <h2 style="font-family:'Orbitron', sans-serif; font-size:1.6rem; color:var(--text-main); margin-bottom:20px; border-bottom:2px solid var(--border-color); padding-bottom:10px;">
+                <h2 style="font-family: var(--font-primary); font-size:1.6rem; color:var(--text-main); margin-bottom:20px; border-bottom:2px solid var(--border-color); padding-bottom:10px;">
                     Featured Laptop Accessories in Stock (47 Items)
                 </h2>
                 <div class="grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:20px;">
@@ -979,15 +983,15 @@
         </a>
     </article>
 <article class="product-card">
-        <a href="products/dell-wireless-mouse-wm428-high-copy.html" class="product-card-link" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+        <a href="products/dell-wireless-mouse-wm428.html" class="product-card-link" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
             <div class="product-card-top">
                 <div class="discount-badge">5% OFF</div>
                 <div class="product-img-wrapper">
-                    <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1788809319/d24a4276bf1774616276_w7udrn.jpg" alt="DELL WIRELESS MOUSE WM428 HIGH COPY" class="product-img img-primary" loading="lazy" width="280" height="280">
-                    <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1788809334/301755686116_u5roi3.jpg" alt="DELL WIRELESS MOUSE WM428 HIGH COPY alternate view" class="product-img img-secondary" loading="lazy" width="280" height="280">
+                    <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1788809319/d24a4276bf1774616276_w7udrn.jpg" alt="DELL WIRELESS MOUSE WM428" class="product-img img-primary" loading="lazy" width="280" height="280">
+                    <img src="https://res.cloudinary.com/dyrncibsu/image/upload/v1788809334/301755686116_u5roi3.jpg" alt="DELL WIRELESS MOUSE WM428 alternate view" class="product-img img-secondary" loading="lazy" width="280" height="280">
                 </div>
                 <div class="product-info-wrapper">
-                    <h3 class="product-name" style="font-size:0.95rem; margin:10px 0 6px; font-weight:600; line-height:1.4;">DELL WIRELESS MOUSE WM428 HIGH COPY</h3>
+                    <h3 class="product-name" style="font-size:0.95rem; margin:10px 0 6px; font-weight:600; line-height:1.4;">DELL WIRELESS MOUSE WM428</h3>
                 </div>
             </div>
             <div class="product-card-bottom" style="margin-top:auto; padding-top:8px;">
@@ -1269,7 +1273,7 @@
                     <li><a href="./about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                     <li><a href="./faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
                     <li><a href="./contact-us.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
-                    <li><a href="./ToC.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>
+                    <li><a href="./terms-and-conditions.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>
                     <li><a href="./cookie-policy.html"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
                     <li><a href="html-sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
                 </ul>

@@ -63,13 +63,13 @@ walkDir(dir, (filePath) => {
         const trustBadgesStart = `<div class="footer-col trust-badges">`;
         
         // Let's just find the exact block:
-        const searchBlock = `<li><a href="${prefix}ToC.html">Terms & Conditions</a></li>
+        const searchBlock = `<li><a href="${prefix}terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
             </div>
 
             <div class="footer-col trust-badges">`;
             
-        const replacementBlock = `<li><a href="${prefix}ToC.html">Terms & Conditions</a></li>
+        const replacementBlock = `<li><a href="${prefix}terms-and-conditions.html">Terms & Conditions</a></li>
                 </ul>
             </div>
 

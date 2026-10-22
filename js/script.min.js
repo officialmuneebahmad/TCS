@@ -978,7 +978,7 @@ const productsDatabase = [
     },
     {
         id: 62,
-        name: "DELL WIRELESS MOUSE WM428 HIGH COPY",
+        name: "DELL WIRELESS MOUSE WM428",
         price: 1000,
         discount: "5% OFF",
         category: "peripherals",
@@ -990,7 +990,7 @@ const productsDatabase = [
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809328/201755686115_g6tldq.jpg",
             "https://res.cloudinary.com/dyrncibsu/image/upload/v1788809339/101755686115_tysfe1.jpg"
         ],
-        desc: "Dell Wireless Mouse WM428 (High Copy). Features a compact design for everyday use, plug-and-play USB RF connectivity, optical tracking, and ambidextrous 3-button layout."
+        desc: "Dell Wireless Mouse WM428. Features a compact design for everyday use, plug-and-play USB RF connectivity, optical tracking, and ambidextrous 3-button layout."
     },
     {
         id: 63,
@@ -1340,7 +1340,7 @@ const productSlugs = {
     59: "xtrike-me-gm502-rgb-wired-gaming-mouse-12800dpi",
     60: "xtrike-me-gm-323-rgb-wired-gaming-mouse-12800dpi",
     61: "hp-s5000-bluetooth-wireless-2.4ghz-mouse",
-    62: "dell-wireless-mouse-wm428-high-copy",
+    62: "dell-wireless-mouse-wm428",
     63: "xtrike-me-mk-307-en-wireless-keyboard-mouse-combo",
     64: "jedel-wireless-keyboard-mouse-combo-ws736",
     65: "speed-x-sp-e28-2-dual-lens-bulb-camera-v380-pro",

@@ -49,7 +49,7 @@ THE COMPUTER SHOP/                  <- Project root / domain root
 +-- about-us.html                   <- About page (static HTML)
 +-- contact-us.html                 <- Contact page with WhatsApp + address info
 +-- faqs.html                       <- FAQ page (static HTML)
-+-- ToC.html                        <- Terms & Conditions page
++-- terms-and-conditions.html                        <- Terms & Conditions page
 +-- computer-accessories-multan.html <- Local SEO landing page (computer accessories)
 +-- mobile-accessories-multan.html  <- Local SEO landing page (mobile accessories)
 +-- cables-multan.html              <- Local SEO landing page (cables)
@@ -78,7 +78,7 @@ THE COMPUTER SHOP/                  <- Project root / domain root
 |   +-- best-mobile-accessories-in-pakistan.html
 |
 +-- foot/                           <- Partial HTML snippets (NOT referenced anywhere in live pages)
-|   +-- ToC.html
+|   +-- terms-and-conditions.html
 |   +-- about-us.html
 |   +-- contact-us.html
 |   +-- faqs.html
@@ -140,7 +140,7 @@ THE COMPUTER SHOP/                  <- Project root / domain root
 | **Local SEO landing pages** | Done | 5 geo-targeted pages targeting Multan keyword variations |
 | **Blog / content section** | Done | 6 articles in `/blog/` (buying guides for chargers, mice, cables, hubs) |
 | **Google Search Console verification** | Done | `google05013b29c36b14cc.html` |
-| **About / Contact / FAQ / T&C pages** | Done | `about-us.html`, `contact-us.html`, `faqs.html`, `ToC.html` |
+| **About / Contact / FAQ / T&C pages** | Done | `about-us.html`, `contact-us.html`, `faqs.html`, `terms-and-conditions.html` |
 
 ---
 
@@ -215,7 +215,7 @@ The only "API-like" interactions are:
 ### Incomplete / Partially Built
 
 - **`README.md`** — Contains only `# TCS` (6 bytes). No setup, deployment, or project description.
-- **`foot/` directory** — 4 HTML partial files (`about-us.html`, `contact-us.html`, `faqs.html`, `ToC.html`) that are **not referenced or included anywhere** in the live site pages. Appear to be unused drafts.
+- **`foot/` directory** — 4 HTML partial files (`about-us.html`, `contact-us.html`, `faqs.html`, `terms-and-conditions.html`) that are **not referenced or included anywhere** in the live site pages. Appear to be unused drafts.
 - **Related products logic** — `js/script.js` line 1370: related products are the first 3 items from the database array that don't match the current product ID. Not category-aware or relevance-ranked.
 - **Discount badge "None" bug** — Product ID 35 (Lenovo Lecoo EW301) has `discount: "None"` which renders literally as the text "None" in the badge on product cards.
 - **`laptopchargers` nav gap** — Category `laptopchargers` exists in `categoryTitlesMap` and filter logic, but there is no nav button with `id="btn-laptopchargers"` in `index.html`. Active state cannot be set via JS.

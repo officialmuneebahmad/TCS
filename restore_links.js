@@ -31,7 +31,7 @@ function walk(dir) {
             content = content.replace(/<li><a href=""><i class="fas fa-info-circle"><\/i> About Us<\/a><\/li>/g, `<li><a href="${p}about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>`);
             content = content.replace(/<li><a href=""><i class="fas fa-question-circle"><\/i> FAQs<\/a><\/li>/g, `<li><a href="${p}faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>`);
             content = content.replace(/<li><a href=""><i class="fas fa-phone-alt"><\/i> Contact Us<\/a><\/li>/g, `<li><a href="${p}contact-us.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>`);
-            content = content.replace(/<li><a href=""><i class="fas fa-file-contract"><\/i> Terms &amp; Conditions<\/a><\/li>/g, `<li><a href="${p}ToC.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>`);
+            content = content.replace(/<li><a href=""><i class="fas fa-file-contract"><\/i> Terms &amp; Conditions<\/a><\/li>/g, `<li><a href="${p}terms-and-conditions.html"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a></li>`);
 
             // Top Categories (these were absolute with leading /)
             content = content.replace(/<li><a href=""><i class="fas fa-mobile-alt"><\/i> Mobile Gear<\/a><\/li>/g, `<li><a href="/mobile-accessories-multan.html"><i class="fas fa-mobile-alt"></i> Mobile Gear</a></li>`);
