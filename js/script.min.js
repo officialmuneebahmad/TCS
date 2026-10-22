@@ -1392,7 +1392,9 @@ let activeProductGlobal = null;
 let slideIndex = 0;
 const totalSlides = 9;
 let carouselInterval;
-let currentDisplayLimit = 8;
+const PRODUCTS_PER_PAGE = 12;
+let currentPage = 1;
+let currentDisplayLimit = 12;
 let currentFilteredProducts = [];
 let isLoadingMore = false;
 let loadMoreObserver = null;
@@ -1775,6 +1777,7 @@ function filterProductsWithMobileClose() {
 }
 
 function filterProducts(showLoadingAnimation = true) {
+    currentPage = 1;
     if (!productsGrid) return;
     const fullscreenOverlay = document.getElementById('full-screen-loading-overlay');
 
@@ -1845,7 +1848,8 @@ function executeFilterAndRender() {
 
     // Scroll restore: if tcs_scroll_pos exists, we came back from a product page
     const savedScroll = sessionStorage.getItem('tcs_scroll_pos');
-    const savedLimit = sessionStorage.getItem('tcs_display_limit');
+    const savedPage = sessionStorage.getItem('tcs_current_page');
+    if (savedPage) { currentPage = parseInt(savedPage, 10) || 1; sessionStorage.removeItem('tcs_current_page'); }
     if (savedScroll && savedLimit) {
         currentDisplayLimit = parseInt(savedLimit, 10);
     } else {
@@ -1867,24 +1871,36 @@ function renderProductsGrid(itemsList, targetGrid) {
     if (!targetGrid) return;
     targetGrid.innerHTML = "";
 
+    const isMainGrid = (targetGrid === productsGrid);
+
     if (itemsList.length === 0) {
         targetGrid.innerHTML = `<div class="no-results"><i class="fas fa-search-minus" style="font-size:1.8rem; margin-bottom:8px; display:block; color:var(--neon-blue);"></i> No products matched selection bounds.</div>`;
-        updateLoadMoreUI(0, 0);
+        if (isMainGrid) renderPaginationUI(1, 0, 0);
         return;
     }
 
     const prefix = getPathPrefix();
-    const isMainGrid = (targetGrid === productsGrid);
-    let displayItems = isMainGrid ? itemsList.slice(0, currentDisplayLimit) : itemsList;
+    let displayItems;
+    if (isMainGrid) {
+        const total = itemsList.length;
+        const totalPages = Math.ceil(total / PRODUCTS_PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = 1;
+        if (currentPage < 1) currentPage = 1;
+        const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
+        const end = Math.min(start + PRODUCTS_PER_PAGE, total);
+        displayItems = itemsList.slice(start, end);
+    } else {
+        displayItems = itemsList;
+    }
 
     const fragment = document.createDocumentFragment();
 
-    displayItems.forEach(item => {
+    displayItems.forEach((item, idx) => {
         const card = document.createElement('a');
         card.className = 'product-card';
         card.href = `${prefix}products/${productSlugs[item.id]}.html`;
         card.addEventListener('click', () => {
-            sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
+            sessionStorage.setItem('tcs_current_page', currentPage);
             sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
         });
 
@@ -1893,13 +1909,25 @@ function renderProductsGrid(itemsList, targetGrid) {
         const altPrimary = item.alt || item.name;
         const altSecondary = (item.alt || item.name) + ' — alternate view';
 
+        // Core Web Vitals optimization on main grid
+        let imgLoading = 'lazy';
+        let imgFetchPriority = '';
+        if (isMainGrid && currentPage === 1) {
+            if (idx === 0) {
+                imgLoading = 'eager';
+                imgFetchPriority = 'fetchpriority="high"';
+            } else if (idx >= 1 && idx <= 3) {
+                imgLoading = 'eager';
+            }
+        }
+
         card.innerHTML = `
                     <div class="product-card-top">
                         ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
                         ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
                         <div class="product-img-wrapper">
-                            <img src="${img1}" alt="${altPrimary}" class="product-img img-primary" loading="lazy" width="300" height="300">
-                            <img src="${img2}" alt="${altSecondary}" class="product-img img-secondary" loading="lazy" width="300" height="300">
+                            <img src="${img1}" alt="${altPrimary}" class="product-img img-primary" loading="${imgLoading}" ${imgFetchPriority} decoding="async" width="280" height="280">
+                            <img src="${img2}" alt="${altSecondary}" class="product-img img-secondary" loading="${imgLoading}" decoding="async" width="280" height="280">
                         </div>
                         <div class="product-info-wrapper">
                             <div class="product-name">${item.name}</div>
@@ -1916,8 +1944,8 @@ function renderProductsGrid(itemsList, targetGrid) {
     injectProductSchema(displayItems, prefix);
 
     if (isMainGrid) {
-        updateLoadMoreUI(displayItems.length, itemsList.length);
-        setupIntersectionObserver();
+        const totalPages = Math.ceil(itemsList.length / PRODUCTS_PER_PAGE) || 1;
+        renderPaginationUI(currentPage, totalPages, itemsList.length);
     }
 }
 
@@ -1958,125 +1986,137 @@ function injectProductSchema(products, prefix) {
     document.head.appendChild(script);
 }
 
-function updateLoadMoreUI(shown, total) {
-    const progressEl = document.getElementById('products-progress');
-    const btnEl = document.getElementById('load-more-btn');
-    const endEl = document.getElementById('load-more-end');
-    const spinnerEl = document.getElementById('load-more-spinner');
+function goToPage(pageNum) {
+    const total = currentFilteredProducts.length;
+    const totalPages = Math.ceil(total / PRODUCTS_PER_PAGE) || 1;
+    if (pageNum < 1) pageNum = 1;
+    if (pageNum > totalPages) pageNum = totalPages;
+    currentPage = pageNum;
 
-    if (spinnerEl) spinnerEl.classList.remove('visible');
+    // Update query parameter ?page=X without page reload
+    const url = new URL(window.location);
+    if (currentPage > 1) {
+        url.searchParams.set('page', currentPage);
+    } else {
+        url.searchParams.delete('page');
+    }
+    window.history.pushState({ page: currentPage }, '', url);
 
-    if (total === 0) {
-        if (progressEl) progressEl.innerHTML = '';
-        if (btnEl) btnEl.style.display = 'none';
-        if (endEl) endEl.classList.remove('visible');
+    renderProductsGrid(currentFilteredProducts, productsGrid);
+
+    // Smooth scroll to top of products area
+    const targetEl = document.getElementById('grid-title') || document.getElementById('sorting-select') || document.querySelector('.products-area') || productsGrid;
+    if (targetEl) {
+        const headerOffset = 90;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+function renderPaginationUI(currentPage, totalPages, totalItems) {
+    const container = document.getElementById('pagination-container') || document.getElementById('load-more-container');
+    if (!container) return;
+
+    if (totalItems === 0) {
+        container.innerHTML = '';
         return;
     }
 
-    if (progressEl) {
-        progressEl.innerHTML = `Showing <span>${shown}</span> of <span>${total}</span> products`;
+    if (totalPages <= 1) {
+        container.innerHTML = `<p id="products-progress" style="margin-bottom: 15px; font-size: 0.95rem; color: var(--text-light); text-align: center;">Showing all <span>${totalItems}</span> products</p>`;
+        return;
     }
 
-    if (shown < total) {
-        if (btnEl) {
-            btnEl.style.display = 'inline-block';
-            btnEl.textContent = 'Load More';
-            btnEl.style.cssText = 'display:inline-block; padding:10px 28px; font-size:0.95rem; border-radius:8px; background:var(--primary-blue); color:#fff; border:none; cursor:pointer; font-family:Poppins,sans-serif; transition:opacity 0.2s;';
+    const start = (currentPage - 1) * PRODUCTS_PER_PAGE + 1;
+    const end = Math.min(currentPage * PRODUCTS_PER_PAGE, totalItems);
+
+    let html = `<p id="products-progress" style="margin-bottom: 15px; font-size: 0.95rem; color: var(--text-light); text-align: center;">Showing <span>${start} – ${end}</span> of <span>${totalItems}</span> products</p>`;
+    html += '<nav class="pagination-nav" aria-label="Pagination">';
+    html += '<ul class="pagination-list" id="pagination-list">';
+
+    // Previous button
+    if (currentPage > 1) {
+        html += `<li><button type="button" class="pagination-link pagination-prev" onclick="goToPage(${currentPage - 1})" aria-label="Previous page">‹ Previous</button></li>`;
+    }
+
+    // Pattern: First 3 pages ... Mid 3 pages ... Last 3 pages
+    let pageItems = [];
+
+    if (totalPages <= 6) {
+        for (let p = 1; p <= totalPages; p++) pageItems.push(p);
+    } else if (totalPages === 7) {
+        if (currentPage <= 3) {
+            // First 3 ... Last 3
+            pageItems = [1, 2, 3, { type: 'ellipsis', jumpTo: 4 }, 5, 6, 7];
+        } else if (currentPage === 4) {
+            // Mid 3: 1 ... 3 4 5 ... 7
+            pageItems = [1, { type: 'ellipsis', jumpTo: 2 }, 3, 4, 5, { type: 'ellipsis', jumpTo: 6 }, 7];
+        } else {
+            // Last 3 active: 1 2 3 ... 5 6 7
+            pageItems = [1, 2, 3, { type: 'ellipsis', jumpTo: 4 }, 5, 6, 7];
         }
-        if (endEl) endEl.classList.remove('visible');
     } else {
-        if (btnEl) btnEl.style.display = 'none';
-        if (endEl) {
-            endEl.style.display = 'block';
-            requestAnimationFrame(() => endEl.classList.add('visible'));
+        // totalPages >= 8: Full "first 3 pages ... mid 3 pages ... last 3 pages"
+        const first3 = [1, 2, 3];
+        const last3 = [totalPages - 2, totalPages - 1, totalPages];
+
+        let mid3 = [];
+        if (currentPage > 3 && currentPage < totalPages - 2) {
+            mid3 = [currentPage - 1, currentPage, currentPage + 1];
+        } else {
+            const mid = Math.round(totalPages / 2);
+            mid3 = [mid - 1, mid, mid + 1];
+        }
+
+        const pageSet = new Set();
+        first3.forEach(p => pageSet.add(p));
+        mid3.forEach(p => pageSet.add(p));
+        last3.forEach(p => pageSet.add(p));
+
+        const sorted = Array.from(pageSet).sort((a, b) => a - b);
+
+        for (let i = 0; i < sorted.length; i++) {
+            if (i > 0) {
+                const gap = sorted[i] - sorted[i - 1];
+                if (gap > 1) {
+                    const jumpPage = Math.round((sorted[i - 1] + sorted[i]) / 2);
+                    pageItems.push({ type: 'ellipsis', jumpTo: jumpPage });
+                }
+            }
+            pageItems.push(sorted[i]);
         }
     }
-}
 
-function setupIntersectionObserver() {
-    if (loadMoreObserver) loadMoreObserver.disconnect();
-    const sentinel = document.getElementById('load-more-container');
-    if (!sentinel) return;
-
-    const shown = Math.min(currentDisplayLimit, currentFilteredProducts.length);
-    const total = currentFilteredProducts.length;
-    if (shown >= total) return;
-
-    loadMoreObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !isLoadingMore) {
-                loadMoreProducts();
-            }
-        });
-    }, { rootMargin: '0px 0px 300px 0px', threshold: 0 });
-
-    loadMoreObserver.observe(sentinel);
-}
-
-function loadMoreProducts() {
-    if (isLoadingMore) return;
-    const total = currentFilteredProducts.length;
-    if (currentDisplayLimit >= total) return;
-
-    isLoadingMore = true;
-
-    const spinnerEl = document.getElementById('load-more-spinner');
-    const btnEl = document.getElementById('load-more-btn');
-    if (spinnerEl) spinnerEl.classList.add('visible');
-    if (btnEl) btnEl.style.display = 'none';
-
-    // Simulate a brief fetch delay for smooth UX
-    setTimeout(() => {
-        const prevLimit = currentDisplayLimit;
-        currentDisplayLimit = Math.min(currentDisplayLimit + 8, total);
-        const prefix = getPathPrefix();
-
-        // Append only NEW cards with fade-in
-        const newItems = currentFilteredProducts.slice(prevLimit, currentDisplayLimit);
-        newItems.forEach((item, i) => {
-            const card = document.createElement('a');
-            card.className = 'product-card fade-in-new';
-            card.style.animationDelay = `${i * 60}ms`;
-            card.href = `${prefix}products/${productSlugs[item.id]}.html`;
-            card.addEventListener('click', () => {
-                sessionStorage.setItem('tcs_display_limit', currentDisplayLimit);
-                sessionStorage.setItem('tcs_scroll_pos', window.scrollY);
-            });
-
-            const img1 = item.images[0];
-            const img2 = item.images.length > 1 ? item.images[1] : item.images[0];
-            const altPrimary = item.alt || item.name;
-            const altSecondary = (item.alt || item.name) + ' — alternate view';
-
-            card.innerHTML = `
-                        <div class="product-card-top">
-                            ${item.discount && item.discount !== 'None' ? `<div class="discount-badge">${item.discount}</div>` : ''}
-                            ${!item.inStock ? `<div class="out-of-stock-badge">OUT OF STOCK</div>` : ''}
-                            <div class="product-img-wrapper">
-                                <img src="${img1}" alt="${altPrimary}" class="product-img img-primary" loading="lazy" width="300" height="300">
-                                <img src="${img2}" alt="${altSecondary}" class="product-img img-secondary" loading="lazy" width="300" height="300">
-                            </div>
-                            <div class="product-info-wrapper">
-                                <div class="product-name">${item.name}</div>
-                            </div>
-                        </div>
-                        <div class="product-price">Rs. ${item.price.toLocaleString()}</div>
-                    `;
-            productsGrid.appendChild(card);
-        });
-
-        updateLoadMoreUI(currentDisplayLimit, total);
-
-        isLoadingMore = false;
-
-        // Re-attach observer if there are still more items
-        if (currentDisplayLimit < total) {
-            setupIntersectionObserver();
-        } else if (loadMoreObserver) {
-            loadMoreObserver.disconnect();
+    // Render numbers and ellipses
+    pageItems.forEach(item => {
+        if (typeof item === 'object' && item.type === 'ellipsis') {
+            html += `<li><button type="button" class="pagination-ellipsis-btn pagination-link" onclick="goToPage(${item.jumpTo})" aria-label="Page ${item.jumpTo}" title="Jump to Page ${item.jumpTo}">…</button></li>`;
+        } else if (item === currentPage) {
+            html += `<li><span class="pagination-current" aria-current="page">${item}</span></li>`;
+        } else {
+            html += `<li><button type="button" class="pagination-link" onclick="goToPage(${item})">${item}</button></li>`;
         }
-    }, 350);
+    });
+
+    // Next button
+    if (currentPage < totalPages) {
+        html += `<li><button type="button" class="pagination-link pagination-next" onclick="goToPage(${currentPage + 1})" aria-label="Next page">Next ›</button></li>`;
+    }
+
+    html += '</ul>';
+    html += '</nav>';
+
+    container.innerHTML = html;
 }
+
+// Keep backwards compatibility stubs
+function updateLoadMoreUI(shown, total) {}
+function setupIntersectionObserver() {}
+function loadMoreProducts() {}
 
 function viewProductDetails(productId) {
     const product = productsDatabase.find(p => p.id === productId);
@@ -2444,5 +2484,18 @@ document.addEventListener('click', function(e) {
             event_label: 'whatsapp_link_click',
             method: 'WhatsApp'
         });
+    }
+});
+
+
+// Handle browser back/forward buttons with pagination
+window.addEventListener('popstate', (e) => {
+    if (productsGrid) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const p = parseInt(urlParams.get('page'), 10) || 1;
+        if (p !== currentPage) {
+            currentPage = p;
+            renderProductsGrid(currentFilteredProducts, productsGrid);
+        }
     }
 });

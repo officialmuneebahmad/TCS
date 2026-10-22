@@ -2367,3 +2367,94 @@ footer {
 [data-theme="dark"] .seo-link {
     color: var(--neon-blue);
 }
+
+
+/* --- PAGINATION COMPONENT --- */
+.pagination-nav {
+    margin: 40px 0 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-link,
+.pagination-current,
+.pagination-ellipsis {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: var(--transition, all 0.2s ease);
+}
+
+button.pagination-link {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.pagination-link {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.pagination-link:hover,
+.pagination-link:focus-visible {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border-color: var(--primary-blue);
+    outline: none;
+}
+
+.pagination-current {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border: 1px solid var(--primary-blue);
+    cursor: default;
+}
+
+.pagination-ellipsis {
+    color: var(--text-light);
+    border: none;
+    background: transparent;
+    cursor: default;
+    min-width: 32px;
+    padding: 0 4px;
+}
+
+[data-theme="dark"] .pagination-link {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .pagination-link:hover,
+[data-theme="dark"] .pagination-link:focus-visible {
+    background: var(--neon-blue);
+    color: #0b0f19;
+    border-color: var(--neon-blue);
+}
+
+[data-theme="dark"] .pagination-current {
+    background: var(--neon-blue);
+    color: #0b0f19;
+    border-color: var(--neon-blue);
+}
