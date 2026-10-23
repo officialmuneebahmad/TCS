@@ -1,9 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /documentation-print.html
-Disallow: /google-business-profile-prep.md
-
-User-agent: Googlebot-Image
-Allow: /favicon.png
+Disallow: /*?search=*
 
 Sitemap: https://multantech.store/sitemap.xml
